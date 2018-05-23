@@ -8,19 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Drinks
+namespace Drinks.View
 {
-    public partial class FormPainel : Form
+    public partial class FormCadastrarProduto : Form
     {
-        public FormPainel()
+        public FormCadastrarProduto()
         {
             InitializeComponent();
-        }
-
-        private void FormPainel_Load(object sender, EventArgs e)
-        {
-            FormModulos fm = new FormModulos();
-            fm.ShowDialog();
         }
     }
 }
