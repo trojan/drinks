@@ -25,8 +25,17 @@ namespace Drinks.Controller
 
             if (dao.CheckTB() == 0)
                 dao.CreateTB();
+        }
+        
+        private void closeForm_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
-
+        private void FormMinimize_Click(object sender, EventArgs e)
+        {
+            // minimizar o aplicativo
+            // veja: https://msdn.microsoft.com/en-us/library/system.windows.forms.notifyicon.aspx
         }
     }
 }
