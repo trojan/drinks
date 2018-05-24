@@ -55,8 +55,15 @@
     <Compile Include="Controller\FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controller\MarcaController.cs" />
+    <Compile Include="Controller\ProdutoController.cs" />
+    <Compile Include="Controller\TamanhoController.cs" />
+    <Compile Include="Controller\UnidadeMedidaController.cs" />
     <Compile Include="DAO\DAO.cs" />
+    <Compile Include="Model\MarcaModel.cs" />
     <Compile Include="Model\ProdutoModel.cs" />
+    <Compile Include="Model\TamanhoModel.cs" />
+    <Compile Include="Model\UnidadeMedidaModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\FormCadastrarProduto.cs">

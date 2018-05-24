@@ -21,8 +21,10 @@ namespace Drinks.Controller
         {
             DAO.DAO dao = new DAO.DAO();
 
+            // Criara a pasta bd e o arquivo .sdf
             dao.CreateDB();
 
+            // criara as tabelas no bd caso nao tiver nenhum
             if (dao.CheckTB() == 0)
                 dao.CreateTB();
         }
@@ -37,5 +39,6 @@ namespace Drinks.Controller
             // minimizar o aplicativo
             // veja: https://msdn.microsoft.com/en-us/library/system.windows.forms.notifyicon.aspx
         }
+
     }
 }
