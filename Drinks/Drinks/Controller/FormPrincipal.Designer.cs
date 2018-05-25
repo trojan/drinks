@@ -40,8 +40,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabEstoque = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.SelecionarProduto = new System.Windows.Forms.ComboBox();
             this.FormLogo = new System.Windows.Forms.PictureBox();
             this.labelDescricao = new System.Windows.Forms.Label();
             this.textBoxDescricao = new System.Windows.Forms.TextBox();
@@ -55,17 +53,23 @@
             this.buttonSalvarProduto = new System.Windows.Forms.Button();
             this.buttonCancelarProduto = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.listBoxProdutosCadastrados = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.comboBoxMarca = new System.Windows.Forms.ComboBox();
             this.comboBoxUnidadeMedida = new System.Windows.Forms.ComboBox();
             this.comboBoxTamanho = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonBuscarProduto = new System.Windows.Forms.Button();
+            this.textBoxBuscaProduto = new System.Windows.Forms.TextBox();
+            this.comboBoxModoBusca = new System.Windows.Forms.ComboBox();
+            this.dgvProdutosCadastrados = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PanelBackground)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabCompras.SuspendLayout();
             this.tabVendas.SuspendLayout();
             this.tabEstoque.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FormLogo)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutosCadastrados)).BeginInit();
             this.SuspendLayout();
             // 
             // closeForm
@@ -115,7 +119,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 52);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(484, 503);
+            this.tabControl1.Size = new System.Drawing.Size(900, 503);
             this.tabControl1.TabIndex = 3;
             // 
             // tabCompras
@@ -187,35 +191,18 @@
             // 
             // tabEstoque
             // 
-            this.tabEstoque.Controls.Add(this.button1);
-            this.tabEstoque.Controls.Add(this.SelecionarProduto);
+            this.tabEstoque.Controls.Add(this.buttonBuscarProduto);
+            this.tabEstoque.Controls.Add(this.panel1);
+            this.tabEstoque.Controls.Add(this.textBoxBuscaProduto);
+            this.tabEstoque.Controls.Add(this.dgvProdutosCadastrados);
+            this.tabEstoque.Controls.Add(this.comboBoxModoBusca);
+            this.tabEstoque.Controls.Add(this.label2);
             this.tabEstoque.Location = new System.Drawing.Point(4, 22);
             this.tabEstoque.Name = "tabEstoque";
-            this.tabEstoque.Size = new System.Drawing.Size(476, 477);
+            this.tabEstoque.Size = new System.Drawing.Size(892, 477);
             this.tabEstoque.TabIndex = 2;
             this.tabEstoque.Text = "ESTOQUE";
             this.tabEstoque.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(134, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Consultar Produtos";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // SelecionarProduto
-            // 
-            this.SelecionarProduto.FormattingEnabled = true;
-            this.SelecionarProduto.Items.AddRange(new object[] {
-            "Marca",
-            "Unidade de Medida",
-            "Tamanho"});
-            this.SelecionarProduto.Location = new System.Drawing.Point(7, 16);
-            this.SelecionarProduto.Name = "SelecionarProduto";
-            this.SelecionarProduto.Size = new System.Drawing.Size(121, 21);
-            this.SelecionarProduto.TabIndex = 0;
             // 
             // FormLogo
             // 
@@ -231,7 +218,7 @@
             // labelDescricao
             // 
             this.labelDescricao.AutoSize = true;
-            this.labelDescricao.Location = new System.Drawing.Point(625, 112);
+            this.labelDescricao.Location = new System.Drawing.Point(151, 52);
             this.labelDescricao.Name = "labelDescricao";
             this.labelDescricao.Size = new System.Drawing.Size(55, 13);
             this.labelDescricao.TabIndex = 5;
@@ -239,14 +226,14 @@
             // 
             // textBoxDescricao
             // 
-            this.textBoxDescricao.Location = new System.Drawing.Point(628, 129);
+            this.textBoxDescricao.Location = new System.Drawing.Point(154, 69);
             this.textBoxDescricao.Name = "textBoxDescricao";
             this.textBoxDescricao.Size = new System.Drawing.Size(284, 20);
             this.textBoxDescricao.TabIndex = 6;
             // 
             // textBoxID
             // 
-            this.textBoxID.Location = new System.Drawing.Point(502, 129);
+            this.textBoxID.Location = new System.Drawing.Point(28, 69);
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.Size = new System.Drawing.Size(86, 20);
             this.textBoxID.TabIndex = 8;
@@ -254,7 +241,7 @@
             // labelID
             // 
             this.labelID.AutoSize = true;
-            this.labelID.Location = new System.Drawing.Point(502, 112);
+            this.labelID.Location = new System.Drawing.Point(28, 52);
             this.labelID.Name = "labelID";
             this.labelID.Size = new System.Drawing.Size(18, 13);
             this.labelID.TabIndex = 7;
@@ -268,7 +255,7 @@
             this.buttonPesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonPesquisar.FlatAppearance.BorderSize = 0;
             this.buttonPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPesquisar.Location = new System.Drawing.Point(594, 128);
+            this.buttonPesquisar.Location = new System.Drawing.Point(120, 68);
             this.buttonPesquisar.Name = "buttonPesquisar";
             this.buttonPesquisar.Size = new System.Drawing.Size(31, 23);
             this.buttonPesquisar.TabIndex = 9;
@@ -277,7 +264,7 @@
             // labelMarca
             // 
             this.labelMarca.AutoSize = true;
-            this.labelMarca.Location = new System.Drawing.Point(499, 156);
+            this.labelMarca.Location = new System.Drawing.Point(25, 96);
             this.labelMarca.Name = "labelMarca";
             this.labelMarca.Size = new System.Drawing.Size(37, 13);
             this.labelMarca.TabIndex = 10;
@@ -286,7 +273,7 @@
             // labelUnidadeMedida
             // 
             this.labelUnidadeMedida.AutoSize = true;
-            this.labelUnidadeMedida.Location = new System.Drawing.Point(625, 156);
+            this.labelUnidadeMedida.Location = new System.Drawing.Point(151, 96);
             this.labelUnidadeMedida.Name = "labelUnidadeMedida";
             this.labelUnidadeMedida.Size = new System.Drawing.Size(84, 13);
             this.labelUnidadeMedida.TabIndex = 12;
@@ -295,7 +282,7 @@
             // labelTamanho
             // 
             this.labelTamanho.AutoSize = true;
-            this.labelTamanho.Location = new System.Drawing.Point(760, 156);
+            this.labelTamanho.Location = new System.Drawing.Point(286, 96);
             this.labelTamanho.Name = "labelTamanho";
             this.labelTamanho.Size = new System.Drawing.Size(52, 13);
             this.labelTamanho.TabIndex = 14;
@@ -307,7 +294,7 @@
             this.buttonNovoProduto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonNovoProduto.FlatAppearance.BorderSize = 0;
             this.buttonNovoProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNovoProduto.Location = new System.Drawing.Point(505, 232);
+            this.buttonNovoProduto.Location = new System.Drawing.Point(31, 172);
             this.buttonNovoProduto.Name = "buttonNovoProduto";
             this.buttonNovoProduto.Size = new System.Drawing.Size(75, 23);
             this.buttonNovoProduto.TabIndex = 16;
@@ -320,7 +307,7 @@
             this.buttonSalvarProduto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonSalvarProduto.FlatAppearance.BorderSize = 0;
             this.buttonSalvarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSalvarProduto.Location = new System.Drawing.Point(594, 232);
+            this.buttonSalvarProduto.Location = new System.Drawing.Point(120, 172);
             this.buttonSalvarProduto.Name = "buttonSalvarProduto";
             this.buttonSalvarProduto.Size = new System.Drawing.Size(75, 23);
             this.buttonSalvarProduto.TabIndex = 17;
@@ -333,7 +320,7 @@
             this.buttonCancelarProduto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCancelarProduto.FlatAppearance.BorderSize = 0;
             this.buttonCancelarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCancelarProduto.Location = new System.Drawing.Point(682, 232);
+            this.buttonCancelarProduto.Location = new System.Drawing.Point(208, 172);
             this.buttonCancelarProduto.Name = "buttonCancelarProduto";
             this.buttonCancelarProduto.Size = new System.Drawing.Size(75, 23);
             this.buttonCancelarProduto.TabIndex = 18;
@@ -344,37 +331,16 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(500, 74);
+            this.label1.Location = new System.Drawing.Point(26, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(180, 16);
             this.label1.TabIndex = 19;
             this.label1.Text = "CADASTRAR PRODUTO";
             // 
-            // listBoxProdutosCadastrados
-            // 
-            this.listBoxProdutosCadastrados.FormattingEnabled = true;
-            this.listBoxProdutosCadastrados.Items.AddRange(new object[] {
-            "Coca Cola 2L",
-            "Guaraná Pepsi 2L"});
-            this.listBoxProdutosCadastrados.Location = new System.Drawing.Point(503, 313);
-            this.listBoxProdutosCadastrados.Name = "listBoxProdutosCadastrados";
-            this.listBoxProdutosCadastrados.Size = new System.Drawing.Size(407, 238);
-            this.listBoxProdutosCadastrados.TabIndex = 20;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(502, 284);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(211, 16);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "PRODUTOS CADASTRADOS";
-            // 
             // comboBoxMarca
             // 
             this.comboBoxMarca.FormattingEnabled = true;
-            this.comboBoxMarca.Location = new System.Drawing.Point(502, 173);
+            this.comboBoxMarca.Location = new System.Drawing.Point(28, 113);
             this.comboBoxMarca.Name = "comboBoxMarca";
             this.comboBoxMarca.Size = new System.Drawing.Size(86, 21);
             this.comboBoxMarca.TabIndex = 22;
@@ -385,7 +351,7 @@
             this.comboBoxUnidadeMedida.Items.AddRange(new object[] {
             "Litro (L)",
             "Mililitro (mL)"});
-            this.comboBoxUnidadeMedida.Location = new System.Drawing.Point(628, 173);
+            this.comboBoxUnidadeMedida.Location = new System.Drawing.Point(154, 113);
             this.comboBoxUnidadeMedida.Name = "comboBoxUnidadeMedida";
             this.comboBoxUnidadeMedida.Size = new System.Drawing.Size(129, 21);
             this.comboBoxUnidadeMedida.TabIndex = 23;
@@ -393,33 +359,86 @@
             // comboBoxTamanho
             // 
             this.comboBoxTamanho.FormattingEnabled = true;
-            this.comboBoxTamanho.Location = new System.Drawing.Point(763, 173);
+            this.comboBoxTamanho.Location = new System.Drawing.Point(289, 113);
             this.comboBoxTamanho.Name = "comboBoxTamanho";
             this.comboBoxTamanho.Size = new System.Drawing.Size(147, 21);
             this.comboBoxTamanho.TabIndex = 24;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.comboBoxTamanho);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.comboBoxUnidadeMedida);
+            this.panel1.Controls.Add(this.labelDescricao);
+            this.panel1.Controls.Add(this.comboBoxMarca);
+            this.panel1.Controls.Add(this.textBoxDescricao);
+            this.panel1.Controls.Add(this.labelID);
+            this.panel1.Controls.Add(this.textBoxID);
+            this.panel1.Controls.Add(this.buttonCancelarProduto);
+            this.panel1.Controls.Add(this.buttonPesquisar);
+            this.panel1.Controls.Add(this.buttonSalvarProduto);
+            this.panel1.Controls.Add(this.labelMarca);
+            this.panel1.Controls.Add(this.buttonNovoProduto);
+            this.panel1.Controls.Add(this.labelUnidadeMedida);
+            this.panel1.Controls.Add(this.labelTamanho);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(470, 471);
+            this.panel1.TabIndex = 0;
+            // 
+            // buttonBuscarProduto
+            // 
+            this.buttonBuscarProduto.BackColor = System.Drawing.Color.Transparent;
+            this.buttonBuscarProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonBuscarProduto.BackgroundImage")));
+            this.buttonBuscarProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonBuscarProduto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonBuscarProduto.FlatAppearance.BorderSize = 0;
+            this.buttonBuscarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBuscarProduto.Location = new System.Drawing.Point(851, 43);
+            this.buttonBuscarProduto.Name = "buttonBuscarProduto";
+            this.buttonBuscarProduto.Size = new System.Drawing.Size(31, 30);
+            this.buttonBuscarProduto.TabIndex = 35;
+            this.buttonBuscarProduto.UseVisualStyleBackColor = false;
+            // 
+            // textBoxBuscaProduto
+            // 
+            this.textBoxBuscaProduto.Location = new System.Drawing.Point(604, 47);
+            this.textBoxBuscaProduto.Name = "textBoxBuscaProduto";
+            this.textBoxBuscaProduto.Size = new System.Drawing.Size(241, 20);
+            this.textBoxBuscaProduto.TabIndex = 34;
+            // 
+            // comboBoxModoBusca
+            // 
+            this.comboBoxModoBusca.FormattingEnabled = true;
+            this.comboBoxModoBusca.Location = new System.Drawing.Point(476, 46);
+            this.comboBoxModoBusca.Name = "comboBoxModoBusca";
+            this.comboBoxModoBusca.Size = new System.Drawing.Size(122, 21);
+            this.comboBoxModoBusca.TabIndex = 33;
+            // 
+            // dgvProdutosCadastrados
+            // 
+            this.dgvProdutosCadastrados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProdutosCadastrados.Location = new System.Drawing.Point(476, 75);
+            this.dgvProdutosCadastrados.Name = "dgvProdutosCadastrados";
+            this.dgvProdutosCadastrados.Size = new System.Drawing.Size(413, 399);
+            this.dgvProdutosCadastrados.TabIndex = 32;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(587, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(211, 16);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "PRODUTOS CADASTRADOS";
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 567);
-            this.Controls.Add(this.comboBoxTamanho);
-            this.Controls.Add(this.comboBoxUnidadeMedida);
-            this.Controls.Add(this.comboBoxMarca);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.listBoxProdutosCadastrados);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonCancelarProduto);
-            this.Controls.Add(this.buttonSalvarProduto);
-            this.Controls.Add(this.buttonNovoProduto);
-            this.Controls.Add(this.labelTamanho);
-            this.Controls.Add(this.labelUnidadeMedida);
-            this.Controls.Add(this.labelMarca);
-            this.Controls.Add(this.buttonPesquisar);
-            this.Controls.Add(this.textBoxID);
-            this.Controls.Add(this.labelID);
-            this.Controls.Add(this.textBoxDescricao);
-            this.Controls.Add(this.labelDescricao);
             this.Controls.Add(this.FormLogo);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.FormMinimize);
@@ -435,9 +454,12 @@
             this.tabCompras.ResumeLayout(false);
             this.tabVendas.ResumeLayout(false);
             this.tabEstoque.ResumeLayout(false);
+            this.tabEstoque.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FormLogo)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutosCadastrados)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -451,8 +473,6 @@
         private System.Windows.Forms.TabPage tabVendas;
         private System.Windows.Forms.TabPage tabEstoque;
         private System.Windows.Forms.PictureBox FormLogo;
-        private System.Windows.Forms.ComboBox SelecionarProduto;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button button2;
@@ -469,10 +489,14 @@
         private System.Windows.Forms.Button buttonSalvarProduto;
         private System.Windows.Forms.Button buttonCancelarProduto;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBoxProdutosCadastrados;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBoxMarca;
         private System.Windows.Forms.ComboBox comboBoxUnidadeMedida;
         private System.Windows.Forms.ComboBox comboBoxTamanho;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button buttonBuscarProduto;
+        private System.Windows.Forms.TextBox textBoxBuscaProduto;
+        private System.Windows.Forms.DataGridView dgvProdutosCadastrados;
+        private System.Windows.Forms.ComboBox comboBoxModoBusca;
+        private System.Windows.Forms.Label label2;
     }
 }

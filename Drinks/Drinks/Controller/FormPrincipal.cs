@@ -24,7 +24,7 @@ namespace Drinks.Controller
             // Criara a pasta bd e o arquivo .sdf
             dao.CreateDB();
 
-            // criara as tabelas no bd caso nao tiver nenhum
+            // Criara as tabelas no bd caso nao tiver nenhuma
             if (dao.CheckTB() == 0)
                 dao.CreateTB();
         }
