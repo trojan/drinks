@@ -32,44 +32,33 @@
             this.closeForm = new System.Windows.Forms.Button();
             this.PanelBackground = new System.Windows.Forms.PictureBox();
             this.FormMinimize = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabCompras = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.tabVendas = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.tabEstoque = new System.Windows.Forms.TabPage();
             this.FormLogo = new System.Windows.Forms.PictureBox();
-            this.labelDescricao = new System.Windows.Forms.Label();
-            this.textBoxDescricao = new System.Windows.Forms.TextBox();
-            this.textBoxID = new System.Windows.Forms.TextBox();
-            this.labelID = new System.Windows.Forms.Label();
-            this.buttonPesquisar = new System.Windows.Forms.Button();
-            this.labelMarca = new System.Windows.Forms.Label();
-            this.labelUnidadeMedida = new System.Windows.Forms.Label();
-            this.labelTamanho = new System.Windows.Forms.Label();
-            this.buttonNovoProduto = new System.Windows.Forms.Button();
-            this.buttonSalvarProduto = new System.Windows.Forms.Button();
-            this.buttonCancelarProduto = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxMarca = new System.Windows.Forms.ComboBox();
-            this.comboBoxUnidadeMedida = new System.Windows.Forms.ComboBox();
-            this.comboBoxTamanho = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonBuscarProduto = new System.Windows.Forms.Button();
-            this.textBoxBuscaProduto = new System.Windows.Forms.TextBox();
-            this.comboBoxModoBusca = new System.Windows.Forms.ComboBox();
-            this.dgvProdutosCadastrados = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.cOMPRASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nOVACOMPRAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.cONSULTARCOMPRASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vENDASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cAIXAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.aLTERARVALORDOPRODUTOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.cONSULTARVENDASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eSTOQUEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pRODUTOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.mARCAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uNIDADEMEDIDAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tAMANHOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.cONSULTARPRODUTOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.PanelBackground)).BeginInit();
-            this.tabControl1.SuspendLayout();
-            this.tabCompras.SuspendLayout();
-            this.tabVendas.SuspendLayout();
-            this.tabEstoque.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FormLogo)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutosCadastrados)).BeginInit();
+            this.menuStrip1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // closeForm
@@ -90,9 +79,10 @@
             // PanelBackground
             // 
             this.PanelBackground.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(28)))), ((int)(((byte)(31)))));
-            this.PanelBackground.Location = new System.Drawing.Point(-1, -1);
+            this.PanelBackground.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelBackground.Location = new System.Drawing.Point(0, 0);
             this.PanelBackground.Name = "PanelBackground";
-            this.PanelBackground.Size = new System.Drawing.Size(928, 47);
+            this.PanelBackground.Size = new System.Drawing.Size(925, 47);
             this.PanelBackground.TabIndex = 1;
             this.PanelBackground.TabStop = false;
             // 
@@ -111,99 +101,6 @@
             this.FormMinimize.UseVisualStyleBackColor = false;
             this.FormMinimize.Click += new System.EventHandler(this.FormMinimize_Click);
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabCompras);
-            this.tabControl1.Controls.Add(this.tabVendas);
-            this.tabControl1.Controls.Add(this.tabEstoque);
-            this.tabControl1.Location = new System.Drawing.Point(12, 52);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(900, 503);
-            this.tabControl1.TabIndex = 3;
-            // 
-            // tabCompras
-            // 
-            this.tabCompras.Controls.Add(this.button3);
-            this.tabCompras.Controls.Add(this.comboBox2);
-            this.tabCompras.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.tabCompras.Location = new System.Drawing.Point(4, 22);
-            this.tabCompras.Name = "tabCompras";
-            this.tabCompras.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCompras.Size = new System.Drawing.Size(476, 477);
-            this.tabCompras.TabIndex = 0;
-            this.tabCompras.Text = "COMPRAS";
-            this.tabCompras.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(135, 17);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(144, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Consultar Produtos";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Marca",
-            "Unidade de Medida",
-            "Tamanho"});
-            this.comboBox2.Location = new System.Drawing.Point(8, 18);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 4;
-            // 
-            // tabVendas
-            // 
-            this.tabVendas.Controls.Add(this.button2);
-            this.tabVendas.Controls.Add(this.comboBox1);
-            this.tabVendas.Location = new System.Drawing.Point(4, 22);
-            this.tabVendas.Name = "tabVendas";
-            this.tabVendas.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVendas.Size = new System.Drawing.Size(476, 477);
-            this.tabVendas.TabIndex = 1;
-            this.tabVendas.Text = "VENDAS";
-            this.tabVendas.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(134, 15);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(144, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Consultar Produtos";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Marca",
-            "Unidade de Medida",
-            "Tamanho"});
-            this.comboBox1.Location = new System.Drawing.Point(7, 16);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 2;
-            // 
-            // tabEstoque
-            // 
-            this.tabEstoque.Controls.Add(this.buttonBuscarProduto);
-            this.tabEstoque.Controls.Add(this.panel1);
-            this.tabEstoque.Controls.Add(this.textBoxBuscaProduto);
-            this.tabEstoque.Controls.Add(this.dgvProdutosCadastrados);
-            this.tabEstoque.Controls.Add(this.comboBoxModoBusca);
-            this.tabEstoque.Controls.Add(this.label2);
-            this.tabEstoque.Location = new System.Drawing.Point(4, 22);
-            this.tabEstoque.Name = "tabEstoque";
-            this.tabEstoque.Size = new System.Drawing.Size(892, 477);
-            this.tabEstoque.TabIndex = 2;
-            this.tabEstoque.Text = "ESTOQUE";
-            this.tabEstoque.UseVisualStyleBackColor = true;
-            // 
             // FormLogo
             // 
             this.FormLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(28)))), ((int)(((byte)(31)))));
@@ -215,232 +112,174 @@
             this.FormLogo.TabIndex = 4;
             this.FormLogo.TabStop = false;
             // 
-            // labelDescricao
+            // menuStrip1
             // 
-            this.labelDescricao.AutoSize = true;
-            this.labelDescricao.Location = new System.Drawing.Point(151, 52);
-            this.labelDescricao.Name = "labelDescricao";
-            this.labelDescricao.Size = new System.Drawing.Size(55, 13);
-            this.labelDescricao.TabIndex = 5;
-            this.labelDescricao.Text = "Descricao";
+            this.menuStrip1.BackColor = System.Drawing.Color.White;
+            this.menuStrip1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cOMPRASToolStripMenuItem,
+            this.vENDASToolStripMenuItem,
+            this.eSTOQUEToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 47);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(925, 25);
+            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.Text = "MenuPrincipal";
             // 
-            // textBoxDescricao
+            // cOMPRASToolStripMenuItem
             // 
-            this.textBoxDescricao.Location = new System.Drawing.Point(154, 69);
-            this.textBoxDescricao.Name = "textBoxDescricao";
-            this.textBoxDescricao.Size = new System.Drawing.Size(284, 20);
-            this.textBoxDescricao.TabIndex = 6;
+            this.cOMPRASToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nOVACOMPRAToolStripMenuItem,
+            this.toolStripSeparator6,
+            this.cONSULTARCOMPRASToolStripMenuItem});
+            this.cOMPRASToolStripMenuItem.Name = "cOMPRASToolStripMenuItem";
+            this.cOMPRASToolStripMenuItem.Size = new System.Drawing.Size(92, 21);
+            this.cOMPRASToolStripMenuItem.Text = "COMPRAS";
             // 
-            // textBoxID
+            // nOVACOMPRAToolStripMenuItem
             // 
-            this.textBoxID.Location = new System.Drawing.Point(28, 69);
-            this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(86, 20);
-            this.textBoxID.TabIndex = 8;
+            this.nOVACOMPRAToolStripMenuItem.Name = "nOVACOMPRAToolStripMenuItem";
+            this.nOVACOMPRAToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.nOVACOMPRAToolStripMenuItem.Text = "NOVA COMPRA";
             // 
-            // labelID
+            // toolStripSeparator6
             // 
-            this.labelID.AutoSize = true;
-            this.labelID.Location = new System.Drawing.Point(28, 52);
-            this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(18, 13);
-            this.labelID.TabIndex = 7;
-            this.labelID.Text = "ID";
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(237, 6);
             // 
-            // buttonPesquisar
+            // cONSULTARCOMPRASToolStripMenuItem
             // 
-            this.buttonPesquisar.BackColor = System.Drawing.Color.Transparent;
-            this.buttonPesquisar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonPesquisar.BackgroundImage")));
-            this.buttonPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonPesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonPesquisar.FlatAppearance.BorderSize = 0;
-            this.buttonPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPesquisar.Location = new System.Drawing.Point(120, 68);
-            this.buttonPesquisar.Name = "buttonPesquisar";
-            this.buttonPesquisar.Size = new System.Drawing.Size(31, 23);
-            this.buttonPesquisar.TabIndex = 9;
-            this.buttonPesquisar.UseVisualStyleBackColor = false;
+            this.cONSULTARCOMPRASToolStripMenuItem.Name = "cONSULTARCOMPRASToolStripMenuItem";
+            this.cONSULTARCOMPRASToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.cONSULTARCOMPRASToolStripMenuItem.Text = "CONSULTAR COMPRAS";
             // 
-            // labelMarca
+            // vENDASToolStripMenuItem
             // 
-            this.labelMarca.AutoSize = true;
-            this.labelMarca.Location = new System.Drawing.Point(25, 96);
-            this.labelMarca.Name = "labelMarca";
-            this.labelMarca.Size = new System.Drawing.Size(37, 13);
-            this.labelMarca.TabIndex = 10;
-            this.labelMarca.Text = "Marca";
+            this.vENDASToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cAIXAToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.aLTERARVALORDOPRODUTOToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.cONSULTARVENDASToolStripMenuItem});
+            this.vENDASToolStripMenuItem.Name = "vENDASToolStripMenuItem";
+            this.vENDASToolStripMenuItem.Size = new System.Drawing.Size(81, 21);
+            this.vENDASToolStripMenuItem.Text = "VENDAS";
             // 
-            // labelUnidadeMedida
+            // cAIXAToolStripMenuItem
             // 
-            this.labelUnidadeMedida.AutoSize = true;
-            this.labelUnidadeMedida.Location = new System.Drawing.Point(151, 96);
-            this.labelUnidadeMedida.Name = "labelUnidadeMedida";
-            this.labelUnidadeMedida.Size = new System.Drawing.Size(84, 13);
-            this.labelUnidadeMedida.TabIndex = 12;
-            this.labelUnidadeMedida.Text = "Unidade medida";
+            this.cAIXAToolStripMenuItem.Name = "cAIXAToolStripMenuItem";
+            this.cAIXAToolStripMenuItem.Size = new System.Drawing.Size(300, 22);
+            this.cAIXAToolStripMenuItem.Text = "CAIXA";
             // 
-            // labelTamanho
+            // toolStripSeparator2
             // 
-            this.labelTamanho.AutoSize = true;
-            this.labelTamanho.Location = new System.Drawing.Point(286, 96);
-            this.labelTamanho.Name = "labelTamanho";
-            this.labelTamanho.Size = new System.Drawing.Size(52, 13);
-            this.labelTamanho.TabIndex = 14;
-            this.labelTamanho.Text = "Tamanho";
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(297, 6);
             // 
-            // buttonNovoProduto
+            // aLTERARVALORDOPRODUTOToolStripMenuItem
             // 
-            this.buttonNovoProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.buttonNovoProduto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonNovoProduto.FlatAppearance.BorderSize = 0;
-            this.buttonNovoProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNovoProduto.Location = new System.Drawing.Point(31, 172);
-            this.buttonNovoProduto.Name = "buttonNovoProduto";
-            this.buttonNovoProduto.Size = new System.Drawing.Size(75, 23);
-            this.buttonNovoProduto.TabIndex = 16;
-            this.buttonNovoProduto.Text = "NOVO";
-            this.buttonNovoProduto.UseVisualStyleBackColor = false;
+            this.aLTERARVALORDOPRODUTOToolStripMenuItem.Name = "aLTERARVALORDOPRODUTOToolStripMenuItem";
+            this.aLTERARVALORDOPRODUTOToolStripMenuItem.Size = new System.Drawing.Size(300, 22);
+            this.aLTERARVALORDOPRODUTOToolStripMenuItem.Text = "ALTERAR VALOR DO PRODUTO";
             // 
-            // buttonSalvarProduto
+            // toolStripSeparator1
             // 
-            this.buttonSalvarProduto.BackColor = System.Drawing.Color.DodgerBlue;
-            this.buttonSalvarProduto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSalvarProduto.FlatAppearance.BorderSize = 0;
-            this.buttonSalvarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSalvarProduto.Location = new System.Drawing.Point(120, 172);
-            this.buttonSalvarProduto.Name = "buttonSalvarProduto";
-            this.buttonSalvarProduto.Size = new System.Drawing.Size(75, 23);
-            this.buttonSalvarProduto.TabIndex = 17;
-            this.buttonSalvarProduto.Text = "SALVAR";
-            this.buttonSalvarProduto.UseVisualStyleBackColor = false;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(297, 6);
             // 
-            // buttonCancelarProduto
+            // cONSULTARVENDASToolStripMenuItem
             // 
-            this.buttonCancelarProduto.BackColor = System.Drawing.Color.Red;
-            this.buttonCancelarProduto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCancelarProduto.FlatAppearance.BorderSize = 0;
-            this.buttonCancelarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCancelarProduto.Location = new System.Drawing.Point(208, 172);
-            this.buttonCancelarProduto.Name = "buttonCancelarProduto";
-            this.buttonCancelarProduto.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancelarProduto.TabIndex = 18;
-            this.buttonCancelarProduto.Text = "LIMPAR";
-            this.buttonCancelarProduto.UseVisualStyleBackColor = false;
+            this.cONSULTARVENDASToolStripMenuItem.Name = "cONSULTARVENDASToolStripMenuItem";
+            this.cONSULTARVENDASToolStripMenuItem.Size = new System.Drawing.Size(300, 22);
+            this.cONSULTARVENDASToolStripMenuItem.Text = "CONSULTAR VENDAS";
             // 
-            // label1
+            // eSTOQUEToolStripMenuItem
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 16);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "CADASTRAR PRODUTO";
+            this.eSTOQUEToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pRODUTOSToolStripMenuItem,
+            this.toolStripSeparator3,
+            this.mARCAToolStripMenuItem,
+            this.uNIDADEMEDIDAToolStripMenuItem,
+            this.tAMANHOToolStripMenuItem,
+            this.toolStripSeparator5,
+            this.cONSULTARPRODUTOSToolStripMenuItem});
+            this.eSTOQUEToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eSTOQUEToolStripMenuItem.Name = "eSTOQUEToolStripMenuItem";
+            this.eSTOQUEToolStripMenuItem.Size = new System.Drawing.Size(88, 21);
+            this.eSTOQUEToolStripMenuItem.Text = "ESTOQUE";
             // 
-            // comboBoxMarca
+            // pRODUTOSToolStripMenuItem
             // 
-            this.comboBoxMarca.FormattingEnabled = true;
-            this.comboBoxMarca.Location = new System.Drawing.Point(28, 113);
-            this.comboBoxMarca.Name = "comboBoxMarca";
-            this.comboBoxMarca.Size = new System.Drawing.Size(86, 21);
-            this.comboBoxMarca.TabIndex = 22;
+            this.pRODUTOSToolStripMenuItem.Name = "pRODUTOSToolStripMenuItem";
+            this.pRODUTOSToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
+            this.pRODUTOSToolStripMenuItem.Text = "PRODUTOS";
+            this.pRODUTOSToolStripMenuItem.Click += new System.EventHandler(this.pRODUTOSToolStripMenuItem_Click);
             // 
-            // comboBoxUnidadeMedida
+            // toolStripSeparator3
             // 
-            this.comboBoxUnidadeMedida.FormattingEnabled = true;
-            this.comboBoxUnidadeMedida.Items.AddRange(new object[] {
-            "Litro (L)",
-            "Mililitro (mL)"});
-            this.comboBoxUnidadeMedida.Location = new System.Drawing.Point(154, 113);
-            this.comboBoxUnidadeMedida.Name = "comboBoxUnidadeMedida";
-            this.comboBoxUnidadeMedida.Size = new System.Drawing.Size(129, 21);
-            this.comboBoxUnidadeMedida.TabIndex = 23;
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(245, 6);
             // 
-            // comboBoxTamanho
+            // mARCAToolStripMenuItem
             // 
-            this.comboBoxTamanho.FormattingEnabled = true;
-            this.comboBoxTamanho.Location = new System.Drawing.Point(289, 113);
-            this.comboBoxTamanho.Name = "comboBoxTamanho";
-            this.comboBoxTamanho.Size = new System.Drawing.Size(147, 21);
-            this.comboBoxTamanho.TabIndex = 24;
+            this.mARCAToolStripMenuItem.Name = "mARCAToolStripMenuItem";
+            this.mARCAToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
+            this.mARCAToolStripMenuItem.Text = "MARCA";
             // 
-            // panel1
+            // uNIDADEMEDIDAToolStripMenuItem
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.comboBoxTamanho);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.comboBoxUnidadeMedida);
-            this.panel1.Controls.Add(this.labelDescricao);
-            this.panel1.Controls.Add(this.comboBoxMarca);
-            this.panel1.Controls.Add(this.textBoxDescricao);
-            this.panel1.Controls.Add(this.labelID);
-            this.panel1.Controls.Add(this.textBoxID);
-            this.panel1.Controls.Add(this.buttonCancelarProduto);
-            this.panel1.Controls.Add(this.buttonPesquisar);
-            this.panel1.Controls.Add(this.buttonSalvarProduto);
-            this.panel1.Controls.Add(this.labelMarca);
-            this.panel1.Controls.Add(this.buttonNovoProduto);
-            this.panel1.Controls.Add(this.labelUnidadeMedida);
-            this.panel1.Controls.Add(this.labelTamanho);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(470, 471);
-            this.panel1.TabIndex = 0;
+            this.uNIDADEMEDIDAToolStripMenuItem.Name = "uNIDADEMEDIDAToolStripMenuItem";
+            this.uNIDADEMEDIDAToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
+            this.uNIDADEMEDIDAToolStripMenuItem.Text = "UNIDADE MEDIDA";
             // 
-            // buttonBuscarProduto
+            // tAMANHOToolStripMenuItem
             // 
-            this.buttonBuscarProduto.BackColor = System.Drawing.Color.Transparent;
-            this.buttonBuscarProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonBuscarProduto.BackgroundImage")));
-            this.buttonBuscarProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonBuscarProduto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonBuscarProduto.FlatAppearance.BorderSize = 0;
-            this.buttonBuscarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBuscarProduto.Location = new System.Drawing.Point(851, 43);
-            this.buttonBuscarProduto.Name = "buttonBuscarProduto";
-            this.buttonBuscarProduto.Size = new System.Drawing.Size(31, 30);
-            this.buttonBuscarProduto.TabIndex = 35;
-            this.buttonBuscarProduto.UseVisualStyleBackColor = false;
+            this.tAMANHOToolStripMenuItem.Name = "tAMANHOToolStripMenuItem";
+            this.tAMANHOToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
+            this.tAMANHOToolStripMenuItem.Text = "TAMANHO";
             // 
-            // textBoxBuscaProduto
+            // toolStripSeparator5
             // 
-            this.textBoxBuscaProduto.Location = new System.Drawing.Point(604, 47);
-            this.textBoxBuscaProduto.Name = "textBoxBuscaProduto";
-            this.textBoxBuscaProduto.Size = new System.Drawing.Size(241, 20);
-            this.textBoxBuscaProduto.TabIndex = 34;
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(245, 6);
             // 
-            // comboBoxModoBusca
+            // cONSULTARPRODUTOSToolStripMenuItem
             // 
-            this.comboBoxModoBusca.FormattingEnabled = true;
-            this.comboBoxModoBusca.Location = new System.Drawing.Point(476, 46);
-            this.comboBoxModoBusca.Name = "comboBoxModoBusca";
-            this.comboBoxModoBusca.Size = new System.Drawing.Size(122, 21);
-            this.comboBoxModoBusca.TabIndex = 33;
+            this.cONSULTARPRODUTOSToolStripMenuItem.Name = "cONSULTARPRODUTOSToolStripMenuItem";
+            this.cONSULTARPRODUTOSToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
+            this.cONSULTARPRODUTOSToolStripMenuItem.Text = "CONSULTAR PRODUTOS";
             // 
-            // dgvProdutosCadastrados
+            // toolStrip1
             // 
-            this.dgvProdutosCadastrados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProdutosCadastrados.Location = new System.Drawing.Point(476, 75);
-            this.dgvProdutosCadastrados.Name = "dgvProdutosCadastrados";
-            this.dgvProdutosCadastrados.Size = new System.Drawing.Size(413, 399);
-            this.dgvProdutosCadastrados.TabIndex = 32;
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel1,
+            this.toolStripSeparator7});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 575);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(925, 25);
+            this.toolStrip1.TabIndex = 7;
+            this.toolStrip1.Text = "toolStrip1";
             // 
-            // label2
+            // toolStripLabel1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(587, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(211, 16);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "PRODUTOS CADASTRADOS";
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(66, 22);
+            this.toolStripLabel1.Text = "data e hora";
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 25);
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 567);
+            this.ClientSize = new System.Drawing.Size(925, 600);
+            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.FormLogo);
-            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.FormMinimize);
             this.Controls.Add(this.closeForm);
             this.Controls.Add(this.PanelBackground);
@@ -450,16 +289,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PanelBackground)).EndInit();
-            this.tabControl1.ResumeLayout(false);
-            this.tabCompras.ResumeLayout(false);
-            this.tabVendas.ResumeLayout(false);
-            this.tabEstoque.ResumeLayout(false);
-            this.tabEstoque.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FormLogo)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutosCadastrados)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -468,35 +304,28 @@
         private System.Windows.Forms.Button closeForm;
         private System.Windows.Forms.PictureBox PanelBackground;
         private System.Windows.Forms.Button FormMinimize;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabCompras;
-        private System.Windows.Forms.TabPage tabVendas;
-        private System.Windows.Forms.TabPage tabEstoque;
         private System.Windows.Forms.PictureBox FormLogo;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label labelDescricao;
-        private System.Windows.Forms.TextBox textBoxDescricao;
-        private System.Windows.Forms.TextBox textBoxID;
-        private System.Windows.Forms.Label labelID;
-        private System.Windows.Forms.Button buttonPesquisar;
-        private System.Windows.Forms.Label labelMarca;
-        private System.Windows.Forms.Label labelUnidadeMedida;
-        private System.Windows.Forms.Label labelTamanho;
-        private System.Windows.Forms.Button buttonNovoProduto;
-        private System.Windows.Forms.Button buttonSalvarProduto;
-        private System.Windows.Forms.Button buttonCancelarProduto;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBoxMarca;
-        private System.Windows.Forms.ComboBox comboBoxUnidadeMedida;
-        private System.Windows.Forms.ComboBox comboBoxTamanho;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button buttonBuscarProduto;
-        private System.Windows.Forms.TextBox textBoxBuscaProduto;
-        private System.Windows.Forms.DataGridView dgvProdutosCadastrados;
-        private System.Windows.Forms.ComboBox comboBoxModoBusca;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem cOMPRASToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nOVACOMPRAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripMenuItem cONSULTARCOMPRASToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vENDASToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cAIXAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem aLTERARVALORDOPRODUTOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem cONSULTARVENDASToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eSTOQUEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pRODUTOSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem mARCAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem uNIDADEMEDIDAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tAMANHOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem cONSULTARPRODUTOSToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
     }
 }

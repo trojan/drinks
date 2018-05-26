@@ -341,7 +341,7 @@ namespace Drinks.DAO
                 {
                     try
                     {
-                        string querySql = "SELECT * FROM MARCA;";
+                        string querySql = "SELECT * FROM MARCA ORDER BY descricao;";
                         SqlCeCommand lista = conn.CreateCommand();
                         lista.CommandText = querySql;
                         SqlCeDataAdapter adp = new SqlCeDataAdapter(lista);
@@ -377,7 +377,7 @@ namespace Drinks.DAO
                 {
                     try
                     {
-                        string querySql = "SELECT * FROM UNIDADE_MEDIDA;";
+                        string querySql = "SELECT * FROM UNIDADE_MEDIDA ORDER BY descricao;";
                         SqlCeCommand lista = conn.CreateCommand();
                         lista.CommandText = querySql;
                         SqlCeDataAdapter adp = new SqlCeDataAdapter(lista);
@@ -413,7 +413,7 @@ namespace Drinks.DAO
                 {
                     try
                     {
-                        string querySql = "SELECT * FROM TAMANHO;";
+                        string querySql = "SELECT * FROM TAMANHO ORDER BY descricao;";
                         SqlCeCommand lista = conn.CreateCommand();
                         lista.CommandText = querySql;
                         SqlCeDataAdapter adp = new SqlCeDataAdapter(lista);
@@ -450,7 +450,10 @@ namespace Drinks.DAO
                 {
                     try
                     {
-                        string querySql = "SELECT * FROM ESTOQUE;";
+                        //string querySql = "SELECT * FROM ESTOQUE;";
+
+                        string querySql = "SELECT MARCA.descricao AS MARCA, ESTOQUE.descricao AS PRODUTO, TAMANHO.descricao AS TAMANHO, UNIDADE_MEDIDA.descricao AS UNIDADE_MEDIDA, quantidade AS QUANTIDADE, valorUnitario AS VALOR_UNITARIO, quantidade*valorUnitario AS VALOR_TOTAL_UNITARIO FROM ESTOQUE INNER JOIN MARCA ON (ESTOQUE.idMarca = MARCA.idMarca) INNER JOIN UNIDADE_MEDIDA ON (ESTOQUE.idUnidadeMedida = UNIDADE_MEDIDA.idUnidadeMedida) INNER JOIN TAMANHO ON (ESTOQUE.idTamanho = TAMANHO.idTamanho) ORDER BY PRODUTO;";
+
                         SqlCeCommand lista = conn.CreateCommand();
                         lista.CommandText = querySql;
                         SqlCeDataAdapter adp = new SqlCeDataAdapter(lista);
@@ -485,7 +488,6 @@ namespace Drinks.DAO
                 return null;
             }
         }
-
 
     }
 }

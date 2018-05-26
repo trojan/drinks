@@ -15,15 +15,12 @@ namespace Drinks.Controller
 
         public void InsereUnidadeMedida(string descricao)
         {
-           und.DescricaoUnidadeMedida = descricao;
+            und.DescricaoUnidadeMedida = descricao;
 
-            if (descricao != "" && descricao != null)
-                if (dao.InserirDados(null, und, null, null) == true)
-                    MessageBox.Show("Salvo com sucesso!");
-                else
-                    MessageBox.Show("Erro ao salvar!");
+            if (dao.InserirDados(null, und, null, null) == true)
+                MessageBox.Show("Salvo com sucesso!");
             else
-                MessageBox.Show("Preencha os campos: \nDescrição!");
+                MessageBox.Show("Erro ao salvar!");
         }
 
         public void AlteraUnidadeMedida(int id, string descricao)
@@ -31,13 +28,11 @@ namespace Drinks.Controller
             und.IdUnidadeMedida = id;
             und.DescricaoUnidadeMedida = descricao;
 
-            if (descricao != "" && descricao != null)
-                if (dao.AlterarDados(null, und, null, null) == true)
-                    MessageBox.Show("Alterado com sucesso!");
-                else
-                    MessageBox.Show("Erro ao alterar os dados!");
+            if (dao.AlterarDados(null, und, null, null) == true)
+                MessageBox.Show("Alterado com sucesso!");
             else
-                MessageBox.Show("Preencha o campo: \nDescrição!");
+                MessageBox.Show("Erro ao alterar os dados!");
+
         }
 
     }

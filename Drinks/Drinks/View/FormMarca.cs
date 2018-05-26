@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Drinks.View
 {
-    public partial class FormCadastrarProduto : Form
+    public partial class FormMarca : Form
     {
-        public FormCadastrarProduto()
+        public FormMarca()
         {
             InitializeComponent();
         }

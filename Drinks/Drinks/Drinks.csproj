@@ -66,11 +66,17 @@
     <Compile Include="Model\UnidadeMedidaModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\FormCadastrarProduto.cs">
+    <Compile Include="View\FormMarca.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormCadastrarProduto.Designer.cs">
-      <DependentUpon>FormCadastrarProduto.cs</DependentUpon>
+    <Compile Include="View\FormMarca.Designer.cs">
+      <DependentUpon>FormMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormProduto.Designer.cs">
+      <DependentUpon>FormProduto.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Controller\FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
@@ -84,8 +90,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\FormCadastrarProduto.resx">
-      <DependentUpon>FormCadastrarProduto.cs</DependentUpon>
+    <EmbeddedResource Include="View\FormMarca.resx">
+      <DependentUpon>FormMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormProduto.resx">
+      <DependentUpon>FormProduto.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -28,10 +28,12 @@ namespace Drinks.Controller
             if (dao.CheckTB() == 0)
                 dao.CreateTB();
         }
-        
+
         private void closeForm_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Deseja sair do Sistema ?", "Mensagem do Sistema", 
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                System.Environment.Exit(0);
         }
 
         private void FormMinimize_Click(object sender, EventArgs e)
@@ -40,5 +42,10 @@ namespace Drinks.Controller
             // veja: https://msdn.microsoft.com/en-us/library/system.windows.forms.notifyicon.aspx
         }
 
+        private void pRODUTOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            View.FormProduto fpdr = new View.FormProduto();
+            fpdr.ShowDialog();
+        }
     }
 }

@@ -15,15 +15,16 @@ namespace Drinks.Controller
 
         public void InsereProduto(int idMarca, string descricao, int idUnidadeMedida, int idTamanho, decimal valorUnitario)
         {
-            
+            prd.IdMarca = idMarca;
+            prd.DescricaoProduto = descricao;
+            prd.IdUnidadeMedida = idUnidadeMedida;
+            prd.IdTamanho = idTamanho;
+            prd.ValorUnitario = valorUnitario;
 
-            if (descricao != "" && descricao != null)
-                if (dao.InserirDados(null, null, null, prd) == true)
-                    MessageBox.Show("Salvo com sucesso!");
-                else
-                    MessageBox.Show("Erro ao salvar!");
+            if (dao.InserirDados(null, null, null, prd) == true)
+                MessageBox.Show("Salvo com sucesso!");
             else
-                MessageBox.Show("Preencha todos os campos corretamente!");
+                MessageBox.Show("Erro ao salvar!");
         }
 
         public void AlteraProduto(int idProduto, int idMarca, string descricao, int idUnidadeMedida, int idTamanho, decimal valorUnitario)
@@ -35,13 +36,10 @@ namespace Drinks.Controller
             prd.IdTamanho = idTamanho;
             prd.ValorUnitario = valorUnitario;
 
-            if (descricao != "" && descricao != null)
-                if (dao.InserirDados(null, null, null, prd) == true)
-                    MessageBox.Show("Alterado com sucesso!");
-                else
-                    MessageBox.Show("Erro ao alterar os dados!");
+            if (dao.InserirDados(null, null, null, prd) == true)
+                MessageBox.Show("Alterado com sucesso!");
             else
-                MessageBox.Show("Preencha todos os campos corretamente!");
+                MessageBox.Show("Erro ao alterar os dados!");
         }
 
     }

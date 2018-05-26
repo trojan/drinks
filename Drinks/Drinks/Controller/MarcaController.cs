@@ -17,13 +17,11 @@ namespace Drinks.Controller
         {
             mrc.DescricaoMarca = descricao;
 
-            if (descricao != "" && descricao != null)
-                if (dao.InserirDados(mrc, null, null, null) == true)
-                    MessageBox.Show("Salvo com sucesso!");
-                else
-                    MessageBox.Show("Erro ao salvar!");
+
+            if (dao.InserirDados(mrc, null, null, null) == true)
+                MessageBox.Show("Salvo com sucesso!");
             else
-                MessageBox.Show("Preencha os campos: \nDescrição!");
+                MessageBox.Show("Erro ao salvar!");
         }
 
         public void AlteraMarca(int id, string descricao)
@@ -31,13 +29,12 @@ namespace Drinks.Controller
             mrc.IdMarca = id;
             mrc.DescricaoMarca = descricao;
 
-            if (descricao != "" && descricao != null)
-                if (dao.AlterarDados(mrc, null, null, null) == true)
-                    MessageBox.Show("Alterado com sucesso!");
-                else
-                    MessageBox.Show("Erro ao alterar os dados!");
+
+            if (dao.AlterarDados(mrc, null, null, null) == true)
+                MessageBox.Show("Alterado com sucesso!");
             else
-                MessageBox.Show("Preencha o campo: \nDescrição!");
+                MessageBox.Show("Erro ao alterar os dados!");
+
         }
 
     }

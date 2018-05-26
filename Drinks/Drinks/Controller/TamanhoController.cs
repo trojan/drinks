@@ -17,13 +17,10 @@ namespace Drinks.Controller
         {
             tmh.DescricaoTamanho = descricao;
 
-            if (descricao != "" && descricao != null)
-                if (dao.InserirDados(null, null, tmh, null) == true)
-                    MessageBox.Show("Salvo com sucesso!");
-                else
-                    MessageBox.Show("Erro ao salvar!");
+            if (dao.InserirDados(null, null, tmh, null) == true)
+                MessageBox.Show("Salvo com sucesso!");
             else
-                MessageBox.Show("Preencha os campos: \nDescrição!");
+                MessageBox.Show("Erro ao salvar!");
         }
 
         public void AlteraTamanho(int id, string descricao)
@@ -31,13 +28,12 @@ namespace Drinks.Controller
             tmh.IdTamanho = id;
             tmh.DescricaoTamanho = descricao;
 
-            if (descricao != "" && descricao != null)
-                if (dao.AlterarDados(null, null, tmh, null) == true)
-                    MessageBox.Show("Alterado com sucesso!");
-                else
-                    MessageBox.Show("Erro ao alterar os dados!");
+
+            if (dao.AlterarDados(null, null, tmh, null) == true)
+                MessageBox.Show("Alterado com sucesso!");
             else
-                MessageBox.Show("Preencha o campo: \nDescrição!");
+                MessageBox.Show("Erro ao alterar os dados!");
+
         }
 
     }
