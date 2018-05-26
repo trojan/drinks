@@ -8,10 +8,7 @@ namespace Drinks.Model
 {
     class TamanhoModel
     {
-        private int idTamanho;
-        private string descricaoTamanho;
-
-        public int IdTamanho { get => idTamanho; set => idTamanho = value; }
-        public string DescricaoTamanho { get => descricaoTamanho; set => descricaoTamanho = value; }
+        public int IdTamanho { get; set; }
+        public string DescricaoTamanho { get; set; }
     }
 }

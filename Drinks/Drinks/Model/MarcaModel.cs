@@ -8,10 +8,7 @@ namespace Drinks.Model
 {
     class MarcaModel
     {
-        private int idMarca;
-        private string descricaoMarca;
-
-        public int IdMarca { get => idMarca; set => idMarca = value; }
-        public string DescricaoMarca { get => descricaoMarca; set => descricaoMarca = value; }
+        public int IdMarca { get; set; }
+        public string DescricaoMarca { get; set; }
     }
 }

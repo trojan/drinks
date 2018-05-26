@@ -8,24 +8,14 @@ namespace Drinks.Model
 {
     class ProdutoModel
     {
-        private int idProduto;
-        private int idMarca;
-        private string descricaoProduto;
-        private int idUnidadeMedida;
-        private int idTamanho;
-        private int quantidade;
-        private decimal valorUnitario;
-        private decimal valorUnitarioTotal;
-        private decimal valorTotal;
-
-        public int IdProduto { get => idProduto; set => idProduto = value; }
-        public int IdMarca { get => idMarca; set => idMarca = value; }
-        public string DescricaoProduto { get => descricaoProduto; set => descricaoProduto = value; }
-        public int IdUnidadeMedida { get => idUnidadeMedida; set => idUnidadeMedida = value; }
-        public int IdTamanho { get => idTamanho; set => idTamanho = value; }
-        public int Quantidade { get => quantidade; set => quantidade = value; }
-        public decimal ValorUnitario { get => valorUnitario; set => valorUnitario = value; }
-        public decimal ValorUnitarioTotal { get => valorUnitarioTotal; set => valorUnitarioTotal = value; }
-        public decimal ValorTotal { get => valorTotal; set => valorTotal = value; }
+        public int IdProduto { get; set; }
+        public int IdMarca { get; set; }
+        public string DescricaoProduto { get; set; }
+        public int IdUnidadeMedida { get; set; }
+        public int IdTamanho { get; set; }
+        public int Quantidade { get; set; }
+        public decimal ValorUnitario { get; set; }
+        public decimal ValorUnitarioTotal { get; set; }
+        public decimal ValorTotal { get; set; }
     }
 }

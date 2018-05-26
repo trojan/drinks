@@ -8,10 +8,7 @@ namespace Drinks.Model
 {
     class UnidadeMedidaModel
     {
-        private int idUnidadeMedida;
-        private string descricaoUnidadeMedida;
-
-        public int IdUnidadeMedida { get => idUnidadeMedida; set => idUnidadeMedida = value; }
-        public string DescricaoUnidadeMedida { get => descricaoUnidadeMedida; set => descricaoUnidadeMedida = value; }
+        public int IdUnidadeMedida { get; set; }
+        public string DescricaoUnidadeMedida { get; set; }
     }
 }
