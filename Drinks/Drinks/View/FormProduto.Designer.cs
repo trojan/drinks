@@ -45,19 +45,31 @@
             this.textBoxID = new System.Windows.Forms.TextBox();
             this.textBoxValorUnitario = new System.Windows.Forms.TextBox();
             this.labelValor = new System.Windows.Forms.Label();
+            this.buttonExcluir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelBackground)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvProdutos
             // 
+            this.dgvProdutos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvProdutos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProdutos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvProdutos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvProdutos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdutos.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvProdutos.GridColor = System.Drawing.Color.White;
             this.dgvProdutos.Location = new System.Drawing.Point(0, 267);
+            this.dgvProdutos.MultiSelect = false;
             this.dgvProdutos.Name = "dgvProdutos";
-            this.dgvProdutos.Size = new System.Drawing.Size(717, 178);
+            this.dgvProdutos.ReadOnly = true;
+            this.dgvProdutos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvProdutos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.dgvProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProdutos.Size = new System.Drawing.Size(720, 178);
             this.dgvProdutos.TabIndex = 0;
+            this.dgvProdutos.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvProdutos_CellMouseDoubleClick);
             // 
             // PanelBackground
             // 
@@ -65,7 +77,7 @@
             this.PanelBackground.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelBackground.Location = new System.Drawing.Point(0, 0);
             this.PanelBackground.Name = "PanelBackground";
-            this.PanelBackground.Size = new System.Drawing.Size(717, 47);
+            this.PanelBackground.Size = new System.Drawing.Size(720, 47);
             this.PanelBackground.TabIndex = 2;
             this.PanelBackground.TabStop = false;
             // 
@@ -73,7 +85,7 @@
             // 
             this.labelMarca.AutoSize = true;
             this.labelMarca.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMarca.Location = new System.Drawing.Point(87, 124);
+            this.labelMarca.Location = new System.Drawing.Point(90, 124);
             this.labelMarca.Name = "labelMarca";
             this.labelMarca.Size = new System.Drawing.Size(47, 17);
             this.labelMarca.TabIndex = 30;
@@ -83,7 +95,7 @@
             // 
             this.labelUnidadeMedida.AutoSize = true;
             this.labelUnidadeMedida.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUnidadeMedida.Location = new System.Drawing.Point(261, 124);
+            this.labelUnidadeMedida.Location = new System.Drawing.Point(264, 124);
             this.labelUnidadeMedida.Name = "labelUnidadeMedida";
             this.labelUnidadeMedida.Size = new System.Drawing.Size(105, 17);
             this.labelUnidadeMedida.TabIndex = 29;
@@ -93,7 +105,7 @@
             // 
             this.labelTamanho.AutoSize = true;
             this.labelTamanho.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTamanho.Location = new System.Drawing.Point(466, 124);
+            this.labelTamanho.Location = new System.Drawing.Point(469, 124);
             this.labelTamanho.Name = "labelTamanho";
             this.labelTamanho.Size = new System.Drawing.Size(62, 17);
             this.labelTamanho.TabIndex = 28;
@@ -103,7 +115,7 @@
             // 
             this.labelID.AutoSize = true;
             this.labelID.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelID.Location = new System.Drawing.Point(87, 64);
+            this.labelID.Location = new System.Drawing.Point(90, 64);
             this.labelID.Name = "labelID";
             this.labelID.Size = new System.Drawing.Size(24, 17);
             this.labelID.TabIndex = 27;
@@ -113,7 +125,7 @@
             // 
             this.labelDescricao.AutoSize = true;
             this.labelDescricao.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDescricao.Location = new System.Drawing.Point(227, 64);
+            this.labelDescricao.Location = new System.Drawing.Point(230, 64);
             this.labelDescricao.Name = "labelDescricao";
             this.labelDescricao.Size = new System.Drawing.Size(68, 17);
             this.labelDescricao.TabIndex = 26;
@@ -122,7 +134,7 @@
             // buttonSair
             // 
             this.buttonSair.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSair.Location = new System.Drawing.Point(372, 206);
+            this.buttonSair.Location = new System.Drawing.Point(520, 206);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(115, 35);
             this.buttonSair.TabIndex = 25;
@@ -133,7 +145,7 @@
             // buttonSalvar
             // 
             this.buttonSalvar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvar.Location = new System.Drawing.Point(230, 206);
+            this.buttonSalvar.Location = new System.Drawing.Point(233, 206);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(115, 35);
             this.buttonSalvar.TabIndex = 23;
@@ -144,7 +156,7 @@
             // buttonNovo
             // 
             this.buttonNovo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNovo.Location = new System.Drawing.Point(90, 206);
+            this.buttonNovo.Location = new System.Drawing.Point(93, 206);
             this.buttonNovo.Name = "buttonNovo";
             this.buttonNovo.Size = new System.Drawing.Size(115, 35);
             this.buttonNovo.TabIndex = 22;
@@ -156,7 +168,7 @@
             // 
             this.comboBoxTamanho.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxTamanho.FormattingEnabled = true;
-            this.comboBoxTamanho.Location = new System.Drawing.Point(469, 144);
+            this.comboBoxTamanho.Location = new System.Drawing.Point(472, 144);
             this.comboBoxTamanho.Name = "comboBoxTamanho";
             this.comboBoxTamanho.Size = new System.Drawing.Size(129, 25);
             this.comboBoxTamanho.TabIndex = 21;
@@ -165,7 +177,7 @@
             // 
             this.comboBoxUnidadeMedida.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxUnidadeMedida.FormattingEnabled = true;
-            this.comboBoxUnidadeMedida.Location = new System.Drawing.Point(264, 144);
+            this.comboBoxUnidadeMedida.Location = new System.Drawing.Point(267, 144);
             this.comboBoxUnidadeMedida.Name = "comboBoxUnidadeMedida";
             this.comboBoxUnidadeMedida.Size = new System.Drawing.Size(158, 25);
             this.comboBoxUnidadeMedida.TabIndex = 20;
@@ -174,7 +186,7 @@
             // 
             this.comboBoxMarca.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxMarca.FormattingEnabled = true;
-            this.comboBoxMarca.Location = new System.Drawing.Point(90, 144);
+            this.comboBoxMarca.Location = new System.Drawing.Point(93, 144);
             this.comboBoxMarca.Name = "comboBoxMarca";
             this.comboBoxMarca.Size = new System.Drawing.Size(132, 25);
             this.comboBoxMarca.TabIndex = 19;
@@ -183,7 +195,7 @@
             // 
             this.textBoxDescricao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxDescricao.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDescricao.Location = new System.Drawing.Point(230, 84);
+            this.textBoxDescricao.Location = new System.Drawing.Point(233, 84);
             this.textBoxDescricao.MaxLength = 60;
             this.textBoxDescricao.Name = "textBoxDescricao";
             this.textBoxDescricao.Size = new System.Drawing.Size(256, 25);
@@ -193,7 +205,7 @@
             // 
             this.textBoxID.Enabled = false;
             this.textBoxID.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxID.Location = new System.Drawing.Point(90, 84);
+            this.textBoxID.Location = new System.Drawing.Point(93, 84);
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.ReadOnly = true;
             this.textBoxID.Size = new System.Drawing.Size(90, 25);
@@ -203,7 +215,7 @@
             // textBoxValorUnitario
             // 
             this.textBoxValorUnitario.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxValorUnitario.Location = new System.Drawing.Point(512, 84);
+            this.textBoxValorUnitario.Location = new System.Drawing.Point(515, 84);
             this.textBoxValorUnitario.Name = "textBoxValorUnitario";
             this.textBoxValorUnitario.Size = new System.Drawing.Size(120, 25);
             this.textBoxValorUnitario.TabIndex = 31;
@@ -212,18 +224,30 @@
             // 
             this.labelValor.AutoSize = true;
             this.labelValor.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelValor.Location = new System.Drawing.Point(509, 64);
+            this.labelValor.Location = new System.Drawing.Point(512, 64);
             this.labelValor.Name = "labelValor";
             this.labelValor.Size = new System.Drawing.Size(39, 17);
             this.labelValor.TabIndex = 32;
             this.labelValor.Text = "Valor";
+            // 
+            // buttonExcluir
+            // 
+            this.buttonExcluir.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExcluir.Location = new System.Drawing.Point(376, 206);
+            this.buttonExcluir.Name = "buttonExcluir";
+            this.buttonExcluir.Size = new System.Drawing.Size(115, 35);
+            this.buttonExcluir.TabIndex = 34;
+            this.buttonExcluir.Text = "Excluir";
+            this.buttonExcluir.UseVisualStyleBackColor = true;
+            this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
             // 
             // FormProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(717, 445);
+            this.ClientSize = new System.Drawing.Size(720, 445);
+            this.Controls.Add(this.buttonExcluir);
             this.Controls.Add(this.labelValor);
             this.Controls.Add(this.textBoxValorUnitario);
             this.Controls.Add(this.labelMarca);
@@ -274,5 +298,6 @@
         private System.Windows.Forms.TextBox textBoxID;
         private System.Windows.Forms.TextBox textBoxValorUnitario;
         private System.Windows.Forms.Label labelValor;
+        private System.Windows.Forms.Button buttonExcluir;
     }
 }

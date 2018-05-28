@@ -38,7 +38,7 @@
             this.PanelBackground.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelBackground.Location = new System.Drawing.Point(0, 0);
             this.PanelBackground.Name = "PanelBackground";
-            this.PanelBackground.Size = new System.Drawing.Size(294, 42);
+            this.PanelBackground.Size = new System.Drawing.Size(369, 42);
             this.PanelBackground.TabIndex = 6;
             this.PanelBackground.TabStop = false;
             // 
@@ -47,7 +47,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(294, 362);
+            this.ClientSize = new System.Drawing.Size(369, 371);
             this.Controls.Add(this.PanelBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMarca";

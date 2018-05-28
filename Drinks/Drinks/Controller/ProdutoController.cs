@@ -36,7 +36,7 @@ namespace Drinks.Controller
             prd.IdTamanho = idTamanho;
             prd.ValorUnitario = valorUnitario;
 
-            if (dao.InserirDados(null, null, null, prd) == true)
+            if (dao.AlterarDados(null, null, null, prd) == true)
                 MessageBox.Show("Alterado com sucesso!");
             else
                 MessageBox.Show("Erro ao alterar os dados!");

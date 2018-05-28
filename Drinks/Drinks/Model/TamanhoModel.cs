@@ -10,5 +10,6 @@ namespace Drinks.Model
     {
         public int IdTamanho { get; set; }
         public string DescricaoTamanho { get; set; }
+        public int StatusTamanho { get; set; }
     }
 }

@@ -17,5 +17,6 @@ namespace Drinks.Model
         public decimal ValorUnitario { get; set; }
         public decimal ValorUnitarioTotal { get; set; }
         public decimal ValorTotal { get; set; }
+        public int StatusProduto { get; set; }
     }
 }

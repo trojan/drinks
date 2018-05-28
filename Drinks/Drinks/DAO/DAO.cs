@@ -52,19 +52,23 @@ namespace Drinks.DAO
                  "login             nvarchar(50),  " +
                  "senha             nvarchar(20),  " +
                  "idNivelAcesso     int, " +
+                 "status            int, " +
                  "foreign key (idNivelAcesso) references NIVEL_ACESSO (idNivelAcesso));",
 
                  "CREATE TABLE MARCA( " +
-                 "idMarca            INT IDENTITY (1,1) CONSTRAINT pkIdMarca PRIMARY KEY NOT NULL,  " +
-                 "descricao          nvarchar(20)); ",
+                 "idMarca           INT IDENTITY (1,1) CONSTRAINT pkIdMarca PRIMARY KEY NOT NULL,  " +
+                 "descricao         nvarchar(20)," +
+                 "status                int);",
 
                  "CREATE TABLE UNIDADE_MEDIDA( " +
-                 "idUnidadeMedida        INT IDENTITY (1,1) CONSTRAINT pkIdUnidadeMedida PRIMARY KEY NOT NULL,  " +
-                 "descricao              nvarchar(15)); ",
+                 "idUnidadeMedida       INT IDENTITY (1,1) CONSTRAINT pkIdUnidadeMedida PRIMARY KEY NOT NULL,  " +
+                 "descricao             nvarchar(15)," +
+                 "status                int);",
 
                  "CREATE TABLE TAMANHO( " +
                  "idTamanho             INT IDENTITY (1,1) CONSTRAINT pkIdTamanho PRIMARY KEY NOT NULL,  " +
-                 "descricao             nvarchar(15)); ",
+                 "descricao             nvarchar(15), " +
+                 "status                int);",
 
                  "CREATE TABLE ESTOQUE( " +
                  "idProduto             INT IDENTITY (1,1) CONSTRAINT pkIdProduto PRIMARY KEY NOT NULL,  " +
@@ -76,6 +80,7 @@ namespace Drinks.DAO
                  "valorUnitario         decimal(10, 2), " +
                  "valorTotalUnitario    decimal(10, 2), " +
                  "valorTotal            decimal(10, 2), " +
+                 "status                int, " +
                  "foreign key (idMarca) references MARCA (idMarca), " +
                  "foreign key (idUnidadeMedida) references UNIDADE_MEDIDA (idUnidadeMedida), " +
                  "foreign key (idTamanho) references TAMANHO (idTamanho)); ",
@@ -92,7 +97,8 @@ namespace Drinks.DAO
                  "idItensCompras        int, " +
                  "quantidadeTotal       int, " +
                  "valorTotal            decimal(10, 2), " +
-                 "dataCompra datetime," +
+                 "dataCompras           datetime," +
+                 "status                int, " +
                  "foreign key (idItensCompras) references ITENS_COMPRA (idItensCompras)); ",
 
                  "CREATE TABLE ITENS_VENDAS ( " +
@@ -107,7 +113,8 @@ namespace Drinks.DAO
                  "idItensVendas         int, " +
                  "quantidadeTotal       int, " +
                  "valorTotal            decimal(10, 2), " +
-                 "dataVenda             datetime, " +
+                 "dataVendas            datetime, " +
+                 "status                int, " +   
                  "foreign key (idItensVendas) references ITENS_VENDAS (idItensVendas));"
             };
 
@@ -166,9 +173,10 @@ namespace Drinks.DAO
                 try
                 {
                     conn.Open();
-                    string querySql = "INSERT INTO MARCA (descricao) VALUES (@descricaoMarca)";
+                    string querySql = "INSERT INTO MARCA (descricao, status) VALUES (@descricaoMarca, @statusMarca)";
                     SqlCeCommand insere = new SqlCeCommand(querySql, conn);
                     insere.Parameters.AddWithValue("@descricaoMarca", mrc.DescricaoMarca);
+                    insere.Parameters.AddWithValue("@statusMarca", 1);
                     insere.ExecuteNonQuery();
                     conn.Close();
                     return true;
@@ -185,9 +193,10 @@ namespace Drinks.DAO
                 try
                 {
                     conn.Open();
-                    string querySql = "INSERT INTO UNIDADE_MEDIDA (descricao) VALUES (@descricaoUnidadeMedida)";
+                    string querySql = "INSERT INTO UNIDADE_MEDIDA (descricao, status) VALUES (@descricaoUnidadeMedida, @statusUnidadeMedida)";
                     SqlCeCommand insere = new SqlCeCommand(querySql, conn);
                     insere.Parameters.AddWithValue("@descricaoUnidadeMedida", und.DescricaoUnidadeMedida);
+                    insere.Parameters.AddWithValue("@statusUnidadeMedida", 1);
                     insere.ExecuteNonQuery();
                     conn.Close();
                     return true;
@@ -204,9 +213,10 @@ namespace Drinks.DAO
                 try
                 {
                     conn.Open();
-                    string querySql = "INSERT INTO TAMANHO (descricao) VALUES (@descricaoTamanho)";
+                    string querySql = "INSERT INTO TAMANHO (descricao, status) VALUES (@descricaoTamanho, @statusTamanho)";
                     SqlCeCommand insere = new SqlCeCommand(querySql, conn);
                     insere.Parameters.AddWithValue("@descricaoTamanho", tmh.DescricaoTamanho);
+                    insere.Parameters.AddWithValue("@statusTamanho", 1);
                     insere.ExecuteNonQuery();
                     conn.Close();
                     return true;
@@ -223,7 +233,7 @@ namespace Drinks.DAO
                 try
                 {
                     conn.Open();
-                    string querySql = "INSERT INTO ESTOQUE (idMarca, descricao, idUnidadeMedida, idTamanho, quantidade, valorUnitario) VALUES (@idMarca, @descricaoProduto, @idUnidadeMedida, @idTamanho, @quantidadeProduto, @valorUnitario)";
+                    string querySql = "INSERT INTO ESTOQUE (idMarca, descricao, idUnidadeMedida, idTamanho, quantidade, valorUnitario, status) VALUES (@idMarca, @descricaoProduto, @idUnidadeMedida, @idTamanho, @quantidadeProduto, @valorUnitario, @statusProduto)";
                     SqlCeCommand insere = new SqlCeCommand(querySql, conn);
                     insere.Parameters.AddWithValue("@idMarca", prd.IdMarca);
                     insere.Parameters.AddWithValue("@descricaoProduto", prd.DescricaoProduto);
@@ -231,6 +241,7 @@ namespace Drinks.DAO
                     insere.Parameters.AddWithValue("@idTamanho", prd.IdTamanho);
                     insere.Parameters.AddWithValue("@quantidadeProduto", 0);
                     insere.Parameters.AddWithValue("@valorUnitario", prd.ValorUnitario);
+                    insere.Parameters.AddWithValue("@statusProduto", 1);
                     insere.ExecuteNonQuery();
                     conn.Close();
                     return true;
@@ -441,7 +452,6 @@ namespace Drinks.DAO
                     }
                 }
                 #endregion
-
             }
             else if (prd != null)   // LISTAR OU BUSCAR OS DADOS DA TABELA ESTOQUE
             {
@@ -452,7 +462,7 @@ namespace Drinks.DAO
                     {
                         //string querySql = "SELECT * FROM ESTOQUE;";
 
-                        string querySql = "SELECT MARCA.descricao AS MARCA, ESTOQUE.descricao AS PRODUTO, TAMANHO.descricao AS TAMANHO, UNIDADE_MEDIDA.descricao AS UNIDADE_MEDIDA, quantidade AS QUANTIDADE, valorUnitario AS VALOR_UNITARIO, quantidade*valorUnitario AS VALOR_TOTAL_UNITARIO FROM ESTOQUE INNER JOIN MARCA ON (ESTOQUE.idMarca = MARCA.idMarca) INNER JOIN UNIDADE_MEDIDA ON (ESTOQUE.idUnidadeMedida = UNIDADE_MEDIDA.idUnidadeMedida) INNER JOIN TAMANHO ON (ESTOQUE.idTamanho = TAMANHO.idTamanho) ORDER BY PRODUTO;";
+                        string querySql = "SELECT ESTOQUE.idProduto AS CODIGO, MARCA.descricao AS MARCA, ESTOQUE.descricao AS PRODUTO, TAMANHO.descricao AS TAMANHO, UNIDADE_MEDIDA.descricao AS UNIDADE_MEDIDA, quantidade AS QUANTIDADE, valorUnitario AS VALOR_UNITARIO, quantidade*valorUnitario AS VALOR_TOTAL_UNITARIO FROM ESTOQUE INNER JOIN MARCA ON (ESTOQUE.idMarca = MARCA.idMarca) INNER JOIN UNIDADE_MEDIDA ON (ESTOQUE.idUnidadeMedida = UNIDADE_MEDIDA.idUnidadeMedida) INNER JOIN TAMANHO ON (ESTOQUE.idTamanho = TAMANHO.idTamanho) ORDER BY PRODUTO;";
 
                         SqlCeCommand lista = conn.CreateCommand();
                         lista.CommandText = querySql;
@@ -481,7 +491,6 @@ namespace Drinks.DAO
                     }
                 }
                 #endregion
-
             }
             else                    // NENHUM DADO ENCONTRADO
             {

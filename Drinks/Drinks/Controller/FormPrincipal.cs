@@ -31,9 +31,9 @@ namespace Drinks.Controller
 
         private void closeForm_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Deseja sair do Sistema ?", "Mensagem do Sistema", 
+            if (MessageBox.Show("Deseja sair do Sistema ?", "Mensagem do Sistema",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                System.Environment.Exit(0);
+                Application.Exit();
         }
 
         private void FormMinimize_Click(object sender, EventArgs e)
@@ -42,10 +42,26 @@ namespace Drinks.Controller
             // veja: https://msdn.microsoft.com/en-us/library/system.windows.forms.notifyicon.aspx
         }
 
+        #region [COMPRAS]
+
+        #endregion
+
+        #region [VENDAS]
+        // CAIXA    
+        private void cAIXAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            View.FormCaixa fcx = new View.FormCaixa();
+            fcx.ShowDialog();
+        }
+        #endregion
+
+        #region [ESTOQUE]
         private void pRODUTOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
             View.FormProduto fpdr = new View.FormProduto();
             fpdr.ShowDialog();
         }
+        #endregion
+     
     }
 }

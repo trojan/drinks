@@ -170,6 +170,7 @@
             this.cAIXAToolStripMenuItem.Name = "cAIXAToolStripMenuItem";
             this.cAIXAToolStripMenuItem.Size = new System.Drawing.Size(300, 22);
             this.cAIXAToolStripMenuItem.Text = "CAIXA";
+            this.cAIXAToolStripMenuItem.Click += new System.EventHandler(this.cAIXAToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 

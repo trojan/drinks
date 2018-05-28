@@ -10,5 +10,6 @@ namespace Drinks.Model
     {
         public int IdMarca { get; set; }
         public string DescricaoMarca { get; set; }
+        public int StatusMarca { get; set; }
     }
 }

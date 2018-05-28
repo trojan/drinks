@@ -33,7 +33,7 @@ namespace Drinks.View
         Controller.TamanhoController tmh_c = new Controller.TamanhoController();
         Controller.ProdutoController prd_c = new Controller.ProdutoController();
 
-
+        #region [FUNÇÕES]
         public void ListaMarca()
         {
             DataTable dtMarca = new DataTable();
@@ -81,15 +81,15 @@ namespace Drinks.View
             dao.ListarDados(busca_seletiva, null, null, null, prd_m).Fill(dtProduto);
 
             dgvProdutos.DataSource = dtProduto;
-
+            dgvProdutos.Columns["CODIGO"].Visible = true;
             dgvProdutos.Columns["MARCA"].Visible = true;
             dgvProdutos.Columns["PRODUTO"].Visible = true;
             dgvProdutos.Columns["UNIDADE_MEDIDA"].Visible = true;
             dgvProdutos.Columns["TAMANHO"].Visible = true;
-            dgvProdutos.Columns["QUANTIDADE"].Visible = true;
+            dgvProdutos.Columns["QUANTIDADE"].Visible = false;
             dgvProdutos.Columns["VALOR_UNITARIO"].Visible = true;
-            dgvProdutos.Columns["VALOR_TOTAL_UNITARIO"].Visible = true;
-            //dgvProdutos.Columns["VALOR_TOTAL"].Visible = true;
+            dgvProdutos.Columns["VALOR_TOTAL_UNITARIO"].Visible = false;
+            //dgvProdutos.Columns["VALOR_TOTAL"].Visible = false;
         }
 
         public void LimparCampos()
@@ -100,25 +100,31 @@ namespace Drinks.View
 
             textBoxDescricao.Select();
         }
-
+        #endregion
 
         private void FormProduto_Load(object sender, EventArgs e)
         {
+            // CARREGARA O CONTEUDO NO FORMULARIO
             ListaMarca();
             ListaUnidadeMedida();
             ListaTamanho();
             ListaProduto();
         }
 
+        // --- BOTOES ---
+
+        #region [NOVO]
         private void buttonNovo_Click(object sender, EventArgs e)
         {
             LimparCampos();
         }
+        #endregion
 
+        #region [SALVAR]
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
             if (textBoxDescricao.Text != "" && textBoxDescricao != null
-                && textBoxValorUnitario.Text != "" && textBoxValorUnitario.Text != null)
+            && textBoxValorUnitario.Text != "" && textBoxValorUnitario.Text != null)
             {
                 labelDescricao.Text = "Descricao";
                 labelDescricao.ForeColor = Color.Black;
@@ -126,10 +132,17 @@ namespace Drinks.View
                 labelValor.Text = "Valor";
                 labelValor.ForeColor = Color.Black;
 
-                prd_c.InsereProduto(Convert.ToInt16(comboBoxMarca.SelectedValue), Convert.ToString(textBoxDescricao.Text),
-                                    Convert.ToInt16(comboBoxUnidadeMedida.SelectedValue),
-                                    Convert.ToInt16(comboBoxTamanho.SelectedValue),
-                                    Convert.ToDecimal(textBoxValorUnitario.Text));
+                if (textBoxID.Text != "" || textBoxID.Text != null)
+                    prd_c.AlteraProduto(Convert.ToInt16(textBoxID.Text), Convert.ToInt16(comboBoxMarca.SelectedValue),
+                                            Convert.ToString(textBoxDescricao.Text),
+                                            Convert.ToInt16(comboBoxUnidadeMedida.SelectedValue),
+                                            Convert.ToInt16(comboBoxTamanho.SelectedValue),
+                                            Convert.ToDecimal(textBoxValorUnitario.Text));
+                else
+                    prd_c.InsereProduto(Convert.ToInt16(comboBoxMarca.SelectedValue), Convert.ToString(textBoxDescricao.Text),
+                                        Convert.ToInt16(comboBoxUnidadeMedida.SelectedValue),
+                                        Convert.ToInt16(comboBoxTamanho.SelectedValue),
+                                        Convert.ToDecimal(textBoxValorUnitario.Text));
 
                 ListaProduto();
                 LimparCampos();
@@ -149,8 +162,8 @@ namespace Drinks.View
                     labelDescricao.Text = "Descricao";
                     labelDescricao.ForeColor = Color.Black;
                 }
-                
-                
+
+
                 if (textBoxValorUnitario.Text == "" || textBoxValorUnitario.Text == null)
                 {
                     labelValor.Text = "*Valor";
@@ -164,14 +177,46 @@ namespace Drinks.View
                 }
             }
         }
+        #endregion
 
+        #region [EXCLUIR]
+        private void buttonExcluir_Click(object sender, EventArgs e)
+        {
 
+        }
+        #endregion
+
+        #region [SAIR]
         private void buttonSair_Click(object sender, EventArgs e)
         {
-            if (textBoxDescricao.Text != null && textBoxDescricao.Text != "" || textBoxValorUnitario.Text != null && textBoxValorUnitario.Text != "")
+            if (textBoxID.Text != "" && textBoxID.Text != null ||
+                textBoxDescricao.Text != null && textBoxDescricao.Text != "" ||
+                textBoxValorUnitario.Text != null && textBoxValorUnitario.Text != "")
                 MessageBox.Show("Necessário salvar antes de sair!", "Mensagem do Sistema");
             else
                 this.Close();
         }
+        #endregion
+
+        
+        // --- PEGARA O CONTEUDO DA LINHA SELECIONADA, E ATRIBUIRA AOS ITENS DO FORMULARIO --- 
+
+        #region [SELECIONAR LINHA]
+        private void dgvProdutos_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int linha_selecionada = dgvProdutos.CurrentRow.Index;
+
+            if (linha_selecionada >= 0)
+            {
+                textBoxID.Text = dgvProdutos.SelectedRows[0].Cells[0].Value.ToString();
+                comboBoxMarca.Text = dgvProdutos.SelectedRows[0].Cells[1].Value.ToString();
+                textBoxDescricao.Text = dgvProdutos.SelectedRows[0].Cells[2].Value.ToString();
+                comboBoxTamanho.Text = dgvProdutos.SelectedRows[0].Cells[3].Value.ToString();
+                comboBoxUnidadeMedida.Text = dgvProdutos.SelectedRows[0].Cells[4].Value.ToString();
+                textBoxValorUnitario.Text = dgvProdutos.SelectedRows[0].Cells[6].Value.ToString();
+            }
+        }
+        #endregion
+
     }
 }

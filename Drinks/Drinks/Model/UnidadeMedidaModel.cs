@@ -10,5 +10,6 @@ namespace Drinks.Model
     {
         public int IdUnidadeMedida { get; set; }
         public string DescricaoUnidadeMedida { get; set; }
+        public int StatusUnidadeMedida { get; set; }
     }
 }
