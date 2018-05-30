@@ -15,7 +15,7 @@ namespace Drinks.View
         public FormProduto()
         {
             InitializeComponent();
-            textBoxDescricao.Select();
+            LimparCampos();
         }
 
         // DAO
@@ -42,8 +42,8 @@ namespace Drinks.View
 
             comboBoxMarca.DataSource = dtMarca;
 
-            comboBoxMarca.ValueMember = "idMarca";
-            comboBoxMarca.DisplayMember = "descricao";
+            comboBoxMarca.ValueMember = "CODIGO";
+            comboBoxMarca.DisplayMember = "DESCRICAO";
             comboBoxMarca.Refresh();
         }
 
@@ -55,8 +55,8 @@ namespace Drinks.View
 
             comboBoxUnidadeMedida.DataSource = dtUnidadeMedida;
 
-            comboBoxUnidadeMedida.ValueMember = "idUnidadeMedida";
-            comboBoxUnidadeMedida.DisplayMember = "descricao";
+            comboBoxUnidadeMedida.ValueMember = "CODIGO";
+            comboBoxUnidadeMedida.DisplayMember = "DESCRICAO";
             comboBoxUnidadeMedida.Refresh();
         }
 
@@ -68,20 +68,19 @@ namespace Drinks.View
 
             comboBoxTamanho.DataSource = dtTamanho;
 
-            comboBoxTamanho.ValueMember = "idTamanho";
-            comboBoxTamanho.DisplayMember = "descricao";
+            comboBoxTamanho.ValueMember = "CODIGO";
+            comboBoxTamanho.DisplayMember = "DESCRICAO";
             comboBoxTamanho.Refresh();
         }
 
         public void ListaProduto()
         {
-
             string busca_seletiva = null;
             DataTable dtProduto = new DataTable();
             dao.ListarDados(busca_seletiva, null, null, null, prd_m).Fill(dtProduto);
 
             dgvProdutos.DataSource = dtProduto;
-            dgvProdutos.Columns["CODIGO"].Visible = true;
+            dgvProdutos.Columns["CODIGO"].Visible = false;
             dgvProdutos.Columns["MARCA"].Visible = true;
             dgvProdutos.Columns["PRODUTO"].Visible = true;
             dgvProdutos.Columns["UNIDADE_MEDIDA"].Visible = true;
@@ -89,7 +88,6 @@ namespace Drinks.View
             dgvProdutos.Columns["QUANTIDADE"].Visible = false;
             dgvProdutos.Columns["VALOR_UNITARIO"].Visible = true;
             dgvProdutos.Columns["VALOR_TOTAL_UNITARIO"].Visible = false;
-            //dgvProdutos.Columns["VALOR_TOTAL"].Visible = false;
         }
 
         public void LimparCampos()
@@ -99,12 +97,14 @@ namespace Drinks.View
             textBoxValorUnitario.Text = "";
 
             textBoxDescricao.Select();
+            buttonExcluir.Enabled = false;
         }
         #endregion
 
         private void FormProduto_Load(object sender, EventArgs e)
         {
             // CARREGARA O CONTEUDO NO FORMULARIO
+
             ListaMarca();
             ListaUnidadeMedida();
             ListaTamanho();
@@ -117,6 +117,9 @@ namespace Drinks.View
         private void buttonNovo_Click(object sender, EventArgs e)
         {
             LimparCampos();
+            ListaMarca();
+            ListaUnidadeMedida();
+            ListaTamanho();
         }
         #endregion
 
@@ -126,13 +129,13 @@ namespace Drinks.View
             if (textBoxDescricao.Text != "" && textBoxDescricao != null
             && textBoxValorUnitario.Text != "" && textBoxValorUnitario.Text != null)
             {
-                labelDescricao.Text = "Descricao";
+                labelDescricao.Text = "Descrição";
                 labelDescricao.ForeColor = Color.Black;
 
                 labelValor.Text = "Valor";
                 labelValor.ForeColor = Color.Black;
 
-                if (textBoxID.Text != "" || textBoxID.Text != null)
+                if (textBoxID.Text != "" && textBoxID.Text != null)
                     prd_c.AlteraProduto(Convert.ToInt16(textBoxID.Text), Convert.ToInt16(comboBoxMarca.SelectedValue),
                                             Convert.ToString(textBoxDescricao.Text),
                                             Convert.ToInt16(comboBoxUnidadeMedida.SelectedValue),
@@ -153,13 +156,13 @@ namespace Drinks.View
 
                 if (textBoxDescricao.Text == "" || textBoxDescricao.Text == null)
                 {
-                    labelDescricao.Text = "*Descricao";
+                    labelDescricao.Text = "*Descrição";
                     labelDescricao.ForeColor = Color.Red;
                     textBoxDescricao.Select();
                 }
                 else
                 {
-                    labelDescricao.Text = "Descricao";
+                    labelDescricao.Text = "Descrição";
                     labelDescricao.ForeColor = Color.Black;
                 }
 
@@ -182,7 +185,12 @@ namespace Drinks.View
         #region [EXCLUIR]
         private void buttonExcluir_Click(object sender, EventArgs e)
         {
+            if (textBoxID.Text != "" && textBoxID != null)
+                if (MessageBox.Show("Tem certeza que deseja excluir ?", "Mensagem do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    prd_c.ExcluiProduto(Convert.ToInt32(textBoxID.Text));
 
+            LimparCampos();
+            ListaProduto();
         }
         #endregion
 
@@ -198,7 +206,7 @@ namespace Drinks.View
         }
         #endregion
 
-        
+
         // --- PEGARA O CONTEUDO DA LINHA SELECIONADA, E ATRIBUIRA AOS ITENS DO FORMULARIO --- 
 
         #region [SELECIONAR LINHA]
@@ -215,8 +223,9 @@ namespace Drinks.View
                 comboBoxUnidadeMedida.Text = dgvProdutos.SelectedRows[0].Cells[4].Value.ToString();
                 textBoxValorUnitario.Text = dgvProdutos.SelectedRows[0].Cells[6].Value.ToString();
             }
+
+            buttonExcluir.Enabled = true;
         }
         #endregion
-
     }
 }

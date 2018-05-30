@@ -31,10 +31,20 @@ namespace Drinks.Controller
 
 
             if (dao.AlterarDados(mrc, null, null, null) == true)
-                MessageBox.Show("Alterado com sucesso!");
+                MessageBox.Show("Alterado com Sucesso!");
             else
                 MessageBox.Show("Erro ao alterar os dados!");
+        }
 
+        public void ExcluiMarca(int id)
+        {
+            mrc.IdMarca = id;
+
+
+            if (dao.ExcluirDados(mrc, null, null, null) == true)
+                MessageBox.Show("Excluido com Sucesso!");
+            else
+                MessageBox.Show("Erro ao excluir os dados!");
         }
 
     }

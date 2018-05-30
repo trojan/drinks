@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Drinks.View
 {
-    public partial class FormMarca : Form
+    public partial class FormUnidadeMedida : Form
     {
-        public FormMarca()
+        public FormUnidadeMedida()
         {
             InitializeComponent();
             LimparCampos();
@@ -21,20 +21,20 @@ namespace Drinks.View
         // DAO
         DAO.DAO dao = new DAO.DAO();
         // MODEL
-        Model.MarcaModel mrc_m = new Model.MarcaModel();
+        Model.UnidadeMedidaModel und_m = new Model.UnidadeMedidaModel();
         // CONTROLLER
-        Controller.MarcaController mrc_c = new Controller.MarcaController();
+        Controller.UnidadeMedidaController und_c = new Controller.UnidadeMedidaController();
 
         #region [FUNÇÕES] 
-        public void ListaMarca()
+        public void ListaUnidadeMedida()
         {
             string busca_seletiva = null;
-            DataTable dtMarca = new DataTable();
-            dao.ListarDados(busca_seletiva, mrc_m, null, null, null).Fill(dtMarca);
+            DataTable dtUnidadeMedida = new DataTable();
+            dao.ListarDados(busca_seletiva, null, und_m, null, null).Fill(dtUnidadeMedida);
 
-            dgvMarca.DataSource = dtMarca;
-            dgvMarca.Columns["CODIGO"].Visible = true;
-            dgvMarca.Columns["DESCRICAO"].Visible = true;
+            dgvUnidadeMedida.DataSource = dtUnidadeMedida;
+            dgvUnidadeMedida.Columns["CODIGO"].Visible = true;
+            dgvUnidadeMedida.Columns["DESCRICAO"].Visible = true;
         }
 
         public void LimparCampos()
@@ -47,13 +47,13 @@ namespace Drinks.View
 
         #endregion
 
-        private void FormMarca_Load(object sender, EventArgs e)
+        private void FormUnidadeMedida_Load(object sender, EventArgs e)
         {
-            ListaMarca();
+            ListaUnidadeMedida();
         }
 
 
-        // --- BOTOES ---
+        // --- BOTOES --- 
 
         #region [NOVO]
         private void buttonNovo_Click(object sender, EventArgs e)
@@ -71,11 +71,11 @@ namespace Drinks.View
                 labelDescricao.ForeColor = Color.Black;
 
                 if (textBoxID.Text != "" && textBoxID.Text != null)
-                    mrc_c.AlteraMarca(Convert.ToInt16(textBoxID.Text), textBoxDescricao.Text);
+                    und_c.AlteraUnidadeMedida(Convert.ToInt16(textBoxID.Text), textBoxDescricao.Text);
                 else
-                    mrc_c.InsereMarca(textBoxDescricao.Text);
+                    und_c.InsereUnidadeMedida(textBoxDescricao.Text);
 
-                ListaMarca();
+                ListaUnidadeMedida();
                 LimparCampos();
             }
             else
@@ -102,10 +102,10 @@ namespace Drinks.View
         {
             if (textBoxID.Text != "" && textBoxID != null)
                 if (MessageBox.Show("Tem certeza que deseja excluir ?", "Mensagem do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    mrc_c.ExcluiMarca(Convert.ToInt16(textBoxID.Text));
+                    und_c.ExcluiUnidadeMedida(Convert.ToInt16(textBoxID.Text));
 
             LimparCampos();
-            ListaMarca();
+            ListaUnidadeMedida();
         }
         #endregion
 
@@ -123,20 +123,18 @@ namespace Drinks.View
         // --- PEGARA O CONTEUDO DA LINHA SELECIONADA, E ATRIBUIRA AOS ITENS DO FORMULARIO --- 
 
         #region [SELECIONAR LINHA]
-        private void dgvMarca_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void dgvUnidadeMedida_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            int linha_selecionada = dgvMarca.CurrentRow.Index;
+            int linha_selecionada = dgvUnidadeMedida.CurrentRow.Index;
 
             if (linha_selecionada >= 0)
             {
-                textBoxID.Text = dgvMarca.SelectedRows[0].Cells[0].Value.ToString();
-                textBoxDescricao.Text = dgvMarca.SelectedRows[0].Cells[1].Value.ToString();
+                textBoxID.Text = dgvUnidadeMedida.SelectedRows[0].Cells[0].Value.ToString();
+                textBoxDescricao.Text = dgvUnidadeMedida.SelectedRows[0].Cells[1].Value.ToString();
             }
 
             buttonExcluir.Enabled = true;
         }
         #endregion
-
     }
 }
-

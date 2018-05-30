@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Drinks.View
 {
-    public partial class FormMarca : Form
+    public partial class FormTamanho : Form
     {
-        public FormMarca()
+        public FormTamanho()
         {
             InitializeComponent();
             LimparCampos();
@@ -21,20 +21,20 @@ namespace Drinks.View
         // DAO
         DAO.DAO dao = new DAO.DAO();
         // MODEL
-        Model.MarcaModel mrc_m = new Model.MarcaModel();
+        Model.TamanhoModel tmh_m = new Model.TamanhoModel();
         // CONTROLLER
-        Controller.MarcaController mrc_c = new Controller.MarcaController();
+        Controller.TamanhoController tmh_c = new Controller.TamanhoController();
 
         #region [FUNÇÕES] 
-        public void ListaMarca()
+        public void ListaTamanho()
         {
             string busca_seletiva = null;
-            DataTable dtMarca = new DataTable();
-            dao.ListarDados(busca_seletiva, mrc_m, null, null, null).Fill(dtMarca);
+            DataTable dtTamanho = new DataTable();
+            dao.ListarDados(busca_seletiva, null, null, tmh_m, null).Fill(dtTamanho);
 
-            dgvMarca.DataSource = dtMarca;
-            dgvMarca.Columns["CODIGO"].Visible = true;
-            dgvMarca.Columns["DESCRICAO"].Visible = true;
+            dgvTamanho.DataSource = dtTamanho;
+            dgvTamanho.Columns["CODIGO"].Visible = true;
+            dgvTamanho.Columns["DESCRICAO"].Visible = true;
         }
 
         public void LimparCampos()
@@ -47,9 +47,9 @@ namespace Drinks.View
 
         #endregion
 
-        private void FormMarca_Load(object sender, EventArgs e)
+        private void FormTamanho_Load(object sender, EventArgs e)
         {
-            ListaMarca();
+            ListaTamanho();
         }
 
 
@@ -71,11 +71,11 @@ namespace Drinks.View
                 labelDescricao.ForeColor = Color.Black;
 
                 if (textBoxID.Text != "" && textBoxID.Text != null)
-                    mrc_c.AlteraMarca(Convert.ToInt16(textBoxID.Text), textBoxDescricao.Text);
+                    tmh_c.AlteraTamanho(Convert.ToInt16(textBoxID.Text), textBoxDescricao.Text);
                 else
-                    mrc_c.InsereMarca(textBoxDescricao.Text);
+                    tmh_c.InsereTamanho(textBoxDescricao.Text);
 
-                ListaMarca();
+                ListaTamanho();
                 LimparCampos();
             }
             else
@@ -102,10 +102,10 @@ namespace Drinks.View
         {
             if (textBoxID.Text != "" && textBoxID != null)
                 if (MessageBox.Show("Tem certeza que deseja excluir ?", "Mensagem do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    mrc_c.ExcluiMarca(Convert.ToInt16(textBoxID.Text));
+                    tmh_c.ExcluiTamanho(Convert.ToInt16(textBoxID.Text));
 
             LimparCampos();
-            ListaMarca();
+            ListaTamanho();
         }
         #endregion
 
@@ -117,26 +117,25 @@ namespace Drinks.View
             else
                 this.Close();
         }
-        #endregion
 
+
+        #endregion
 
         // --- PEGARA O CONTEUDO DA LINHA SELECIONADA, E ATRIBUIRA AOS ITENS DO FORMULARIO --- 
 
         #region [SELECIONAR LINHA]
-        private void dgvMarca_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void dgvTamanho_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            int linha_selecionada = dgvMarca.CurrentRow.Index;
+            int linha_selecionada = dgvTamanho.CurrentRow.Index;
 
             if (linha_selecionada >= 0)
             {
-                textBoxID.Text = dgvMarca.SelectedRows[0].Cells[0].Value.ToString();
-                textBoxDescricao.Text = dgvMarca.SelectedRows[0].Cells[1].Value.ToString();
+                textBoxID.Text = dgvTamanho.SelectedRows[0].Cells[0].Value.ToString();
+                textBoxDescricao.Text = dgvTamanho.SelectedRows[0].Cells[1].Value.ToString();
             }
 
             buttonExcluir.Enabled = true;
         }
         #endregion
-
     }
 }
-

@@ -114,7 +114,7 @@ namespace Drinks.DAO
                  "quantidadeTotal       int, " +
                  "valorTotal            decimal(10, 2), " +
                  "dataVendas            datetime, " +
-                 "status                int, " +   
+                 "status                int, " +
                  "foreign key (idItensVendas) references ITENS_VENDAS (idItensVendas));"
             };
 
@@ -154,6 +154,7 @@ namespace Drinks.DAO
             }
 
         }
+
 
 
         //+------------------+//
@@ -267,9 +268,9 @@ namespace Drinks.DAO
                 try
                 {
                     conn.Open();
-                    string querySql = "UPDATE MARCA SET descricao=@decricaoMarca WHERE idMarca = " + mrc.IdMarca + ";";
+                    string querySql = "UPDATE MARCA SET descricao=@descricaoMarca WHERE idMarca = " + mrc.IdMarca + ";";
                     SqlCeCommand altera = new SqlCeCommand(querySql, conn);
-                    altera.Parameters.AddWithValue("@decricaoMarca", mrc.DescricaoMarca);
+                    altera.Parameters.AddWithValue("@descricaoMarca", mrc.DescricaoMarca);
                     altera.ExecuteNonQuery();
                     return true;
                 }
@@ -285,9 +286,9 @@ namespace Drinks.DAO
                 try
                 {
                     conn.Open();
-                    string querySql = "UPDATE UNIDADE_MEDIDA SET descricao=@decricaoUnidadeMedida WHERE idUnidadeMedida = " + und.DescricaoUnidadeMedida + ";";
+                    string querySql = "UPDATE UNIDADE_MEDIDA SET descricao=@descricaoUnidadeMedida WHERE idUnidadeMedida = " + und.IdUnidadeMedida + ";";
                     SqlCeCommand altera = new SqlCeCommand(querySql, conn);
-                    altera.Parameters.AddWithValue("@decricaoUnidadeMedida", und.DescricaoUnidadeMedida);
+                    altera.Parameters.AddWithValue("@descricaoUnidadeMedida", und.DescricaoUnidadeMedida);
                     altera.ExecuteNonQuery();
                     return true;
                 }
@@ -303,7 +304,7 @@ namespace Drinks.DAO
                 try
                 {
                     conn.Open();
-                    string querySql = "UPDATE TAMANHO SET descricao=@descricaoTamanho WHERE idTamanh = " + tmh.IdTamanho + ";";
+                    string querySql = "UPDATE TAMANHO SET descricao=@descricaoTamanho WHERE idTamanho = " + tmh.IdTamanho + ";";
                     SqlCeCommand altera = new SqlCeCommand(querySql, conn);
                     altera.Parameters.AddWithValue("@descricaoTamanho", tmh.DescricaoTamanho);
                     altera.ExecuteNonQuery();
@@ -352,7 +353,7 @@ namespace Drinks.DAO
                 {
                     try
                     {
-                        string querySql = "SELECT * FROM MARCA ORDER BY descricao;";
+                        string querySql = "SELECT idMarca AS CODIGO, descricao AS DESCRICAO FROM MARCA WHERE status = 1 ORDER BY DESCRICAO;";
                         SqlCeCommand lista = conn.CreateCommand();
                         lista.CommandText = querySql;
                         SqlCeDataAdapter adp = new SqlCeDataAdapter(lista);
@@ -388,7 +389,7 @@ namespace Drinks.DAO
                 {
                     try
                     {
-                        string querySql = "SELECT * FROM UNIDADE_MEDIDA ORDER BY descricao;";
+                        string querySql = "SELECT idUnidadeMedida AS CODIGO, descricao AS DESCRICAO FROM UNIDADE_MEDIDA WHERE status = 1 ORDER BY DESCRICAO";
                         SqlCeCommand lista = conn.CreateCommand();
                         lista.CommandText = querySql;
                         SqlCeDataAdapter adp = new SqlCeDataAdapter(lista);
@@ -424,7 +425,7 @@ namespace Drinks.DAO
                 {
                     try
                     {
-                        string querySql = "SELECT * FROM TAMANHO ORDER BY descricao;";
+                        string querySql = "SELECT idTamanho AS CODIGO, descricao AS DESCRICAO FROM TAMANHO WHERE status = 1 ORDER BY DESCRICAO";
                         SqlCeCommand lista = conn.CreateCommand();
                         lista.CommandText = querySql;
                         SqlCeDataAdapter adp = new SqlCeDataAdapter(lista);
@@ -460,10 +461,7 @@ namespace Drinks.DAO
                 {
                     try
                     {
-                        //string querySql = "SELECT * FROM ESTOQUE;";
-
-                        string querySql = "SELECT ESTOQUE.idProduto AS CODIGO, MARCA.descricao AS MARCA, ESTOQUE.descricao AS PRODUTO, TAMANHO.descricao AS TAMANHO, UNIDADE_MEDIDA.descricao AS UNIDADE_MEDIDA, quantidade AS QUANTIDADE, valorUnitario AS VALOR_UNITARIO, quantidade*valorUnitario AS VALOR_TOTAL_UNITARIO FROM ESTOQUE INNER JOIN MARCA ON (ESTOQUE.idMarca = MARCA.idMarca) INNER JOIN UNIDADE_MEDIDA ON (ESTOQUE.idUnidadeMedida = UNIDADE_MEDIDA.idUnidadeMedida) INNER JOIN TAMANHO ON (ESTOQUE.idTamanho = TAMANHO.idTamanho) ORDER BY PRODUTO;";
-
+                        string querySql = "SELECT idProduto AS CODIGO, MARCA.descricao AS MARCA, ESTOQUE.descricao AS PRODUTO, TAMANHO.descricao AS TAMANHO, UNIDADE_MEDIDA.descricao AS UNIDADE_MEDIDA, quantidade AS QUANTIDADE, valorUnitario AS VALOR_UNITARIO, quantidade*valorUnitario AS VALOR_TOTAL_UNITARIO FROM ESTOQUE INNER JOIN MARCA ON (ESTOQUE.idMarca = MARCA.idMarca) INNER JOIN UNIDADE_MEDIDA ON (ESTOQUE.idUnidadeMedida = UNIDADE_MEDIDA.idUnidadeMedida) INNER JOIN TAMANHO ON (ESTOQUE.idTamanho = TAMANHO.idTamanho) WHERE ESTOQUE.status = 1 ORDER BY PRODUTO;";
                         SqlCeCommand lista = conn.CreateCommand();
                         lista.CommandText = querySql;
                         SqlCeDataAdapter adp = new SqlCeDataAdapter(lista);
@@ -495,6 +493,86 @@ namespace Drinks.DAO
             else                    // NENHUM DADO ENCONTRADO
             {
                 return null;
+            }
+        }
+
+        // EXCLUIR DADOS
+        public bool ExcluirDados(Model.MarcaModel mrc, Model.UnidadeMedidaModel und, Model.TamanhoModel tmh, Model.ProdutoModel prd)
+        {
+            string connStr = @"Data Source = bd\drinks.sdf";
+            SqlCeConnection conn = new SqlCeConnection(connStr);
+
+            if (mrc != null) 
+            {
+                #region [MARCA]
+                try
+                {
+                    conn.Open();
+                    string querySql = "UPDATE MARCA SET status=@statusMarca WHERE idMarca = " + mrc.IdMarca + ";";
+                    SqlCeCommand exclui = new SqlCeCommand(querySql, conn);
+                    exclui.Parameters.AddWithValue("@statusMarca", 0);
+                    exclui.ExecuteNonQuery();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+                #endregion
+            }
+            else if (und != null)  
+            {
+                #region [UNIDADE_MEDIDA]
+                try
+                {
+                    conn.Open();
+                    string querySql = "UPDATE UNIDADE_MEDIDA SET status=@statusUnidadeMedida WHERE idUnidadeMedida = " + und.IdUnidadeMedida + ";";
+                    SqlCeCommand exclui = new SqlCeCommand(querySql, conn);
+                    exclui.Parameters.AddWithValue("@statusUnidadeMedida", 0);
+                    exclui.ExecuteNonQuery();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+                #endregion
+            }
+            else if (tmh != null) 
+            {
+                #region [TAMANHO]
+                try
+                {
+                    conn.Open();
+                    string querySql = "UPDATE TAMANHO SET status=@statusTamanho WHERE idTamanho = " + tmh.IdTamanho + ";";
+                    SqlCeCommand exclui = new SqlCeCommand(querySql, conn);
+                    exclui.Parameters.AddWithValue("@statusTamanho", tmh.DescricaoTamanho);
+                    exclui.ExecuteNonQuery();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+                #endregion
+            }
+            else                    
+            {
+                #region [PRODUTOS]
+                try
+                {
+                    conn.Open();
+                    string querySql = "UPDATE ESTOQUE SET status=@statusProduto WHERE idProduto = " + prd.IdProduto + ";";
+                    SqlCeCommand exclui = new SqlCeCommand(querySql, conn);
+                    exclui.Parameters.AddWithValue("@statusProduto", prd.ValorUnitario);
+                    exclui.ExecuteNonQuery();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+                #endregion
             }
         }
 

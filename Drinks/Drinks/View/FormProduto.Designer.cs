@@ -95,7 +95,7 @@
             // 
             this.labelUnidadeMedida.AutoSize = true;
             this.labelUnidadeMedida.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUnidadeMedida.Location = new System.Drawing.Point(264, 124);
+            this.labelUnidadeMedida.Location = new System.Drawing.Point(440, 124);
             this.labelUnidadeMedida.Name = "labelUnidadeMedida";
             this.labelUnidadeMedida.Size = new System.Drawing.Size(105, 17);
             this.labelUnidadeMedida.TabIndex = 29;
@@ -105,7 +105,7 @@
             // 
             this.labelTamanho.AutoSize = true;
             this.labelTamanho.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTamanho.Location = new System.Drawing.Point(469, 124);
+            this.labelTamanho.Location = new System.Drawing.Point(265, 124);
             this.labelTamanho.Name = "labelTamanho";
             this.labelTamanho.Size = new System.Drawing.Size(62, 17);
             this.labelTamanho.TabIndex = 28;
@@ -166,24 +166,30 @@
             // 
             // comboBoxTamanho
             // 
+            this.comboBoxTamanho.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxTamanho.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxTamanho.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxTamanho.FormattingEnabled = true;
-            this.comboBoxTamanho.Location = new System.Drawing.Point(472, 144);
+            this.comboBoxTamanho.Location = new System.Drawing.Point(268, 144);
             this.comboBoxTamanho.Name = "comboBoxTamanho";
             this.comboBoxTamanho.Size = new System.Drawing.Size(129, 25);
             this.comboBoxTamanho.TabIndex = 21;
             // 
             // comboBoxUnidadeMedida
             // 
+            this.comboBoxUnidadeMedida.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxUnidadeMedida.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxUnidadeMedida.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxUnidadeMedida.FormattingEnabled = true;
-            this.comboBoxUnidadeMedida.Location = new System.Drawing.Point(267, 144);
+            this.comboBoxUnidadeMedida.Location = new System.Drawing.Point(443, 144);
             this.comboBoxUnidadeMedida.Name = "comboBoxUnidadeMedida";
             this.comboBoxUnidadeMedida.Size = new System.Drawing.Size(158, 25);
             this.comboBoxUnidadeMedida.TabIndex = 20;
             // 
             // comboBoxMarca
             // 
+            this.comboBoxMarca.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxMarca.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxMarca.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxMarca.FormattingEnabled = true;
             this.comboBoxMarca.Location = new System.Drawing.Point(93, 144);

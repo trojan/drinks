@@ -179,14 +179,17 @@
             // 
             // aLTERARVALORDOPRODUTOToolStripMenuItem
             // 
+            this.aLTERARVALORDOPRODUTOToolStripMenuItem.Enabled = false;
             this.aLTERARVALORDOPRODUTOToolStripMenuItem.Name = "aLTERARVALORDOPRODUTOToolStripMenuItem";
             this.aLTERARVALORDOPRODUTOToolStripMenuItem.Size = new System.Drawing.Size(300, 22);
             this.aLTERARVALORDOPRODUTOToolStripMenuItem.Text = "ALTERAR VALOR DO PRODUTO";
+            this.aLTERARVALORDOPRODUTOToolStripMenuItem.Visible = false;
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(297, 6);
+            this.toolStripSeparator1.Visible = false;
             // 
             // cONSULTARVENDASToolStripMenuItem
             // 
@@ -226,18 +229,21 @@
             this.mARCAToolStripMenuItem.Name = "mARCAToolStripMenuItem";
             this.mARCAToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
             this.mARCAToolStripMenuItem.Text = "MARCA";
+            this.mARCAToolStripMenuItem.Click += new System.EventHandler(this.mARCAToolStripMenuItem_Click);
             // 
             // uNIDADEMEDIDAToolStripMenuItem
             // 
             this.uNIDADEMEDIDAToolStripMenuItem.Name = "uNIDADEMEDIDAToolStripMenuItem";
             this.uNIDADEMEDIDAToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
             this.uNIDADEMEDIDAToolStripMenuItem.Text = "UNIDADE MEDIDA";
+            this.uNIDADEMEDIDAToolStripMenuItem.Click += new System.EventHandler(this.uNIDADEMEDIDAToolStripMenuItem_Click);
             // 
             // tAMANHOToolStripMenuItem
             // 
             this.tAMANHOToolStripMenuItem.Name = "tAMANHOToolStripMenuItem";
             this.tAMANHOToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
             this.tAMANHOToolStripMenuItem.Text = "TAMANHO";
+            this.tAMANHOToolStripMenuItem.Click += new System.EventHandler(this.tAMANHOToolStripMenuItem_Click);
             // 
             // toolStripSeparator5
             // 
@@ -249,6 +255,7 @@
             this.cONSULTARPRODUTOSToolStripMenuItem.Name = "cONSULTARPRODUTOSToolStripMenuItem";
             this.cONSULTARPRODUTOSToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
             this.cONSULTARPRODUTOSToolStripMenuItem.Text = "CONSULTAR PRODUTOS";
+            this.cONSULTARPRODUTOSToolStripMenuItem.Click += new System.EventHandler(this.cONSULTARPRODUTOSToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 

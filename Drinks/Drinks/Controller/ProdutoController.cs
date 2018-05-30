@@ -21,6 +21,7 @@ namespace Drinks.Controller
             prd.IdTamanho = idTamanho;
             prd.ValorUnitario = valorUnitario;
 
+
             if (dao.InserirDados(null, null, null, prd) == true)
                 MessageBox.Show("Salvo com sucesso!");
             else
@@ -36,10 +37,22 @@ namespace Drinks.Controller
             prd.IdTamanho = idTamanho;
             prd.ValorUnitario = valorUnitario;
 
+
             if (dao.AlterarDados(null, null, null, prd) == true)
                 MessageBox.Show("Alterado com sucesso!");
             else
                 MessageBox.Show("Erro ao alterar os dados!");
+        }
+
+        public void ExcluiProduto(int id)
+        {
+            prd.IdProduto = id;
+
+
+            if (dao.ExcluirDados(null, null, null, prd) == true)
+                MessageBox.Show("Excluido com Sucesso!");
+            else
+                MessageBox.Show("Erro ao excluir os dados!");
         }
 
     }

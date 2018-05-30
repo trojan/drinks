@@ -33,8 +33,17 @@ namespace Drinks.Controller
                 MessageBox.Show("Alterado com sucesso!");
             else
                 MessageBox.Show("Erro ao alterar os dados!");
-
         }
 
+        public void ExcluiTamanho(int id)
+        {
+            tmh.IdTamanho = id;
+            
+
+            if (dao.ExcluirDados(null, null, tmh, null) == true)
+                MessageBox.Show("Excluido com Sucesso!");
+            else
+                MessageBox.Show("Erro ao excluir os dados!");
+        }
     }
 }
