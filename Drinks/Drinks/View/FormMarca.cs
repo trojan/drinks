@@ -50,6 +50,8 @@ namespace Drinks.View
         private void FormMarca_Load(object sender, EventArgs e)
         {
             ListaMarca();
+            // TIRAR LINHA EM BRANCO DO DATA_GRID_VIEW
+            dgvMarca.AllowUserToAddRows = false;
         }
 
 

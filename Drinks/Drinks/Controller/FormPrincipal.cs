@@ -43,7 +43,11 @@ namespace Drinks.Controller
         }
 
         #region [COMPRAS]
-
+        private void nOVACOMPRAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            View.FormCompra fcmp = new View.FormCompra();
+            fcmp.ShowDialog();
+        }
         #endregion
 
         #region [VENDAS]
@@ -82,9 +86,12 @@ namespace Drinks.Controller
 
         private void cONSULTARPRODUTOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            View.FormConsultaProduto fcprd = new View.FormConsultaProduto();
+            fcprd.ShowDialog();
         }
 
         #endregion
+
+        
     }
 }

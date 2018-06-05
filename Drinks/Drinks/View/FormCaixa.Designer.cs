@@ -82,6 +82,7 @@
             // 
             // textBox3
             // 
+            this.textBox3.Enabled = false;
             this.textBox3.Font = new System.Drawing.Font("Times New Roman", 20F);
             this.textBox3.Location = new System.Drawing.Point(294, 395);
             this.textBox3.Name = "textBox3";
@@ -159,9 +160,9 @@
             this.label5.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.label5.Location = new System.Drawing.Point(145, 59);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(171, 16);
+            this.label5.Size = new System.Drawing.Size(73, 16);
             this.label5.TabIndex = 20;
-            this.label5.Text = "DECRIÇÃO DO PRODUTO";
+            this.label5.Text = "PRODUTO";
             // 
             // label6
             // 

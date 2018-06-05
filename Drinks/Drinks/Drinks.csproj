@@ -55,17 +55,21 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\CompraController.cs" />
     <Compile Include="Controller\FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Controller\FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controller\ItensCompraController.cs" />
     <Compile Include="Controller\MarcaController.cs" />
     <Compile Include="Controller\ProdutoController.cs" />
     <Compile Include="Controller\TamanhoController.cs" />
     <Compile Include="Controller\UnidadeMedidaController.cs" />
     <Compile Include="DAO\DAO.cs" />
+    <Compile Include="Model\CompraModel.cs" />
+    <Compile Include="Model\ItensCompra.cs" />
     <Compile Include="Model\MarcaModel.cs" />
     <Compile Include="Model\ProdutoModel.cs" />
     <Compile Include="Model\TamanhoModel.cs" />
@@ -77,6 +81,18 @@
     </Compile>
     <Compile Include="View\FormCaixa.Designer.cs">
       <DependentUpon>FormCaixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormCompra.Designer.cs">
+      <DependentUpon>FormCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormConsultaProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormConsultaProduto.Designer.cs">
+      <DependentUpon>FormConsultaProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FormMarca.cs">
       <SubType>Form</SubType>
@@ -116,6 +132,12 @@
     </Compile>
     <EmbeddedResource Include="View\FormCaixa.resx">
       <DependentUpon>FormCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormCompra.resx">
+      <DependentUpon>FormCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormConsultaProduto.resx">
+      <DependentUpon>FormConsultaProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormMarca.resx">
       <DependentUpon>FormMarca.cs</DependentUpon>

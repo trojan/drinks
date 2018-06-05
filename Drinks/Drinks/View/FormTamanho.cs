@@ -50,6 +50,8 @@ namespace Drinks.View
         private void FormTamanho_Load(object sender, EventArgs e)
         {
             ListaTamanho();
+            // TIRAR LINHA EM BRANCO DO DATA_GRID_VIEW
+            dgvTamanho.AllowUserToAddRows = false;
         }
 
 

@@ -53,12 +53,9 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.cONSULTARPRODUTOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.PanelBackground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FormLogo)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // closeForm
@@ -141,6 +138,7 @@
             this.nOVACOMPRAToolStripMenuItem.Name = "nOVACOMPRAToolStripMenuItem";
             this.nOVACOMPRAToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.nOVACOMPRAToolStripMenuItem.Text = "NOVA COMPRA";
+            this.nOVACOMPRAToolStripMenuItem.Click += new System.EventHandler(this.nOVACOMPRAToolStripMenuItem_Click);
             // 
             // toolStripSeparator6
             // 
@@ -203,8 +201,8 @@
             this.pRODUTOSToolStripMenuItem,
             this.toolStripSeparator3,
             this.mARCAToolStripMenuItem,
-            this.uNIDADEMEDIDAToolStripMenuItem,
             this.tAMANHOToolStripMenuItem,
+            this.uNIDADEMEDIDAToolStripMenuItem,
             this.toolStripSeparator5,
             this.cONSULTARPRODUTOSToolStripMenuItem});
             this.eSTOQUEToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -260,25 +258,11 @@
             // toolStrip1
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1,
-            this.toolStripSeparator7});
             this.toolStrip1.Location = new System.Drawing.Point(0, 575);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(925, 25);
             this.toolStrip1.TabIndex = 7;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(66, 22);
-            this.toolStripLabel1.Text = "data e hora";
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 25);
             // 
             // FormPrincipal
             // 
@@ -300,8 +284,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.FormLogo)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,7 +315,5 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem cONSULTARPRODUTOSToolStripMenuItem;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
     }
 }

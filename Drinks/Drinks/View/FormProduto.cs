@@ -109,6 +109,8 @@ namespace Drinks.View
             ListaUnidadeMedida();
             ListaTamanho();
             ListaProduto();
+            // TIRAR LINHA EM BRANCO DO DATA_GRID_VIEW
+            dgvProdutos.AllowUserToAddRows = false;
         }
 
         // --- BOTOES ---
