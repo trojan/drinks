@@ -42,6 +42,7 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.caixaTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PanelBackground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -174,12 +175,25 @@
             this.label6.TabIndex = 21;
             this.label6.Text = "ID";
             // 
+            // caixaTitle
+            // 
+            this.caixaTitle.AutoSize = true;
+            this.caixaTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(28)))), ((int)(((byte)(31)))));
+            this.caixaTitle.Font = new System.Drawing.Font("Roboto Light", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.caixaTitle.ForeColor = System.Drawing.Color.White;
+            this.caixaTitle.Location = new System.Drawing.Point(12, 9);
+            this.caixaTitle.Name = "caixaTitle";
+            this.caixaTitle.Size = new System.Drawing.Size(64, 24);
+            this.caixaTitle.TabIndex = 22;
+            this.caixaTitle.Text = "CAIXA";
+            // 
             // FormCaixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(720, 445);
+            this.Controls.Add(this.caixaTitle);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -221,5 +235,6 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label caixaTitle;
     }
 }

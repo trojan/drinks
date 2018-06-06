@@ -40,6 +40,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvUnidadeMedida = new System.Windows.Forms.DataGridView();
             this.buttonSair = new System.Windows.Forms.Button();
+            this.uniMedidaTitle = new System.Windows.Forms.Label();
             this.panelUnidadeMedida.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PanelBackground)).BeginInit();
             this.panel1.SuspendLayout();
@@ -145,7 +146,7 @@
             // 
             // dgvUnidadeMedida
             // 
-            this.dgvUnidadeMedida.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvUnidadeMedida.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvUnidadeMedida.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvUnidadeMedida.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvUnidadeMedida.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -174,12 +175,25 @@
             this.buttonSair.UseVisualStyleBackColor = true;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
+            // uniMedidaTitle
+            // 
+            this.uniMedidaTitle.AutoSize = true;
+            this.uniMedidaTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(28)))), ((int)(((byte)(31)))));
+            this.uniMedidaTitle.Font = new System.Drawing.Font("Roboto Light", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.uniMedidaTitle.ForeColor = System.Drawing.Color.White;
+            this.uniMedidaTitle.Location = new System.Drawing.Point(12, 9);
+            this.uniMedidaTitle.Name = "uniMedidaTitle";
+            this.uniMedidaTitle.Size = new System.Drawing.Size(196, 24);
+            this.uniMedidaTitle.TabIndex = 36;
+            this.uniMedidaTitle.Text = "UNIDADE DE MEDIDA";
+            // 
             // FormUnidadeMedida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(495, 370);
+            this.Controls.Add(this.uniMedidaTitle);
             this.Controls.Add(this.panelUnidadeMedida);
             this.Controls.Add(this.buttonNovo);
             this.Controls.Add(this.buttonExcluir);
@@ -198,6 +212,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUnidadeMedida)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -215,5 +230,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonSair;
         private System.Windows.Forms.DataGridView dgvUnidadeMedida;
+        private System.Windows.Forms.Label uniMedidaTitle;
     }
 }

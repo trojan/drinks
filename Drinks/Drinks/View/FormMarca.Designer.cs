@@ -40,6 +40,7 @@
             this.buttonSair = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvMarca = new System.Windows.Forms.DataGridView();
+            this.marcaTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PanelBackground)).BeginInit();
             this.panelMarca.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -155,7 +156,7 @@
             // 
             // dgvMarca
             // 
-            this.dgvMarca.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvMarca.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMarca.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvMarca.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMarca.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -174,12 +175,25 @@
             this.dgvMarca.TabIndex = 1;
             this.dgvMarca.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMarca_CellMouseDoubleClick);
             // 
+            // marcaTitle
+            // 
+            this.marcaTitle.AutoSize = true;
+            this.marcaTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(28)))), ((int)(((byte)(31)))));
+            this.marcaTitle.Font = new System.Drawing.Font("Roboto Light", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.marcaTitle.ForeColor = System.Drawing.Color.White;
+            this.marcaTitle.Location = new System.Drawing.Point(9, 9);
+            this.marcaTitle.Name = "marcaTitle";
+            this.marcaTitle.Size = new System.Drawing.Size(77, 24);
+            this.marcaTitle.TabIndex = 36;
+            this.marcaTitle.Text = "MARCA";
+            // 
             // FormMarca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(495, 370);
+            this.Controls.Add(this.marcaTitle);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.panelMarca);
@@ -198,6 +212,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarca)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -214,5 +229,6 @@
         private System.Windows.Forms.TextBox textBoxDescricao;
         private System.Windows.Forms.TextBox textBoxID;
         private System.Windows.Forms.DataGridView dgvMarca;
+        private System.Windows.Forms.Label marcaTitle;
     }
 }

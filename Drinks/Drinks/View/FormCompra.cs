@@ -40,7 +40,8 @@ namespace Drinks.View
         {
             dao.ListarDados(null, null, null, null, prd_m).Fill(dtProduto);
 
-            dtProduto.Columns.Add("PRODUTO_INFORMATION", typeof(String), "PRODUTO + ' ' + MARCA + ' ' + TAMANHO");
+            //dtProduto.Columns.Add("PRODUTO_INFORMATION", typeof(String), "PRODUTO + ' ' + MARCA + ' ' + TAMANHO");
+            dtProduto.Columns.Add("PRODUTO_INFORMATION", typeof(String), "PRODUTO + ' ' + MARCA + ' ' + TAMANHO + '' + UNIDADE_MEDIDA");
 
             comboBoxProdutoInformation.DataSource = dtProduto;
             comboBoxProdutoInformation.DisplayMember = "PRODUTO_INFORMATION";
@@ -79,6 +80,9 @@ namespace Drinks.View
             ListaProduto();
             // TIRAR LINHA EM BRANCO DO DATA_GRID_VIEW
             dgvItemPedido.AllowUserToAddRows = false;
+
+            // Valor inicial na quantidade
+            textBoxQuantidade.Text = "1";
 
             comboBoxProdutoInformation.Select();
         }
@@ -151,6 +155,8 @@ namespace Drinks.View
             dgvItemPedido.Refresh();
 
             comboBoxProdutoInformation.Select();
+
+            textBoxQuantidade.Text = "1";
         }
 
         private void buttonExcluirItem_Click(object sender, EventArgs e)
@@ -172,6 +178,30 @@ namespace Drinks.View
 
         #endregion
 
+        // Retorna o produto dos campos "valor unitário" e "quantidade"
+        private void Multiply()
+        {
+            float a;
+            int b;
+
+            bool isAValid = float.TryParse(textBoxValor.Text, out a);
+            bool isBValid = int.TryParse(textBoxQuantidade.Text, out b);
+
+            if (isAValid && isBValid)
+                textBoxValorTotal.Text = (a * b).ToString();
+            else
+                textBoxValorTotal.Text = "Valores inválidos.";
+        }
+
+        private void textBoxValor_TextChanged(object sender, EventArgs e)
+        {
+            Multiply();
+        }
+
+        private void textBoxQuantidade_TextChanged(object sender, EventArgs e)
+        {
+            Multiply();
+        }
     }
 }
 

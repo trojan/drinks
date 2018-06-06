@@ -48,8 +48,8 @@
             this.pRODUTOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.mARCAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.uNIDADEMEDIDAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tAMANHOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uNIDADEMEDIDAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.cONSULTARPRODUTOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -63,6 +63,7 @@
             this.closeForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(28)))), ((int)(((byte)(31)))));
             this.closeForm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("closeForm.BackgroundImage")));
             this.closeForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.closeForm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closeForm.FlatAppearance.BorderSize = 0;
             this.closeForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeForm.Location = new System.Drawing.Point(888, 12);
@@ -88,6 +89,7 @@
             this.FormMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(28)))), ((int)(((byte)(31)))));
             this.FormMinimize.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("FormMinimize.BackgroundImage")));
             this.FormMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.FormMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormMinimize.FlatAppearance.BorderSize = 0;
             this.FormMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FormMinimize.Location = new System.Drawing.Point(858, 12);
@@ -112,7 +114,7 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.White;
-            this.menuStrip1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Font = new System.Drawing.Font("Roboto Medium", 10.25F, System.Drawing.FontStyle.Bold);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cOMPRASToolStripMenuItem,
             this.vENDASToolStripMenuItem,
@@ -205,9 +207,9 @@
             this.uNIDADEMEDIDAToolStripMenuItem,
             this.toolStripSeparator5,
             this.cONSULTARPRODUTOSToolStripMenuItem});
-            this.eSTOQUEToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eSTOQUEToolStripMenuItem.Font = new System.Drawing.Font("Roboto Medium", 10.25F, System.Drawing.FontStyle.Bold);
             this.eSTOQUEToolStripMenuItem.Name = "eSTOQUEToolStripMenuItem";
-            this.eSTOQUEToolStripMenuItem.Size = new System.Drawing.Size(88, 21);
+            this.eSTOQUEToolStripMenuItem.Size = new System.Drawing.Size(89, 21);
             this.eSTOQUEToolStripMenuItem.Text = "ESTOQUE";
             // 
             // pRODUTOSToolStripMenuItem
@@ -229,19 +231,19 @@
             this.mARCAToolStripMenuItem.Text = "MARCA";
             this.mARCAToolStripMenuItem.Click += new System.EventHandler(this.mARCAToolStripMenuItem_Click);
             // 
-            // uNIDADEMEDIDAToolStripMenuItem
-            // 
-            this.uNIDADEMEDIDAToolStripMenuItem.Name = "uNIDADEMEDIDAToolStripMenuItem";
-            this.uNIDADEMEDIDAToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
-            this.uNIDADEMEDIDAToolStripMenuItem.Text = "UNIDADE MEDIDA";
-            this.uNIDADEMEDIDAToolStripMenuItem.Click += new System.EventHandler(this.uNIDADEMEDIDAToolStripMenuItem_Click);
-            // 
             // tAMANHOToolStripMenuItem
             // 
             this.tAMANHOToolStripMenuItem.Name = "tAMANHOToolStripMenuItem";
             this.tAMANHOToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
             this.tAMANHOToolStripMenuItem.Text = "TAMANHO";
             this.tAMANHOToolStripMenuItem.Click += new System.EventHandler(this.tAMANHOToolStripMenuItem_Click);
+            // 
+            // uNIDADEMEDIDAToolStripMenuItem
+            // 
+            this.uNIDADEMEDIDAToolStripMenuItem.Name = "uNIDADEMEDIDAToolStripMenuItem";
+            this.uNIDADEMEDIDAToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
+            this.uNIDADEMEDIDAToolStripMenuItem.Text = "UNIDADE MEDIDA";
+            this.uNIDADEMEDIDAToolStripMenuItem.Click += new System.EventHandler(this.uNIDADEMEDIDAToolStripMenuItem_Click);
             // 
             // toolStripSeparator5
             // 

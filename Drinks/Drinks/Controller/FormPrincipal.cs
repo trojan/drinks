@@ -38,8 +38,7 @@ namespace Drinks.Controller
 
         private void FormMinimize_Click(object sender, EventArgs e)
         {
-            // minimizar o aplicativo
-            // veja: https://msdn.microsoft.com/en-us/library/system.windows.forms.notifyicon.aspx
+            this.WindowState = FormWindowState.Minimized;
         }
 
         #region [COMPRAS]

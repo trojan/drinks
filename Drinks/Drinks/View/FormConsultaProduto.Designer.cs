@@ -32,9 +32,11 @@
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
             this.PanelBackground = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.buttonImprimir = new System.Windows.Forms.Button();
+            this.ConsultaProdutoBuscar = new System.Windows.Forms.Button();
             this.comboBoxTamanho = new System.Windows.Forms.ComboBox();
+            this.ImprimirProduto = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.consultaProdTitle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelBackground)).BeginInit();
@@ -50,7 +52,7 @@
             // 
             // dgvProdutos
             // 
-            this.dgvProdutos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvProdutos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProdutos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProdutos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProdutos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -87,23 +89,14 @@
             this.button1.Text = "Sair";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // ConsultaProdutoBuscar
             // 
-            this.button2.Location = new System.Drawing.Point(657, 79);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(142, 34);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Buscar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // buttonImprimir
-            // 
-            this.buttonImprimir.Location = new System.Drawing.Point(657, 342);
-            this.buttonImprimir.Name = "buttonImprimir";
-            this.buttonImprimir.Size = new System.Drawing.Size(142, 34);
-            this.buttonImprimir.TabIndex = 11;
-            this.buttonImprimir.Text = "Imprimir";
-            this.buttonImprimir.UseVisualStyleBackColor = true;
+            this.ConsultaProdutoBuscar.Location = new System.Drawing.Point(657, 153);
+            this.ConsultaProdutoBuscar.Name = "ConsultaProdutoBuscar";
+            this.ConsultaProdutoBuscar.Size = new System.Drawing.Size(142, 34);
+            this.ConsultaProdutoBuscar.TabIndex = 9;
+            this.ConsultaProdutoBuscar.Text = "Buscar";
+            this.ConsultaProdutoBuscar.UseVisualStyleBackColor = true;
             // 
             // comboBoxTamanho
             // 
@@ -111,10 +104,39 @@
             this.comboBoxTamanho.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxTamanho.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxTamanho.FormattingEnabled = true;
-            this.comboBoxTamanho.Location = new System.Drawing.Point(657, 48);
+            this.comboBoxTamanho.Location = new System.Drawing.Point(657, 85);
             this.comboBoxTamanho.Name = "comboBoxTamanho";
             this.comboBoxTamanho.Size = new System.Drawing.Size(142, 25);
             this.comboBoxTamanho.TabIndex = 22;
+            // 
+            // ImprimirProduto
+            // 
+            this.ImprimirProduto.Location = new System.Drawing.Point(657, 193);
+            this.ImprimirProduto.Name = "ImprimirProduto";
+            this.ImprimirProduto.Size = new System.Drawing.Size(142, 34);
+            this.ImprimirProduto.TabIndex = 23;
+            this.ImprimirProduto.Text = "Imprimir";
+            this.ImprimirProduto.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.textBox1.Location = new System.Drawing.Point(657, 116);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(142, 24);
+            this.textBox1.TabIndex = 24;
+            // 
+            // consultaProdTitle
+            // 
+            this.consultaProdTitle.AutoSize = true;
+            this.consultaProdTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(28)))), ((int)(((byte)(31)))));
+            this.consultaProdTitle.Font = new System.Drawing.Font("Roboto Light", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.consultaProdTitle.ForeColor = System.Drawing.Color.White;
+            this.consultaProdTitle.Location = new System.Drawing.Point(12, 9);
+            this.consultaProdTitle.Name = "consultaProdTitle";
+            this.consultaProdTitle.Size = new System.Drawing.Size(244, 24);
+            this.consultaProdTitle.TabIndex = 36;
+            this.consultaProdTitle.Text = "CONSULTA DE PRODUTOS";
             // 
             // FormConsultaProduto
             // 
@@ -122,9 +144,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(811, 428);
+            this.Controls.Add(this.consultaProdTitle);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.ImprimirProduto);
             this.Controls.Add(this.comboBoxTamanho);
-            this.Controls.Add(this.buttonImprimir);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.ConsultaProdutoBuscar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.PanelBackground);
             this.Controls.Add(this.panel1);
@@ -137,6 +161,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelBackground)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -145,9 +170,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox PanelBackground;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button buttonImprimir;
+        private System.Windows.Forms.Button ConsultaProdutoBuscar;
         private System.Windows.Forms.ComboBox comboBoxTamanho;
         private System.Windows.Forms.DataGridView dgvProdutos;
+        private System.Windows.Forms.Button ImprimirProduto;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label consultaProdTitle;
     }
 }

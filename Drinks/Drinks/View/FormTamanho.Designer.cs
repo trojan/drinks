@@ -40,6 +40,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvTamanho = new System.Windows.Forms.DataGridView();
             this.buttonSair = new System.Windows.Forms.Button();
+            this.tamanhoTitle = new System.Windows.Forms.Label();
             this.panelTamanho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PanelBackground)).BeginInit();
             this.panel1.SuspendLayout();
@@ -145,7 +146,7 @@
             // 
             // dgvTamanho
             // 
-            this.dgvTamanho.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvTamanho.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTamanho.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvTamanho.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTamanho.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -174,12 +175,25 @@
             this.buttonSair.UseVisualStyleBackColor = true;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
+            // tamanhoTitle
+            // 
+            this.tamanhoTitle.AutoSize = true;
+            this.tamanhoTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(28)))), ((int)(((byte)(31)))));
+            this.tamanhoTitle.Font = new System.Drawing.Font("Roboto Light", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tamanhoTitle.ForeColor = System.Drawing.Color.White;
+            this.tamanhoTitle.Location = new System.Drawing.Point(12, 9);
+            this.tamanhoTitle.Name = "tamanhoTitle";
+            this.tamanhoTitle.Size = new System.Drawing.Size(104, 24);
+            this.tamanhoTitle.TabIndex = 36;
+            this.tamanhoTitle.Text = "TAMANHO";
+            // 
             // FormTamanho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(495, 370);
+            this.Controls.Add(this.tamanhoTitle);
             this.Controls.Add(this.panelTamanho);
             this.Controls.Add(this.buttonNovo);
             this.Controls.Add(this.buttonExcluir);
@@ -198,6 +212,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTamanho)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -215,5 +230,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvTamanho;
         private System.Windows.Forms.Button buttonSair;
+        private System.Windows.Forms.Label tamanhoTitle;
     }
 }
