@@ -99,6 +99,19 @@ namespace Drinks.View
             textBoxDescricao.Select();
             buttonExcluir.Enabled = false;
         }
+
+        public void Sair()
+        {
+            if (textBoxID.Text != "" && textBoxID.Text != null ||
+                textBoxDescricao.Text != null && textBoxDescricao.Text != "" ||
+                textBoxValorUnitario.Text != null && textBoxValorUnitario.Text != "")
+                MessageBox.Show("Necessário salvar antes de sair!", "Mensagem do Sistema");
+            else
+                this.Close();
+        }
+
+
+
         #endregion
 
         private void FormProduto_Load(object sender, EventArgs e)
@@ -199,12 +212,8 @@ namespace Drinks.View
         #region [SAIR]
         private void buttonSair_Click(object sender, EventArgs e)
         {
-            if (textBoxID.Text != "" && textBoxID.Text != null ||
-                textBoxDescricao.Text != null && textBoxDescricao.Text != "" ||
-                textBoxValorUnitario.Text != null && textBoxValorUnitario.Text != "")
-                MessageBox.Show("Necessário salvar antes de sair!", "Mensagem do Sistema");
-            else
-                this.Close();
+            Sair();
+
         }
         #endregion
 
@@ -229,5 +238,30 @@ namespace Drinks.View
             buttonExcluir.Enabled = true;
         }
         #endregion
+
+
+        private void pictureBoxMarca_Click(object sender, EventArgs e)
+        {
+            FormMarca fmrc = new FormMarca();
+            fmrc.ShowDialog();
+
+            ListaMarca();
+        }
+
+        private void pictureBoxTamanho_Click(object sender, EventArgs e)
+        {
+            FormTamanho ftmh = new FormTamanho();
+            ftmh.ShowDialog();
+
+            ListaTamanho();
+        }
+
+        private void pictureBoxUnidadeMedida_Click(object sender, EventArgs e)
+        {
+            FormUnidadeMedida fund = new FormUnidadeMedida();
+            fund.ShowDialog();
+
+            ListaUnidadeMedida();
+        }
     }
 }

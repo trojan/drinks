@@ -159,7 +159,7 @@ namespace Drinks.DAO
         //+-------------------------------+//
 
         // INSERÇÃO DE DADOS
-        public bool InserirDados(Model.FornecedorModel fnd, Model.MarcaModel mrc, Model.UnidadeMedidaModel und, Model.TamanhoModel tmh, Model.ProdutoModel prd)
+        public bool InserirDados(Model.MarcaModel mrc, Model.UnidadeMedidaModel und, Model.TamanhoModel tmh, Model.ProdutoModel prd)
         {
             string connStr = @"Data Source = bd\drinks.sdf";
             SqlCeConnection conn = new SqlCeConnection(connStr);
@@ -184,7 +184,7 @@ namespace Drinks.DAO
                 }
                 #endregion
             }
-            else if (und != null)   // INSERIR OS DADOS NA TABELA UNIDADE_MEDIDA
+            else if (und != null)       // INSERIR OS DADOS NA TABELA UNIDADE_MEDIDA
             {
                 #region [UNIDADE_MEDIDA]
                 try
@@ -204,7 +204,7 @@ namespace Drinks.DAO
                 }
                 #endregion
             }
-            else if (tmh != null)   // INSERIR OS DADOS NA TABELA TAMANHO
+            else if (tmh != null)           // INSERIR OS DADOS NA TABELA TAMANHO
             {
                 #region [TAMANHO]
                 try

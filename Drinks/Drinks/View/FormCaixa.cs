@@ -151,7 +151,11 @@ namespace Drinks.View
 
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
+            LimpaDGV();
+            textBoxQuantidade.Text = "1";
+            textBoxTotalPagar.Text = "";
 
+            comboBoxProdutoInformation.Select();
         }
 
 

@@ -77,24 +77,6 @@ namespace Drinks.Controller
             View.FormProduto fpdr = new View.FormProduto();
             fpdr.ShowDialog();
         }
-        
-        private void mARCAToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            View.FormMarca fmrc = new View.FormMarca();
-            fmrc.ShowDialog();
-        }
-
-        private void uNIDADEMEDIDAToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            View.FormUnidadeMedida fund = new View.FormUnidadeMedida();
-            fund.ShowDialog();
-        }
-
-        private void tAMANHOToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            View.FormTamanho ftmh = new View.FormTamanho();
-            ftmh.ShowDialog();
-        }
 
         private void cONSULTARPRODUTOSToolStripMenuItem_Click(object sender, EventArgs e)
         {

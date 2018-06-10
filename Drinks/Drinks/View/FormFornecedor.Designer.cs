@@ -59,7 +59,6 @@
             this.textBoxNomeFantasia = new System.Windows.Forms.TextBox();
             this.labelEmail = new System.Windows.Forms.Label();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelBotoes = new System.Windows.Forms.Panel();
             this.buttonExcluir = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
@@ -75,7 +74,6 @@
             this.labelTelefone = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PanelBackground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCNPJ)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelBotoes.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -388,16 +386,8 @@
             this.textBoxEmail.Location = new System.Drawing.Point(510, 265);
             this.textBoxEmail.MaxLength = 60;
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(137, 24);
+            this.textBoxEmail.Size = new System.Drawing.Size(168, 24);
             this.textBoxEmail.TabIndex = 51;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(653, 264);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox1.TabIndex = 53;
-            this.pictureBox1.TabStop = false;
             // 
             // panelBotoes
             // 
@@ -566,7 +556,6 @@
             this.Controls.Add(this.labelDDDCelular);
             this.Controls.Add(this.labelDDDTelefone);
             this.Controls.Add(this.panelBotoes);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelEmail);
             this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.labelNomeFantasia);
@@ -604,7 +593,6 @@
             this.Text = "FORNECEDOR";
             ((System.ComponentModel.ISupportInitialize)(this.PanelBackground)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCNPJ)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelBotoes.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -644,7 +632,6 @@
         private System.Windows.Forms.TextBox textBoxNomeFantasia;
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.TextBox textBoxEmail;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelBotoes;
         private System.Windows.Forms.Button buttonExcluir;
         private System.Windows.Forms.Button buttonSair;

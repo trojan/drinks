@@ -62,67 +62,86 @@
             // labelID
             // 
             this.labelID.AutoSize = true;
-            this.labelID.Location = new System.Drawing.Point(30, 23);
+            this.labelID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.labelID.Location = new System.Drawing.Point(29, 16);
             this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(18, 13);
+            this.labelID.Size = new System.Drawing.Size(26, 20);
             this.labelID.TabIndex = 5;
             this.labelID.Text = "ID";
             // 
             // labelDescricao
             // 
             this.labelDescricao.AutoSize = true;
-            this.labelDescricao.Location = new System.Drawing.Point(151, 23);
+            this.labelDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.labelDescricao.Location = new System.Drawing.Point(150, 16);
             this.labelDescricao.Name = "labelDescricao";
-            this.labelDescricao.Size = new System.Drawing.Size(55, 13);
+            this.labelDescricao.Size = new System.Drawing.Size(80, 20);
             this.labelDescricao.TabIndex = 4;
             this.labelDescricao.Text = "Descrição";
             // 
             // textBoxDescricao
             // 
             this.textBoxDescricao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.textBoxDescricao.Location = new System.Drawing.Point(154, 39);
             this.textBoxDescricao.Name = "textBoxDescricao";
-            this.textBoxDescricao.Size = new System.Drawing.Size(185, 20);
+            this.textBoxDescricao.Size = new System.Drawing.Size(185, 26);
             this.textBoxDescricao.TabIndex = 3;
             // 
             // textBoxID
             // 
             this.textBoxID.Enabled = false;
+            this.textBoxID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.textBoxID.Location = new System.Drawing.Point(33, 39);
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.ReadOnly = true;
-            this.textBoxID.Size = new System.Drawing.Size(81, 20);
+            this.textBoxID.Size = new System.Drawing.Size(81, 26);
             this.textBoxID.TabIndex = 2;
             this.textBoxID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // buttonNovo
             // 
-            this.buttonNovo.Location = new System.Drawing.Point(393, 257);
+            this.buttonNovo.BackColor = System.Drawing.Color.DarkCyan;
+            this.buttonNovo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.buttonNovo.ForeColor = System.Drawing.Color.White;
+            this.buttonNovo.Location = new System.Drawing.Point(393, 48);
             this.buttonNovo.Name = "buttonNovo";
             this.buttonNovo.Size = new System.Drawing.Size(90, 30);
             this.buttonNovo.TabIndex = 20;
             this.buttonNovo.Text = "Novo";
-            this.buttonNovo.UseVisualStyleBackColor = true;
+            this.buttonNovo.UseVisualStyleBackColor = false;
             this.buttonNovo.Click += new System.EventHandler(this.buttonNovo_Click);
             // 
             // buttonExcluir
             // 
+            this.buttonExcluir.BackColor = System.Drawing.Color.Crimson;
+            this.buttonExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.buttonExcluir.ForeColor = System.Drawing.Color.White;
             this.buttonExcluir.Location = new System.Drawing.Point(393, 293);
             this.buttonExcluir.Name = "buttonExcluir";
             this.buttonExcluir.Size = new System.Drawing.Size(90, 30);
             this.buttonExcluir.TabIndex = 19;
             this.buttonExcluir.Text = "Excluir";
-            this.buttonExcluir.UseVisualStyleBackColor = true;
+            this.buttonExcluir.UseVisualStyleBackColor = false;
             this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
             // 
             // buttonGravar
             // 
-            this.buttonGravar.Location = new System.Drawing.Point(393, 48);
+            this.buttonGravar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.buttonGravar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonGravar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGravar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.buttonGravar.ForeColor = System.Drawing.Color.White;
+            this.buttonGravar.Location = new System.Drawing.Point(393, 257);
             this.buttonGravar.Name = "buttonGravar";
             this.buttonGravar.Size = new System.Drawing.Size(90, 30);
             this.buttonGravar.TabIndex = 18;
             this.buttonGravar.Text = "Gravar";
-            this.buttonGravar.UseVisualStyleBackColor = true;
+            this.buttonGravar.UseVisualStyleBackColor = false;
             this.buttonGravar.Click += new System.EventHandler(this.buttonGravar_Click);
             // 
             // PanelBackground
@@ -167,23 +186,28 @@
             // 
             // buttonSair
             // 
+            this.buttonSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.buttonSair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.buttonSair.ForeColor = System.Drawing.Color.Red;
             this.buttonSair.Location = new System.Drawing.Point(393, 329);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(90, 30);
             this.buttonSair.TabIndex = 22;
             this.buttonSair.Text = "Sair";
-            this.buttonSair.UseVisualStyleBackColor = true;
+            this.buttonSair.UseVisualStyleBackColor = false;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
             // uniMedidaTitle
             // 
             this.uniMedidaTitle.AutoSize = true;
             this.uniMedidaTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(28)))), ((int)(((byte)(31)))));
-            this.uniMedidaTitle.Font = new System.Drawing.Font("Roboto Light", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.uniMedidaTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.uniMedidaTitle.ForeColor = System.Drawing.Color.White;
             this.uniMedidaTitle.Location = new System.Drawing.Point(12, 9);
             this.uniMedidaTitle.Name = "uniMedidaTitle";
-            this.uniMedidaTitle.Size = new System.Drawing.Size(196, 24);
+            this.uniMedidaTitle.Size = new System.Drawing.Size(214, 25);
             this.uniMedidaTitle.TabIndex = 36;
             this.uniMedidaTitle.Text = "UNIDADE DE MEDIDA";
             // 

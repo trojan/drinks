@@ -46,6 +46,8 @@ namespace Drinks.View
         private void FormConsultaProduto_Load(object sender, EventArgs e)
         {
             ListaProduto();
+
+            dgvProdutos.AllowUserToAddRows = false;
         }
 
     }

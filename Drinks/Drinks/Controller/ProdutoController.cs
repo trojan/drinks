@@ -22,7 +22,7 @@ namespace Drinks.Controller
             prd.ValorUnitario = valorUnitario;
 
 
-            if (dao.InserirDados(null, null, null, null, prd) == true)
+            if (dao.InserirDados(null, null, null, prd) == true)
                 MessageBox.Show("Salvo com sucesso!", "Mensagem do Sistema");
             else
                 MessageBox.Show("Falha ao salvar!", "Mensagem do Sistema");

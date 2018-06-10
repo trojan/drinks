@@ -42,6 +42,7 @@ namespace Drinks.View
             textBoxID.Text = "";
             textBoxDescricao.Text = "";
 
+            textBoxDescricao.Select();
             buttonExcluir.Enabled = false;
         }
 

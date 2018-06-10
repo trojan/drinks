@@ -51,24 +51,14 @@
             this.eSTOQUEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pRODUTOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.mARCAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tAMANHOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.uNIDADEMEDIDAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.cONSULTARPRODUTOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rELATÓRIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cOMPRASToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pORDIAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pORSEMANAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pORMÊSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.pORFORNECEDORToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vENDASToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pORDIAToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pORSEMANAToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pORMÊSToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.eSTOQUEToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.PanelBackground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FormLogo)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -249,10 +239,6 @@
             this.eSTOQUEToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pRODUTOSToolStripMenuItem,
             this.toolStripSeparator3,
-            this.mARCAToolStripMenuItem,
-            this.tAMANHOToolStripMenuItem,
-            this.uNIDADEMEDIDAToolStripMenuItem,
-            this.toolStripSeparator5,
             this.cONSULTARPRODUTOSToolStripMenuItem});
             this.eSTOQUEToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold);
             this.eSTOQUEToolStripMenuItem.Name = "eSTOQUEToolStripMenuItem";
@@ -271,32 +257,6 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(259, 6);
             // 
-            // mARCAToolStripMenuItem
-            // 
-            this.mARCAToolStripMenuItem.Name = "mARCAToolStripMenuItem";
-            this.mARCAToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
-            this.mARCAToolStripMenuItem.Text = "MARCA";
-            this.mARCAToolStripMenuItem.Click += new System.EventHandler(this.mARCAToolStripMenuItem_Click);
-            // 
-            // tAMANHOToolStripMenuItem
-            // 
-            this.tAMANHOToolStripMenuItem.Name = "tAMANHOToolStripMenuItem";
-            this.tAMANHOToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
-            this.tAMANHOToolStripMenuItem.Text = "TAMANHO";
-            this.tAMANHOToolStripMenuItem.Click += new System.EventHandler(this.tAMANHOToolStripMenuItem_Click);
-            // 
-            // uNIDADEMEDIDAToolStripMenuItem
-            // 
-            this.uNIDADEMEDIDAToolStripMenuItem.Name = "uNIDADEMEDIDAToolStripMenuItem";
-            this.uNIDADEMEDIDAToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
-            this.uNIDADEMEDIDAToolStripMenuItem.Text = "UNIDADE MEDIDA";
-            this.uNIDADEMEDIDAToolStripMenuItem.Click += new System.EventHandler(this.uNIDADEMEDIDAToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(259, 6);
-            // 
             // cONSULTARPRODUTOSToolStripMenuItem
             // 
             this.cONSULTARPRODUTOSToolStripMenuItem.Name = "cONSULTARPRODUTOSToolStripMenuItem";
@@ -308,7 +268,9 @@
             // 
             this.rELATÓRIOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cOMPRASToolStripMenuItem1,
+            this.toolStripSeparator5,
             this.vENDASToolStripMenuItem1,
+            this.toolStripSeparator7,
             this.eSTOQUEToolStripMenuItem1});
             this.rELATÓRIOSToolStripMenuItem.Name = "rELATÓRIOSToolStripMenuItem";
             this.rELATÓRIOSToolStripMenuItem.Size = new System.Drawing.Size(119, 21);
@@ -316,77 +278,20 @@
             // 
             // cOMPRASToolStripMenuItem1
             // 
-            this.cOMPRASToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pORDIAToolStripMenuItem,
-            this.pORSEMANAToolStripMenuItem,
-            this.pORMÊSToolStripMenuItem,
-            this.toolStripSeparator7,
-            this.pORFORNECEDORToolStripMenuItem});
             this.cOMPRASToolStripMenuItem1.Name = "cOMPRASToolStripMenuItem1";
-            this.cOMPRASToolStripMenuItem1.Size = new System.Drawing.Size(151, 22);
+            this.cOMPRASToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.cOMPRASToolStripMenuItem1.Text = "COMPRAS";
-            // 
-            // pORDIAToolStripMenuItem
-            // 
-            this.pORDIAToolStripMenuItem.Name = "pORDIAToolStripMenuItem";
-            this.pORDIAToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.pORDIAToolStripMenuItem.Text = "POR DIA";
-            // 
-            // pORSEMANAToolStripMenuItem
-            // 
-            this.pORSEMANAToolStripMenuItem.Name = "pORSEMANAToolStripMenuItem";
-            this.pORSEMANAToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.pORSEMANAToolStripMenuItem.Text = "POR SEMANA";
-            // 
-            // pORMÊSToolStripMenuItem
-            // 
-            this.pORMÊSToolStripMenuItem.Name = "pORMÊSToolStripMenuItem";
-            this.pORMÊSToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.pORMÊSToolStripMenuItem.Text = "POR MÊS";
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(218, 6);
-            // 
-            // pORFORNECEDORToolStripMenuItem
-            // 
-            this.pORFORNECEDORToolStripMenuItem.Name = "pORFORNECEDORToolStripMenuItem";
-            this.pORFORNECEDORToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.pORFORNECEDORToolStripMenuItem.Text = "POR FORNECEDOR";
             // 
             // vENDASToolStripMenuItem1
             // 
-            this.vENDASToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pORDIAToolStripMenuItem1,
-            this.pORSEMANAToolStripMenuItem1,
-            this.pORMÊSToolStripMenuItem1});
             this.vENDASToolStripMenuItem1.Name = "vENDASToolStripMenuItem1";
-            this.vENDASToolStripMenuItem1.Size = new System.Drawing.Size(151, 22);
+            this.vENDASToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.vENDASToolStripMenuItem1.Text = "VENDAS";
-            // 
-            // pORDIAToolStripMenuItem1
-            // 
-            this.pORDIAToolStripMenuItem1.Name = "pORDIAToolStripMenuItem1";
-            this.pORDIAToolStripMenuItem1.Size = new System.Drawing.Size(177, 22);
-            this.pORDIAToolStripMenuItem1.Text = "POR DIA";
-            // 
-            // pORSEMANAToolStripMenuItem1
-            // 
-            this.pORSEMANAToolStripMenuItem1.Name = "pORSEMANAToolStripMenuItem1";
-            this.pORSEMANAToolStripMenuItem1.Size = new System.Drawing.Size(177, 22);
-            this.pORSEMANAToolStripMenuItem1.Text = "POR SEMANA";
-            // 
-            // pORMÊSToolStripMenuItem1
-            // 
-            this.pORMÊSToolStripMenuItem1.Name = "pORMÊSToolStripMenuItem1";
-            this.pORMÊSToolStripMenuItem1.Size = new System.Drawing.Size(177, 22);
-            this.pORMÊSToolStripMenuItem1.Text = "POR MÊS";
             // 
             // eSTOQUEToolStripMenuItem1
             // 
             this.eSTOQUEToolStripMenuItem1.Name = "eSTOQUEToolStripMenuItem1";
-            this.eSTOQUEToolStripMenuItem1.Size = new System.Drawing.Size(151, 22);
+            this.eSTOQUEToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.eSTOQUEToolStripMenuItem1.Text = "ESTOQUE";
             // 
             // toolStrip1
@@ -397,6 +302,16 @@
             this.toolStrip1.Size = new System.Drawing.Size(925, 25);
             this.toolStrip1.TabIndex = 7;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(177, 6);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(177, 6);
             // 
             // FormPrincipal
             // 
@@ -443,10 +358,6 @@
         private System.Windows.Forms.ToolStripMenuItem eSTOQUEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pRODUTOSToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripMenuItem mARCAToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem uNIDADEMEDIDAToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tAMANHOToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem cONSULTARPRODUTOSToolStripMenuItem;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripMenuItem fORNECEDORESToolStripMenuItem;
@@ -455,15 +366,9 @@
         private System.Windows.Forms.ToolStripMenuItem cONSULTARFORNECEDORESToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rELATÓRIOSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cOMPRASToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem pORDIAToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pORSEMANAToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pORMÊSToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
-        private System.Windows.Forms.ToolStripMenuItem pORFORNECEDORToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vENDASToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem pORDIAToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem pORSEMANAToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem pORMÊSToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem eSTOQUEToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     }
 }
