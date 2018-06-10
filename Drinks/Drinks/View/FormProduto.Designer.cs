@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProduto));
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
             this.PanelBackground = new System.Windows.Forms.PictureBox();
             this.labelMarca = new System.Windows.Forms.Label();
@@ -284,6 +285,8 @@
             // 
             // pictureBoxUnidadeMedida
             // 
+            this.pictureBoxUnidadeMedida.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxUnidadeMedida.BackgroundImage")));
+            this.pictureBoxUnidadeMedida.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBoxUnidadeMedida.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxUnidadeMedida.Location = new System.Drawing.Point(608, 144);
             this.pictureBoxUnidadeMedida.Name = "pictureBoxUnidadeMedida";
@@ -294,6 +297,8 @@
             // 
             // pictureBoxTamanho
             // 
+            this.pictureBoxTamanho.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxTamanho.BackgroundImage")));
+            this.pictureBoxTamanho.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBoxTamanho.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxTamanho.Location = new System.Drawing.Point(411, 145);
             this.pictureBoxTamanho.Name = "pictureBoxTamanho";
@@ -304,6 +309,8 @@
             // 
             // pictureBoxMarca
             // 
+            this.pictureBoxMarca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxMarca.BackgroundImage")));
+            this.pictureBoxMarca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBoxMarca.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxMarca.Location = new System.Drawing.Point(261, 144);
             this.pictureBoxMarca.Name = "pictureBoxMarca";

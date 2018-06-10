@@ -180,11 +180,9 @@ namespace Drinks.View
             this.dgvItemVenda.Rows.Add(Convert.ToInt32(comboBoxProdutoInformation.SelectedValue), informacaoProduto, textBoxValor.Text, textBoxQuantidade.Text, Convert.ToDecimal(textBoxValor.Text) * Convert.ToInt32(textBoxQuantidade.Text));
 
             dgvItemVenda.Refresh();
-
             comboBoxProdutoInformation.Select();
 
             textBoxQuantidade.Text = "1";
-
 
             decimal totalPagar = 0;
 
@@ -200,12 +198,15 @@ namespace Drinks.View
         {
             int linha_selecionada = dgvItemVenda.CurrentRow.Index;
 
-            if (linha_selecionada >= 0)
-            {
+            if (linha_selecionada > 0)
+                linha_selecionada -= 1;
 
-                dgvItemVenda.Rows.RemoveAt(linha_selecionada);
-            }
+            decimal val = Convert.ToDecimal(dgvItemVenda.SelectedRows[linha_selecionada].Cells["VALOR_TOTAL_UNITARIO"].Value.ToString());
+            decimal totalPagar = Convert.ToDecimal(textBoxTotalPagar.Text) - val;
 
+            textBoxTotalPagar.Text = Convert.ToString(totalPagar);
+
+            dgvItemVenda.Rows.RemoveAt(linha_selecionada);
         }
 
         private void buttonVisualizarItem_Click(object sender, EventArgs e)

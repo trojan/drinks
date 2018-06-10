@@ -26,7 +26,7 @@ namespace Drinks.View
 
         public void BuscaCEP()
         {
-            var viaCepService = new ViaCep();
+            var viaCepService = new ViaCepService();
 
             if (!string.IsNullOrWhiteSpace(textBoxCEP.Text))
                 try
@@ -49,9 +49,7 @@ namespace Drinks.View
 
         public void LimpaCampos()
         {
-            textBoxNumero.Text = "";
-            textBoxFilial.Text = "";
-            textBoxDigito.Text = "";
+            textBoxCnpj.Text = "";
             textBoxRazaoSocial.Text = "";
             textBoxCEP.Text = "";
             textBoxEndereco.Text = "";
@@ -67,7 +65,7 @@ namespace Drinks.View
             textBoxInscricaoEstadual.Text = "";
             textBoxEmail.Text = "";
 
-            textBoxNumero.Focus();
+            textBoxCnpj.Focus();
         }
 
 

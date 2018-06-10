@@ -33,7 +33,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MosaicoSolutions.ViaCep, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MosaicoSolutions.ViaCep.2.0.0.0\lib\net45\MosaicoSolutions.ViaCep.dll</HintPath>
+      <HintPath>..\packages\MosaicoSolutions.ViaCep.3.0.1\lib\net45\MosaicoSolutions.ViaCep.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -191,6 +192,9 @@
     <Content Include="Resources\icon.png" />
     <Content Include="Resources\logo.png" />
     <Content Include="Resources\minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

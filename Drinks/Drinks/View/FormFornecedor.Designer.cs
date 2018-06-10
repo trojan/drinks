@@ -28,16 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFornecedor));
             this.PanelBackground = new System.Windows.Forms.PictureBox();
             this.fornecedorTitle = new System.Windows.Forms.Label();
             this.panelEsquerdo = new System.Windows.Forms.Panel();
             this.panelDireito = new System.Windows.Forms.Panel();
-            this.textBoxNumero = new System.Windows.Forms.TextBox();
-            this.textBoxFilial = new System.Windows.Forms.TextBox();
-            this.textBoxDigito = new System.Windows.Forms.TextBox();
-            this.labelNumero = new System.Windows.Forms.Label();
-            this.labelDigito = new System.Windows.Forms.Label();
-            this.labelFilial = new System.Windows.Forms.Label();
             this.textBoxRazaoSocial = new System.Windows.Forms.TextBox();
             this.pictureBoxCNPJ = new System.Windows.Forms.PictureBox();
             this.labelRazaoSocial = new System.Windows.Forms.Label();
@@ -72,6 +67,8 @@
             this.textBoxCelular = new System.Windows.Forms.TextBox();
             this.labelCelular = new System.Windows.Forms.Label();
             this.labelTelefone = new System.Windows.Forms.Label();
+            this.textBoxCnpj = new System.Windows.Forms.TextBox();
+            this.labelCnpj = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PanelBackground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCNPJ)).BeginInit();
             this.panelBotoes.SuspendLayout();
@@ -115,82 +112,21 @@
             this.panelDireito.Size = new System.Drawing.Size(50, 337);
             this.panelDireito.TabIndex = 24;
             // 
-            // textBoxNumero
-            // 
-            this.textBoxNumero.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBoxNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.textBoxNumero.Location = new System.Drawing.Point(56, 77);
-            this.textBoxNumero.MaxLength = 9;
-            this.textBoxNumero.Name = "textBoxNumero";
-            this.textBoxNumero.Size = new System.Drawing.Size(107, 24);
-            this.textBoxNumero.TabIndex = 26;
-            this.textBoxNumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxFilial
-            // 
-            this.textBoxFilial.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBoxFilial.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.textBoxFilial.Location = new System.Drawing.Point(169, 76);
-            this.textBoxFilial.MaxLength = 4;
-            this.textBoxFilial.Name = "textBoxFilial";
-            this.textBoxFilial.Size = new System.Drawing.Size(46, 24);
-            this.textBoxFilial.TabIndex = 27;
-            this.textBoxFilial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxDigito
-            // 
-            this.textBoxDigito.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBoxDigito.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.textBoxDigito.Location = new System.Drawing.Point(221, 76);
-            this.textBoxDigito.MaxLength = 2;
-            this.textBoxDigito.Name = "textBoxDigito";
-            this.textBoxDigito.Size = new System.Drawing.Size(37, 24);
-            this.textBoxDigito.TabIndex = 28;
-            this.textBoxDigito.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // labelNumero
-            // 
-            this.labelNumero.AutoSize = true;
-            this.labelNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.labelNumero.Location = new System.Drawing.Point(53, 57);
-            this.labelNumero.Name = "labelNumero";
-            this.labelNumero.Size = new System.Drawing.Size(58, 17);
-            this.labelNumero.TabIndex = 29;
-            this.labelNumero.Text = "Número";
-            // 
-            // labelDigito
-            // 
-            this.labelDigito.AutoSize = true;
-            this.labelDigito.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.labelDigito.Location = new System.Drawing.Point(218, 57);
-            this.labelDigito.Name = "labelDigito";
-            this.labelDigito.Size = new System.Drawing.Size(44, 17);
-            this.labelDigito.TabIndex = 30;
-            this.labelDigito.Text = "Digíto";
-            // 
-            // labelFilial
-            // 
-            this.labelFilial.AutoSize = true;
-            this.labelFilial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.labelFilial.Location = new System.Drawing.Point(166, 57);
-            this.labelFilial.Name = "labelFilial";
-            this.labelFilial.Size = new System.Drawing.Size(36, 17);
-            this.labelFilial.TabIndex = 31;
-            this.labelFilial.Text = "Filial";
-            // 
             // textBoxRazaoSocial
             // 
             this.textBoxRazaoSocial.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxRazaoSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.textBoxRazaoSocial.Location = new System.Drawing.Point(295, 77);
+            this.textBoxRazaoSocial.Location = new System.Drawing.Point(306, 77);
             this.textBoxRazaoSocial.MaxLength = 60;
             this.textBoxRazaoSocial.Name = "textBoxRazaoSocial";
-            this.textBoxRazaoSocial.Size = new System.Drawing.Size(383, 24);
+            this.textBoxRazaoSocial.Size = new System.Drawing.Size(372, 24);
             this.textBoxRazaoSocial.TabIndex = 32;
             // 
             // pictureBoxCNPJ
             // 
-            this.pictureBoxCNPJ.Location = new System.Drawing.Point(264, 76);
+            this.pictureBoxCNPJ.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxCNPJ.BackgroundImage")));
+            this.pictureBoxCNPJ.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBoxCNPJ.Location = new System.Drawing.Point(275, 77);
             this.pictureBoxCNPJ.Name = "pictureBoxCNPJ";
             this.pictureBoxCNPJ.Size = new System.Drawing.Size(25, 25);
             this.pictureBoxCNPJ.TabIndex = 33;
@@ -200,7 +136,7 @@
             // 
             this.labelRazaoSocial.AutoSize = true;
             this.labelRazaoSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.labelRazaoSocial.Location = new System.Drawing.Point(292, 57);
+            this.labelRazaoSocial.Location = new System.Drawing.Point(303, 57);
             this.labelRazaoSocial.Name = "labelRazaoSocial";
             this.labelRazaoSocial.Size = new System.Drawing.Size(91, 17);
             this.labelRazaoSocial.TabIndex = 34;
@@ -337,7 +273,7 @@
             this.textBoxInscricaoEstadual.MaxLength = 20;
             this.textBoxInscricaoEstadual.Name = "textBoxInscricaoEstadual";
             this.textBoxInscricaoEstadual.Size = new System.Drawing.Size(209, 24);
-            this.textBoxInscricaoEstadual.TabIndex = 47;
+            this.textBoxInscricaoEstadual.TabIndex = 51;
             // 
             // labelIncricaoEstadual
             // 
@@ -367,7 +303,7 @@
             this.textBoxNomeFantasia.MaxLength = 30;
             this.textBoxNomeFantasia.Name = "textBoxNomeFantasia";
             this.textBoxNomeFantasia.Size = new System.Drawing.Size(233, 24);
-            this.textBoxNomeFantasia.TabIndex = 49;
+            this.textBoxNomeFantasia.TabIndex = 50;
             // 
             // labelEmail
             // 
@@ -387,7 +323,7 @@
             this.textBoxEmail.MaxLength = 60;
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(168, 24);
-            this.textBoxEmail.TabIndex = 51;
+            this.textBoxEmail.TabIndex = 52;
             // 
             // panelBotoes
             // 
@@ -411,7 +347,7 @@
             this.buttonExcluir.Location = new System.Drawing.Point(329, 23);
             this.buttonExcluir.Name = "buttonExcluir";
             this.buttonExcluir.Size = new System.Drawing.Size(115, 35);
-            this.buttonExcluir.TabIndex = 38;
+            this.buttonExcluir.TabIndex = 100;
             this.buttonExcluir.Text = "Excluir";
             this.buttonExcluir.UseVisualStyleBackColor = false;
             this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
@@ -426,7 +362,7 @@
             this.buttonSair.Location = new System.Drawing.Point(473, 23);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(115, 35);
-            this.buttonSair.TabIndex = 37;
+            this.buttonSair.TabIndex = 110;
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = false;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
@@ -441,7 +377,7 @@
             this.buttonSalvar.Location = new System.Drawing.Point(186, 23);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(115, 35);
-            this.buttonSalvar.TabIndex = 36;
+            this.buttonSalvar.TabIndex = 90;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = false;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
@@ -456,7 +392,7 @@
             this.buttonNovo.Location = new System.Drawing.Point(46, 23);
             this.buttonNovo.Name = "buttonNovo";
             this.buttonNovo.Size = new System.Drawing.Size(115, 35);
-            this.buttonNovo.TabIndex = 35;
+            this.buttonNovo.TabIndex = 80;
             this.buttonNovo.Text = "Novo";
             this.buttonNovo.UseVisualStyleBackColor = false;
             this.buttonNovo.Click += new System.EventHandler(this.buttonNovo_Click);
@@ -489,7 +425,7 @@
             this.textBoxDDDTelefone.MaxLength = 7;
             this.textBoxDDDTelefone.Name = "textBoxDDDTelefone";
             this.textBoxDDDTelefone.Size = new System.Drawing.Size(55, 24);
-            this.textBoxDDDTelefone.TabIndex = 57;
+            this.textBoxDDDTelefone.TabIndex = 46;
             // 
             // textBoxDDDCelular
             // 
@@ -499,7 +435,7 @@
             this.textBoxDDDCelular.MaxLength = 7;
             this.textBoxDDDCelular.Name = "textBoxDDDCelular";
             this.textBoxDDDCelular.Size = new System.Drawing.Size(55, 24);
-            this.textBoxDDDCelular.TabIndex = 58;
+            this.textBoxDDDCelular.TabIndex = 48;
             // 
             // textBoxTelefone
             // 
@@ -509,7 +445,7 @@
             this.textBoxTelefone.MaxLength = 8;
             this.textBoxTelefone.Name = "textBoxTelefone";
             this.textBoxTelefone.Size = new System.Drawing.Size(234, 24);
-            this.textBoxTelefone.TabIndex = 59;
+            this.textBoxTelefone.TabIndex = 47;
             // 
             // textBoxCelular
             // 
@@ -519,7 +455,7 @@
             this.textBoxCelular.MaxLength = 9;
             this.textBoxCelular.Name = "textBoxCelular";
             this.textBoxCelular.Size = new System.Drawing.Size(260, 24);
-            this.textBoxCelular.TabIndex = 60;
+            this.textBoxCelular.TabIndex = 49;
             // 
             // labelCelular
             // 
@@ -541,12 +477,32 @@
             this.labelTelefone.TabIndex = 62;
             this.labelTelefone.Text = "Telefone";
             // 
+            // textBoxCnpj
+            // 
+            this.textBoxCnpj.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.textBoxCnpj.Location = new System.Drawing.Point(56, 77);
+            this.textBoxCnpj.Name = "textBoxCnpj";
+            this.textBoxCnpj.Size = new System.Drawing.Size(213, 24);
+            this.textBoxCnpj.TabIndex = 30;
+            // 
+            // labelCnpj
+            // 
+            this.labelCnpj.AutoSize = true;
+            this.labelCnpj.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.labelCnpj.Location = new System.Drawing.Point(56, 57);
+            this.labelCnpj.Name = "labelCnpj";
+            this.labelCnpj.Size = new System.Drawing.Size(43, 17);
+            this.labelCnpj.TabIndex = 64;
+            this.labelCnpj.Text = "CNPJ";
+            // 
             // FormFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(734, 385);
+            this.Controls.Add(this.labelCnpj);
+            this.Controls.Add(this.textBoxCnpj);
             this.Controls.Add(this.labelTelefone);
             this.Controls.Add(this.labelCelular);
             this.Controls.Add(this.textBoxCelular);
@@ -577,12 +533,6 @@
             this.Controls.Add(this.labelRazaoSocial);
             this.Controls.Add(this.pictureBoxCNPJ);
             this.Controls.Add(this.textBoxRazaoSocial);
-            this.Controls.Add(this.labelFilial);
-            this.Controls.Add(this.labelDigito);
-            this.Controls.Add(this.labelNumero);
-            this.Controls.Add(this.textBoxDigito);
-            this.Controls.Add(this.textBoxFilial);
-            this.Controls.Add(this.textBoxNumero);
             this.Controls.Add(this.panelDireito);
             this.Controls.Add(this.panelEsquerdo);
             this.Controls.Add(this.fornecedorTitle);
@@ -605,12 +555,6 @@
         private System.Windows.Forms.Label fornecedorTitle;
         private System.Windows.Forms.Panel panelEsquerdo;
         private System.Windows.Forms.Panel panelDireito;
-        private System.Windows.Forms.TextBox textBoxNumero;
-        private System.Windows.Forms.TextBox textBoxFilial;
-        private System.Windows.Forms.TextBox textBoxDigito;
-        private System.Windows.Forms.Label labelNumero;
-        private System.Windows.Forms.Label labelDigito;
-        private System.Windows.Forms.Label labelFilial;
         private System.Windows.Forms.TextBox textBoxRazaoSocial;
         private System.Windows.Forms.PictureBox pictureBoxCNPJ;
         private System.Windows.Forms.Label labelRazaoSocial;
@@ -645,5 +589,7 @@
         private System.Windows.Forms.TextBox textBoxCelular;
         private System.Windows.Forms.Label labelCelular;
         private System.Windows.Forms.Label labelTelefone;
+        private System.Windows.Forms.TextBox textBoxCnpj;
+        private System.Windows.Forms.Label labelCnpj;
     }
 }
