@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Drinks.Model
 {
-    class ItensCompra
+    class ItensVendaModel
     {
-        public int IdItensCompra { get; set; }
+        public int IdItensVenda { get; set; }
         public int IdProduto { get; set; }
         public int QuantidadeUnitario { get; set; }
         public decimal ValorUnitario { get; set; }

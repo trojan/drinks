@@ -17,7 +17,7 @@ namespace Drinks.Controller
         {
             tmh.DescricaoTamanho = descricao;
 
-            if (dao.InserirDados(null, null, tmh, null) == true)
+            if (dao.InserirDados(null, null, null, tmh, null) == true)
                 MessageBox.Show("Salvo com sucesso!");
             else
                 MessageBox.Show("Erro ao salvar!");

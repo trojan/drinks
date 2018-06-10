@@ -10,7 +10,7 @@ namespace Drinks.Controller
     class ItensCompraController
     {
         DAO.DAO dao = new DAO.DAO();
-        Model.ItensCompra icmp_m = new Model.ItensCompra();
+        Model.ItensCompraModel icmp_m = new Model.ItensCompraModel();
 
         public void InsereItensCompra(int idItensCompra, int idProduto, int quantidadeUnitario, decimal valorUnitario)
         {
@@ -19,9 +19,7 @@ namespace Drinks.Controller
             icmp_m.QuantidadeUnitario = quantidadeUnitario;
             icmp_m.ValorUnitario = valorUnitario;
 
-            if (dao.InserirItensCompra(icmp_m) == true)
-                MessageBox.Show("Produto inserido");
-            else
+            if (dao.InserirItensCompra(icmp_m) == false)
                 MessageBox.Show("Erro ao inserir Produto!");
         }
     }

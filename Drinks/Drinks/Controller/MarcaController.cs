@@ -18,7 +18,7 @@ namespace Drinks.Controller
             mrc.DescricaoMarca = descricao;
 
 
-            if (dao.InserirDados(mrc, null, null, null) == true)
+            if (dao.InserirDados(null, mrc, null, null, null) == true)
                 MessageBox.Show("Salvo com sucesso!");
             else
                 MessageBox.Show("Erro ao salvar!");

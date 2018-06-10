@@ -117,40 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABMAAAAPCAYAAAAGRPQsAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAEBSURBVDhPpdKxasJQFMbxLB0K
-        BhxcpItbFxFqJ8GxuLi0ow/QLg7dOosPYB/AN1DQB1DQwc2llFJsRymdCy4dWuL/pDnhqDck0g9+N8m5
-        H5dE9IIg+K97DFB0bR6jDc3cVcjqFjZjVymLFn6hmcB3FdPc4AeaKU7haSEfXdNcwx40Rw7hvixVvOJR
-        hwka+IJmiTPEHVneoOkg3jRqsAc9o4idniw92DzAlurYQPOEAmwnpDd92NxB5hf4lEGUd5wjPsDSmxOM
-        oPlGFy/h018+UMHOAZZ98DGDK2skvpHaH8hfZAEb+cxL7HcPuIYlrCCRH/4Krt4B5xBlDNE0sxSBtwUB
-        QZ3uidN4iAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="CancelarBtnIcon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADsQAAA7EAZUrDhsAAACfSURBVDhPpZPBDYAgDEWdxhlc
-        xcQDBxMPDsIQ7uYGzID/K5pSQA0cnpH2tYBCt/WDBTuYvffdH+iGGsuBAz6w5AokdITvGDAiQNZcIWFO
-        uaaUSFbCmHLOiT6FkCtO8DQoiGNAxqItRg0IBL0SSbK1aHADcVKFZMq5SYBQVsX/G0Cs3wKE+o+IRP1v
-        fBNuGFPOdZDw0naU8Wi+TA3XebAHL+9S/6bxUbMAAAAASUVORK5CYII=
-</value>
-  </data>
-  <metadata name="IDPRODUTO.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="PRODUTO.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="VALOR_UNITARIO.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="QUANTIDADE_UNITARIO.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="VALOR_TOTAL_UNITARIO.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

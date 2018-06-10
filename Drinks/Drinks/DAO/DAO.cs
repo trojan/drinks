@@ -11,7 +11,7 @@ namespace Drinks.DAO
 {
     class DAO
     {
-        // Criara o bd
+        // CRIARA O BD
         public void CreateDB()
         {
             // Criara a pasta do bd
@@ -31,7 +31,7 @@ namespace Drinks.DAO
             }
         }
 
-        // Criara as tabelas dentro do bd
+        // CRIARA AS TABELAS DENTRO DO BD
         public void CreateTB()
         {
             string connStr = @"Data Source = bd\drinks.sdf";
@@ -44,11 +44,11 @@ namespace Drinks.DAO
 
             string[] comandos = {
                 "CREATE TABLE NIVEL_ACESSO(" +
-                 "idNivelAcesso         INT IDENTITY (1,1) CONSTRAINT pkIdNivelAcesso PRIMARY KEY NOT NULL,  " +
+                 "idNivelAcesso         int IDENTITY (1,1) CONSTRAINT pkIdNivelAcesso PRIMARY KEY NOT NULL,  " +
                  "descricao             nvarchar(15));",
 
                  "CREATE TABLE USUARIO( " +
-                 "idUsuario         INT IDENTITY (1,1) CONSTRAINT pkIdUsuario PRIMARY KEY NOT NULL,  " +
+                 "idUsuario         int IDENTITY (1,1) CONSTRAINT pkIdUsuario PRIMARY KEY NOT NULL,  " +
                  "login             nvarchar(20),  " +
                  "senha             nvarchar(20),  " +
                  "idNivelAcesso     int, " +
@@ -56,22 +56,22 @@ namespace Drinks.DAO
                  "foreign key (idNivelAcesso) references NIVEL_ACESSO (idNivelAcesso));",
 
                  "CREATE TABLE MARCA( " +
-                 "idMarca           INT IDENTITY (1,1) CONSTRAINT pkIdMarca PRIMARY KEY NOT NULL,  " +
+                 "idMarca           int IDENTITY (1,1) CONSTRAINT pkIdMarca PRIMARY KEY NOT NULL,  " +
                  "descricao         nvarchar(20)," +
-                 "status                int);",
+                 "status            int);",
 
                  "CREATE TABLE TAMANHO( " +
-                 "idTamanho             INT IDENTITY (1,1) CONSTRAINT pkIdTamanho PRIMARY KEY NOT NULL,  " +
+                 "idTamanho             int IDENTITY (1,1) CONSTRAINT pkIdTamanho PRIMARY KEY NOT NULL,  " +
                  "descricao             nvarchar(20), " +
                  "status                int);",
 
                  "CREATE TABLE UNIDADE_MEDIDA( " +
-                 "idUnidadeMedida       INT IDENTITY (1,1) CONSTRAINT pkIdUnidadeMedida PRIMARY KEY NOT NULL,  " +
+                 "idUnidadeMedida       int IDENTITY (1,1) CONSTRAINT pkIdUnidadeMedida PRIMARY KEY NOT NULL,  " +
                  "descricao             nvarchar(20)," +
                  "status                int);",
 
                  "CREATE TABLE ESTOQUE( " +
-                 "idProduto             INT IDENTITY (1,1) CONSTRAINT pkIdProduto PRIMARY KEY NOT NULL,  " +
+                 "idProduto             int IDENTITY (1,1) CONSTRAINT pkIdProduto PRIMARY KEY NOT NULL,  " +
                  "idMarca               int, " +
                  "descricao             nvarchar(60), " +
                  "idUnidadeMedida       int, " +
@@ -108,7 +108,7 @@ namespace Drinks.DAO
                  "foreign key (idProduto) references ESTOQUE (idProduto)); ",
 
                  "CREATE TABLE VENDAS ( " +
-                 "idVenda               INT IDENTITY (1,1) CONSTRAINT pkIdVendas PRIMARY KEY NOT NULL,  " +
+                 "idVenda               int IDENTITY (1,1) CONSTRAINT pkIdVendas PRIMARY KEY NOT NULL,  " +
                  "idItensVenda          int, " +
                  "quantidadeTotal       int, " +
                  "valorTotal            decimal(10, 2), " +
@@ -138,7 +138,7 @@ namespace Drinks.DAO
 
             try
             {
-                
+
                 SqlCeCommand verifica = new SqlCeCommand("SELECT Count(*) FROM INFORMATION_SCHEMA.TABLES", conn);
                 verifica.ExecuteNonQuery();
                 int num = Convert.ToInt32(verifica.ExecuteScalar());
@@ -155,12 +155,11 @@ namespace Drinks.DAO
 
 
         //+-------------------------------+//
-        //|       ESTOQUE / PRODUTO       |//
+        //|            BASICO             |//
         //+-------------------------------+//
 
-
         // INSERÇÃO DE DADOS
-        public bool InserirDados(Model.MarcaModel mrc, Model.UnidadeMedidaModel und, Model.TamanhoModel tmh, Model.ProdutoModel prd)
+        public bool InserirDados(Model.FornecedorModel fnd, Model.MarcaModel mrc, Model.UnidadeMedidaModel und, Model.TamanhoModel tmh, Model.ProdutoModel prd)
         {
             string connStr = @"Data Source = bd\drinks.sdf";
             SqlCeConnection conn = new SqlCeConnection(connStr);
@@ -576,13 +575,11 @@ namespace Drinks.DAO
 
 
 
-
-
         //+-----------------------+//
         //|      ITENS COMPRA     |//
         //+-----------------------+//
 
-        public bool InserirItensCompra(Model.ItensCompra icmp)
+        public bool InserirItensCompra(Model.ItensCompraModel icmp)
         {
             string connStr = @"Data Source = bd\drinks.sdf";
             SqlCeConnection conn = new SqlCeConnection(connStr);
@@ -609,14 +606,14 @@ namespace Drinks.DAO
 
         }
 
-        public SqlCeDataAdapter ListaItensCompra(Model.ItensCompra icmp)
+        public SqlCeDataAdapter ListaItensCompra(Model.ItensCompraModel icmp)
         {
             string connStr = @"Data Source = bd\drinks.sdf";
             SqlCeConnection conn = new SqlCeConnection(connStr);
 
             try
             {
-                string querySql = "SELECT idItensCompra as CODIGO, ESTOQUE.descricao AS PRODUTO, MARCA.descricao AS MARCA, TAMANHO.descricao AS TAMANHO, UNIDADE_MEDIDA.descricao AS UNIDADE_MEDIDA, ITENS_COMPRA.quantidadeUnitario AS QUANTIDADE_UNITARIO, ITENS_COMPRA.valorUnitario AS VALOR_UNITARIO, ITENS_COMPRA.quantidadeUnitario*ITENS_COMPRA.valorUnitario AS VALOR_TOTAL_UNITARIO FROM ITENS_COMPRA INNER JOIN ESTOQUE ON (ITENS_COMPRA.idProduto = ESTOQUE.idProduto) INNER JOIN MARCA ON (ESTOQUE.idMarca = MARCA.idMarca) INNER JOIN TAMANHO ON (ESTOQUE.idTamanho = TAMANHO.idTamanho) INNER JOIN UNIDADE_MEDIDA ON (ESTOQUE.idUnidadeMedida = UNIDADE_MEDIDA.idUnidadeMedida) WHERE ITENS_COMPRA.idItensCompra = 1;";
+                string querySql = "SELECT idItensCompra as CODIGO, ESTOQUE.descricao AS PRODUTO, MARCA.descricao AS MARCA, TAMANHO.descricao AS TAMANHO, UNIDADE_MEDIDA.descricao AS UNIDADE_MEDIDA, ITENS_COMPRA.quantidadeUnitario AS QUANTIDADE_UNITARIO, ITENS_COMPRA.valorUnitario AS VALOR_UNITARIO, ITENS_COMPRA.quantidadeUnitario*ITENS_COMPRA.valorUnitario AS VALOR_TOTAL_UNITARIO FROM ITENS_COMPRA INNER JOIN ESTOQUE ON (ITENS_COMPRA.idProduto = ESTOQUE.idProduto) INNER JOIN MARCA ON (ESTOQUE.idMarca = MARCA.idMarca) INNER JOIN TAMANHO ON (ESTOQUE.idTamanho = TAMANHO.idTamanho) INNER JOIN UNIDADE_MEDIDA ON (ESTOQUE.idUnidadeMedida = UNIDADE_MEDIDA.idUnidadeMedida) ORDER BY CODIGO;";
                 SqlCeCommand lista = conn.CreateCommand();
                 lista.CommandText = querySql;
                 SqlCeDataAdapter adp = new SqlCeDataAdapter(lista);
@@ -630,7 +627,6 @@ namespace Drinks.DAO
 
 
         }
-
 
 
 
@@ -667,6 +663,152 @@ namespace Drinks.DAO
 
 
 
+
+
+
+        //+-----------------------+//
+        //|      ITENS VENDA      |//
+        //+-----------------------+//
+
+        public bool InserirItensVenda(Model.ItensVendaModel ivnd)
+        {
+            string connStr = @"Data Source = bd\drinks.sdf";
+            SqlCeConnection conn = new SqlCeConnection(connStr);
+
+            #region [ITENS_VENDA]
+            try
+            {
+                conn.Open();
+                string querySql = "INSERT INTO ITENS_VENDA (idItensVenda, idProduto, quantidadeUnitario, valorUnitario) VALUES (@idItensVenda, @idProduto, @quantidadeUnitario, @valorUnitario)";
+                SqlCeCommand insereItensCompra = new SqlCeCommand(querySql, conn);
+                insereItensCompra.Parameters.AddWithValue("@idItensVenda", ivnd.IdItensVenda);
+                insereItensCompra.Parameters.AddWithValue("@idProduto", ivnd.IdProduto);
+                insereItensCompra.Parameters.AddWithValue("@quantidadeUnitario", ivnd.QuantidadeUnitario);
+                insereItensCompra.Parameters.AddWithValue("@valorUnitario", ivnd.ValorUnitario);
+                insereItensCompra.ExecuteNonQuery();
+                conn.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            #endregion
+
+        }
+
+        public SqlCeDataAdapter ListaItensVenda(Model.ItensVendaModel ivnd)
+        {
+            string connStr = @"Data Source = bd\drinks.sdf";
+            SqlCeConnection conn = new SqlCeConnection(connStr);
+
+            try
+            {
+                string querySql = "SELECT idItensVenda as CODIGO, ESTOQUE.descricao AS PRODUTO, MARCA.descricao AS MARCA, TAMANHO.descricao AS TAMANHO, UNIDADE_MEDIDA.descricao AS UNIDADE_MEDIDA, ITENS_VENDA.quantidadeUnitario AS QUANTIDADE_UNITARIO, ITENS_VENDA.valorUnitario AS VALOR_UNITARIO, ITENS_VENDA.quantidadeUnitario*ITENS_VENDA.valorUnitario AS VALOR_TOTAL_UNITARIO FROM ITENS_VENDA INNER JOIN ESTOQUE ON (ITENS_VENDA.idProduto = ESTOQUE.idProduto) INNER JOIN MARCA ON (ESTOQUE.idMarca = MARCA.idMarca) INNER JOIN TAMANHO ON (ESTOQUE.idTamanho = TAMANHO.idTamanho) INNER JOIN UNIDADE_MEDIDA ON (ESTOQUE.idUnidadeMedida = UNIDADE_MEDIDA.idUnidadeMedida) ORDER BY CODIGO;";
+                SqlCeCommand lista = conn.CreateCommand();
+                lista.CommandText = querySql;
+                SqlCeDataAdapter adp = new SqlCeDataAdapter(lista);
+                conn.Close();
+                return adp;
+            }
+            catch
+            {
+                return null;
+            }
+
+
+        }
+
+
+        
+        //+--------------------+//
+        //|       VENDAS       |//
+        //+--------------------+//
+
+        public bool InserirVenda(Model.VendaModel ivnd)
+        {
+            string connStr = @"Data Source = bd\drinks.sdf";
+            SqlCeConnection conn = new SqlCeConnection(connStr);
+
+            #region [COMPRA]
+            try
+            {
+                conn.Open();
+                string querySql = "INSERT INTO VENDAS (idItensVenda, quantidadeTotal, valorTotal, dataVenda, status) VALUES (@idItensVenda, @quantidadeTotal, @valorTotal, @dataVenda, @status)";
+                SqlCeCommand insereCompra = new SqlCeCommand(querySql, conn);
+                insereCompra.Parameters.AddWithValue("@idItensVenda", ivnd.IdItensVenda);
+                insereCompra.Parameters.AddWithValue("@quantidadeTotal", ivnd.QuantidadeTotal);
+                insereCompra.Parameters.AddWithValue("@valorTotal", ivnd.ValorTotal);
+                insereCompra.Parameters.AddWithValue("@dataVenda", ivnd.DataVenda);  
+                insereCompra.Parameters.AddWithValue("@status", 1);
+                insereCompra.ExecuteNonQuery();
+                conn.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            #endregion
+        }
+
+
+
+
+
+
+
+
+
+
+        //+-----------------------+//
+        //|       ESPECIFICOS     |//
+        //+-----------------------+//
+
+        // PEGARA A QUANTIDADE DE PRODUTOS
+        public int BuscarProdutoEspecifico(Model.ProdutoModel prd)
+        {
+            string connStr = @"Data Source = bd\drinks.sdf";
+            SqlCeConnection conn = new SqlCeConnection(connStr);
+
+            try
+            {
+                SqlCeCommand verifica = new SqlCeCommand("SELECT QUANTIDADE FROM ESTOQUE WHERE idProduto = " + prd.IdProduto + ";", conn);
+                conn.Open();
+                int quantidade = Convert.ToInt32(verifica.ExecuteScalar());
+                conn.Close();
+                return quantidade;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+
+        // IRA ALTERAR A QUANTIDADE DO PRODUTO NO ESTOQUE
+        public bool AlterarQuantidadeProduto(Model.ProdutoModel prd)
+        {
+            string connStr = @"Data Source = bd\drinks.sdf";
+            SqlCeConnection conn = new SqlCeConnection(connStr);
+
+            #region [PRODUTOS]
+            try
+            {
+                conn.Open();
+                string querySql = "UPDATE ESTOQUE SET quantidade=@quantidade WHERE idProduto = " + prd.IdProduto + ";";
+                SqlCeCommand altera = new SqlCeCommand(querySql, conn);
+                altera.Parameters.AddWithValue("@quantidade", prd.Quantidade);
+                altera.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            #endregion
+
+        }
+
         // PEGARA O ULTIMO ID DE COMPRA E ADICIONARA +1, E O ID_ITENS_COMPRA RECEBERA ESSE VALOR
         public int BuscaRegistroCompra()
         {
@@ -675,11 +817,11 @@ namespace Drinks.DAO
 
             try
             {
-                SqlCeCommand autentica = new SqlCeCommand("SELECT COALESCE(MAX(idCompra),0) +1 AS PROXIMA_COMPRA FROM COMPRAS;", conn);
+                SqlCeCommand verifica = new SqlCeCommand("SELECT COALESCE(MAX(idCompra),0) +1 AS PROXIMA_COMPRA FROM COMPRAS;", conn);
                 conn.Open();
-                int numero = Convert.ToInt32(autentica.ExecuteScalar());
+                int idCompra = Convert.ToInt32(verifica.ExecuteScalar());
                 conn.Close();
-                return numero;
+                return idCompra;
             }
             catch
             {
@@ -687,19 +829,25 @@ namespace Drinks.DAO
             }
         }
 
+        // PEGARA O ULTIMO ID DE VENDA E ADICIONARA +1, E O ID_ITENS_VENDA RECEBERA ESSE VALOR
+        public int BuscaRegistroVenda()
+        {
+            string connStr = @"Data Source = bd\drinks.sdf";
+            SqlCeConnection conn = new SqlCeConnection(connStr);
 
-
-        //+--------------------+//
-        //|       VENDAS       |//
-        //+--------------------+//
-
-
-
-
-
-
-
-
+            try
+            {
+                SqlCeCommand verifica = new SqlCeCommand("SELECT COALESCE(MAX(idVenda),0) +1 AS PROXIMA_VENDA FROM VENDAS;", conn);
+                conn.Open();
+                int idVenda = Convert.ToInt32(verifica.ExecuteScalar());
+                conn.Close();
+                return idVenda;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
 
 
 

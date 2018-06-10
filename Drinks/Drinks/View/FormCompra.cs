@@ -23,7 +23,7 @@ namespace Drinks.View
 
         // MODEL
         Model.ProdutoModel prd_m = new Model.ProdutoModel();
-        Model.ItensCompra icmp_m = new Model.ItensCompra();
+        Model.ItensCompraModel icmp_m = new Model.ItensCompraModel();
         Model.CompraModel cmp_m = new Model.CompraModel();
 
         // CONTROLLER
@@ -40,11 +40,10 @@ namespace Drinks.View
         {
             dao.ListarDados(null, null, null, null, prd_m).Fill(dtProduto);
 
-            //dtProduto.Columns.Add("PRODUTO_INFORMATION", typeof(String), "PRODUTO + ' ' + MARCA + ' ' + TAMANHO");
-            dtProduto.Columns.Add("PRODUTO_INFORMATION", typeof(String), "PRODUTO + ' ' + MARCA + ' ' + TAMANHO + '' + UNIDADE_MEDIDA");
+            dtProduto.Columns.Add("PRODUCT_INFORMATION", typeof(String), "PRODUTO + ' ' + MARCA + ' ' + TAMANHO + '' + UNIDADE_MEDIDA");
 
             comboBoxProdutoInformation.DataSource = dtProduto;
-            comboBoxProdutoInformation.DisplayMember = "PRODUTO_INFORMATION";
+            comboBoxProdutoInformation.DisplayMember = "PRODUCT_INFORMATION";
             comboBoxProdutoInformation.ValueMember = "CODIGO";
             comboBoxProdutoInformation.Refresh();
         }
@@ -67,10 +66,25 @@ namespace Drinks.View
 
         public void LimpaDGV()
         {
-            dgvItemPedido.DataSource = null; //Remover a datasource
-            //dgvItemPedido.Columns.Clear(); //Remover as colunas
-            dgvItemPedido.Rows.Clear();    //Remover as linhas
-            dgvItemPedido.Refresh();    //Para a grid se actualizar
+            dgvItemPedido.DataSource = null; //REMOVERA O DATASOURCE
+            //dgvItemPedido.Columns.Clear(); //REMOVERA AS COLUNAS
+            dgvItemPedido.Rows.Clear();    //REMOVERA AS LINHAS
+            dgvItemPedido.Refresh();    //ATUALIZARA O DGV
+        }
+
+        // RETORNA O PRODUTO DOS CAMPOS 'VALOR UNITARIO' E 'QUANTIDADE'
+        private void Multiply()
+        {
+            float a;
+            int b;
+
+            bool isAValid = float.TryParse(textBoxValor.Text, out a);
+            bool isBValid = int.TryParse(textBoxQuantidade.Text, out b);
+
+            if (isAValid && isBValid)
+                textBoxValorTotal.Text = (a * b).ToString();
+            else
+                textBoxValorTotal.Text = "Valores inválidos.";
         }
         #endregion
 
@@ -81,7 +95,7 @@ namespace Drinks.View
             // TIRAR LINHA EM BRANCO DO DATA_GRID_VIEW
             dgvItemPedido.AllowUserToAddRows = false;
 
-            // Valor inicial na quantidade
+            // VALOR INICIAL NA QUANTIDADE
             textBoxQuantidade.Text = "1";
 
             comboBoxProdutoInformation.Select();
@@ -95,6 +109,8 @@ namespace Drinks.View
             textBoxValor.Text = drv["VALOR_UNITARIO"].ToString();
         }
 
+
+
         #region [COMPRAS]
         private void buttonFinalizar_Click(object sender, EventArgs e)
         {
@@ -105,15 +121,30 @@ namespace Drinks.View
 
             foreach (DataGridViewRow row in dgvItemPedido.Rows)
             {
-                icmp_c.InsereItensCompra(codigo, Convert.ToInt32(row.Cells["IDPRODUTO"].Value), Convert.ToInt32(row.Cells["QUANTIDADE_UNITARIO"].Value), Convert.ToDecimal(row.Cells["VALOR_UNITARIO"].Value));
+                // PEGARA O ID DO PRODUTO NA TABELA
+                int id = prd_m.IdProduto = Convert.ToInt32(row.Cells["IDPRODUTO"].Value);
+                
+                // PEGARA A QUANTIDADE ATUAL DO PRODUTO NO ESTOQUE, APARTIR DO ID DO PRODUTO
+                int quantidade = dao.BuscarProdutoEspecifico(prd_m);
+               
+                // SOMARA A QUANTIDADE QUE TINHA EM ESTOQUE + QUANTIDADE DE ENTRADA
+                quantidade += Convert.ToInt32(row.Cells["QUANTIDADE_UNITARIO"].Value);
 
+                //INSERIR OS ITENS DA TABELA DE ITENS COMPRA
+                icmp_c.InsereItensCompra(codigo, Convert.ToInt32(row.Cells["IDPRODUTO"].Value), Convert.ToInt32(row.Cells["QUANTIDADE_UNITARIO"].Value), Convert.ToDecimal(row.Cells["VALOR_UNITARIO"].Value));
+                
+                // SOMARA TODAS A QUANTIDADE E VALORES UNITARIOS DA TABELA, FORMANDO UM QUANTIDADE TOTAL E VALOR TOTAL
                 quantidadeTotal += Convert.ToInt32(row.Cells["QUANTIDADE_UNITARIO"].Value);
                 valorTotal += Convert.ToDecimal(row.Cells["VALOR_TOTAL_UNITARIO"].Value);
 
+                //ADICIONARA A QUANTIDADE NO ESTOQUE, DE ACORDO COM O ID DO PRODUTO
+                prd_c.AlteraQuantidadeProduto(id, quantidade);
             }
 
+            //IRA INSERIR 
             cmp_c.InsereCompra(codigo, quantidadeTotal, valorTotal);
 
+            // LIMPARA O DATA GRID VIEW
             LimpaDGV();
 
         }
@@ -143,12 +174,15 @@ namespace Drinks.View
         private void buttonNovoItem_Click(object sender, EventArgs e)
         {
             comboBoxProdutoInformation.Select();
+
+            // VALOR INICIAL NA QUANTIDADE
+            textBoxQuantidade.Text = "1";
         }
 
         private void buttonGravarItem_Click(object sender, EventArgs e)
         {
             DataRowView drv = ((DataRowView)comboBoxProdutoInformation.SelectedItem);
-            string informacaoProduto = drv["PRODUTO_INFORMATION"].ToString();
+            string informacaoProduto = drv["PRODUCT_INFORMATION"].ToString();
 
             this.dgvItemPedido.Rows.Add(Convert.ToInt32(comboBoxProdutoInformation.SelectedValue), informacaoProduto, textBoxValor.Text, textBoxQuantidade.Text, Convert.ToDecimal(textBoxValor.Text) * Convert.ToInt32(textBoxQuantidade.Text));
 
@@ -178,20 +212,7 @@ namespace Drinks.View
 
         #endregion
 
-        // Retorna o produto dos campos "valor unitário" e "quantidade"
-        private void Multiply()
-        {
-            float a;
-            int b;
-
-            bool isAValid = float.TryParse(textBoxValor.Text, out a);
-            bool isBValid = int.TryParse(textBoxQuantidade.Text, out b);
-
-            if (isAValid && isBValid)
-                textBoxValorTotal.Text = (a * b).ToString();
-            else
-                textBoxValorTotal.Text = "Valores inválidos.";
-        }
+        
 
         private void textBoxValor_TextChanged(object sender, EventArgs e)
         {

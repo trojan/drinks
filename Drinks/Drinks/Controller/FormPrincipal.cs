@@ -41,6 +41,19 @@ namespace Drinks.Controller
             this.WindowState = FormWindowState.Minimized;
         }
 
+        #region [FORNECEDORES]
+        private void nOVOFORNECEDORToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            View.FormFornecedor ffnd = new View.FormFornecedor();
+            ffnd.ShowDialog();
+        }
+
+        private void cONSULTARFORNECEDORESToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
         #region [COMPRAS]
         private void nOVACOMPRAToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -89,8 +102,9 @@ namespace Drinks.Controller
             fcprd.ShowDialog();
         }
 
+
         #endregion
 
-        
+       
     }
 }

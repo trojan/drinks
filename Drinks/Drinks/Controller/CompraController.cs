@@ -21,9 +21,9 @@ namespace Drinks.Controller
             cmp_m.DataCompra = DateTime.Now.Date;
 
             if (dao.InserirCompra(cmp_m) == true)
-                MessageBox.Show("Sucesso!");
+                MessageBox.Show("Compra Finalizada!", "Mensagem do Sistema");
             else
-                MessageBox.Show("Falha!");
+                MessageBox.Show("Falha ao Finalizar Compra!", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
         }
     }

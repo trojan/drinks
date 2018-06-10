@@ -22,10 +22,10 @@ namespace Drinks.Controller
             prd.ValorUnitario = valorUnitario;
 
 
-            if (dao.InserirDados(null, null, null, prd) == true)
+            if (dao.InserirDados(null, null, null, null, prd) == true)
                 MessageBox.Show("Salvo com sucesso!", "Mensagem do Sistema");
             else
-                MessageBox.Show("Erro ao salvar!");
+                MessageBox.Show("Falha ao salvar!", "Mensagem do Sistema");
         }
 
         public void AlteraProduto(int idProduto, int idMarca, string descricao, int idUnidadeMedida, int idTamanho, decimal valorUnitario)
@@ -49,11 +49,19 @@ namespace Drinks.Controller
             prd.IdProduto = id;
 
 
-            if (dao.ExcluirDados(null, null, null, prd) == true)
-                MessageBox.Show("Excluido com Sucesso!");
-            else
-                MessageBox.Show("Erro ao excluir os dados!");
+            if (dao.ExcluirDados(null, null, null, prd) == false)
+                MessageBox.Show("Não foi possível efetuar a exclusão!", "Mensagem do Sistema");
         }
 
+
+        public void AlteraQuantidadeProduto(int id, int quantidade)
+        {
+            prd.IdProduto = id;
+            prd.Quantidade = quantidade;
+
+
+            if (dao.AlterarQuantidadeProduto(prd) == false)
+                MessageBox.Show("Falha ao alterar a Quantidade!", "Mensagem do Sistema");
+        }
     }
 }
