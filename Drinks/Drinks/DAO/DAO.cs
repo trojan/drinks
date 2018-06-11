@@ -55,6 +55,24 @@ namespace Drinks.DAO
                  "status            int, " +
                  "foreign key (idNivelAcesso) references NIVEL_ACESSO (idNivelAcesso));",
 
+                 "CREATE TABLE FORNECEDOR( " +
+                 "cnpj                  bigint CONSTRAINT pkFornecedor PRIMARY KEY NOT NULL, " +
+                 "razaoSocial           nvarchar(60), " +
+                 "cep                   nvarchar(9), " +
+                 "endereco              nvarchar(60), " +
+                 "numero                nvarchar(7), " +
+                 "bairro                nvarchar(30), " +
+                 "cidade                nvarchar(55), " +
+                 "uf                    nvarchar(2), " +
+                 "dddTelefone           int, " +
+                 "telefone              int, " +
+                 "dddCelular            int, " +
+                 "celular               nvarchar(9)," +
+                 "nomeFantasia          nvarchar(30), " +
+                 "inscricaoEstadual     bigint, " +
+                 "email                 nvarchar(60), " +
+                 "status                int);",
+
                  "CREATE TABLE MARCA( " +
                  "idMarca           int IDENTITY (1,1) CONSTRAINT pkIdMarca PRIMARY KEY NOT NULL,  " +
                  "descricao         nvarchar(20)," +
@@ -150,6 +168,140 @@ namespace Drinks.DAO
                 return 0;
             }
 
+        }
+
+
+
+
+        //+-------------------------------+//
+        //|           FORNECEDOR          |//
+        //+-------------------------------+//
+
+        public bool InserirFornecedor(Model.FornecedorModel fnd)
+        {
+            string connStr = @"Data Source = bd\drinks.sdf";
+            SqlCeConnection conn = new SqlCeConnection(connStr);
+
+            try
+            {
+                conn.Open();
+                string querySql = "INSERT INTO FORNECEDOR (cnpj, razaoSocial, cep, endereco, numero, bairro, cidade, uf, dddTelefone, telefone, dddCelular, celular, nomeFantasia, inscricaoEstadual, email, status) VALUES (@cnpj, @razaoSocial, @cep, @endereco, @numero, @bairro, @cidade, @uf, @dddTelefone, @telefone, @dddCelular, @celular, @nomeFantasia, @inscricaoEstadual, @email, @status);";
+                SqlCeCommand insere = new SqlCeCommand(querySql, conn);
+                insere.Parameters.AddWithValue("@cnpj", fnd.Cnpj);
+                insere.Parameters.AddWithValue("@razaoSocial", fnd.RazaoSocial);
+                insere.Parameters.AddWithValue("@cep", fnd.Cep);
+                insere.Parameters.AddWithValue("@endereco", fnd.Endereco);
+                insere.Parameters.AddWithValue("@numero", fnd.Numero);
+                insere.Parameters.AddWithValue("@bairro", fnd.Bairro);
+                insere.Parameters.AddWithValue("@cidade", fnd.Cidade);
+                insere.Parameters.AddWithValue("@uf", fnd.Uf);
+                insere.Parameters.AddWithValue("@dddTelefone", fnd.DDDTelefone);
+                insere.Parameters.AddWithValue("@telefone", fnd.Telefone);
+                insere.Parameters.AddWithValue("@dddCelular", fnd.DDDCelular);
+                insere.Parameters.AddWithValue("@celular", fnd.Celular);
+                insere.Parameters.AddWithValue("@nomeFantasia", fnd.NomeFantasia);
+                insere.Parameters.AddWithValue("@inscricaoEstadual", fnd.InscricaoEstadual);
+                insere.Parameters.AddWithValue("@email", fnd.Email);
+                insere.Parameters.AddWithValue("@status", 1);
+                insere.ExecuteNonQuery();
+                conn.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool AlterarFonecedor(Model.FornecedorModel fnd)
+        {
+            string connStr = @"Data Source = bd\drinks.sdf";
+            SqlCeConnection conn = new SqlCeConnection(connStr);
+
+            try
+            {
+                conn.Open();
+                string querySql = "UPDATE FORNECEDOR SET razaoSocial=@razaoSocial, cep=@cep, endereco=@endereco, numero=@numero, bairro=@bairro, cidade=@cidade, uf=@uf, dddTelefone=@dddTelefone, telefone=@telefone, dddCelular=@dddCelular, celular=@celular, nomeFantasia=@nomeFantasia, inscricaoEstadual=@inscricaoEstadual, email=@email WHERE cnpj = " + fnd.Cnpj + ";";
+                SqlCeCommand altera = new SqlCeCommand(querySql, conn);
+                altera.Parameters.AddWithValue("@razaoSocial", fnd.RazaoSocial);
+                altera.Parameters.AddWithValue("@cep", fnd.Cep);
+                altera.Parameters.AddWithValue("@endereco", fnd.Endereco);
+                altera.Parameters.AddWithValue("@numero", fnd.Numero);
+                altera.Parameters.AddWithValue("@bairro", fnd.Bairro);
+                altera.Parameters.AddWithValue("@cidade", fnd.Cidade);
+                altera.Parameters.AddWithValue("@uf", fnd.Uf);
+                altera.Parameters.AddWithValue("@dddTelefone", fnd.DDDTelefone);
+                altera.Parameters.AddWithValue("@telefone", fnd.Telefone);
+                altera.Parameters.AddWithValue("@dddCelular", fnd.DDDCelular);
+                altera.Parameters.AddWithValue("@celular", fnd.Celular);
+                altera.Parameters.AddWithValue("@nomeFantasia", fnd.NomeFantasia);
+                altera.Parameters.AddWithValue("@inscricaoEstadual", fnd.InscricaoEstadual);
+                altera.Parameters.AddWithValue("@email", fnd.Email);
+                altera.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public SqlCeDataAdapter ListarFornecedor(string busca_seletiva, Model.FornecedorModel fnd)
+        {
+            string connStr = @"Data Source = bd\drinks.sdf";
+            SqlCeConnection conn = new SqlCeConnection(connStr);
+
+            if (busca_seletiva == null)
+            {
+                try
+                {
+                    string querySql = "SELECT cnpj AS CNPJ, razaoSocial AS RAZAO_SOCIAL, cep AS CEP, endereco AS ENDERECO, numero AS NUMERO, bairro AS BAIRRO, cidade AS CIDADE, uf AS UF, dddTelefone AS DDD_TELEFONE, telefone AS TELEFONE, dddCelular AS DDD_CELULAR, celular AS CELULAR, nomeFantasia AS NOME_FANTASIA, inscricaoEstadual AS INSCRICAO_ESTADUAL, email AS EMAIL  FROM FORNECEDOR WHERE status = 1 ORDER BY RAZAO_SOCIAL;";
+                    SqlCeCommand lista = conn.CreateCommand();
+                    lista.CommandText = querySql;
+                    SqlCeDataAdapter adp = new SqlCeDataAdapter(lista);
+                    conn.Close();
+                    return adp;
+                }
+                catch
+                {
+                    return null;
+                }
+
+            }
+            else
+            {
+                try
+                {
+                    SqlCeCommand lista = new SqlCeCommand(busca_seletiva, conn);
+                    SqlCeDataAdapter adp = new SqlCeDataAdapter(lista);
+                    conn.Close();
+                    return adp;
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+        }
+        
+        public bool ExcluirFornecedor(Model.FornecedorModel fnd)
+        {
+            string connStr = @"Data Source = bd\drinks.sdf";
+            SqlCeConnection conn = new SqlCeConnection(connStr);
+
+            try
+            {
+                conn.Open();
+                string querySql = "UPDATE FORNECEDOR SET status=@status WHERE cnpj = " + fnd.Cnpj + ";";
+                SqlCeCommand exclui = new SqlCeCommand(querySql, conn);
+                exclui.Parameters.AddWithValue("@status", 0);
+                exclui.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
 
@@ -661,10 +813,7 @@ namespace Drinks.DAO
             #endregion
         }
 
-
-
-
-
+        
 
         //+-----------------------+//
         //|      ITENS VENDA      |//
@@ -720,7 +869,7 @@ namespace Drinks.DAO
         }
 
 
-        
+
         //+--------------------+//
         //|       VENDAS       |//
         //+--------------------+//
@@ -739,7 +888,7 @@ namespace Drinks.DAO
                 insereCompra.Parameters.AddWithValue("@idItensVenda", ivnd.IdItensVenda);
                 insereCompra.Parameters.AddWithValue("@quantidadeTotal", ivnd.QuantidadeTotal);
                 insereCompra.Parameters.AddWithValue("@valorTotal", ivnd.ValorTotal);
-                insereCompra.Parameters.AddWithValue("@dataVenda", ivnd.DataVenda);  
+                insereCompra.Parameters.AddWithValue("@dataVenda", ivnd.DataVenda);
                 insereCompra.Parameters.AddWithValue("@status", 1);
                 insereCompra.ExecuteNonQuery();
                 conn.Close();

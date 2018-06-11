@@ -24,10 +24,12 @@ namespace Drinks.View
         // CONTROLLER
         Controller.ProdutoController prd_c = new Controller.ProdutoController();
 
+        string busca_seletiva = null;
+
         #region [FUNÇÃO]
         public void ListaProduto()
         {
-            string busca_seletiva = null;
+            
             DataTable dtProduto = new DataTable();
             dao.ListarDados(busca_seletiva, null, null, null, prd_m).Fill(dtProduto);
 
@@ -50,5 +52,14 @@ namespace Drinks.View
             dgvProdutos.AllowUserToAddRows = false;
         }
 
+        private void buttonBuscarProduto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

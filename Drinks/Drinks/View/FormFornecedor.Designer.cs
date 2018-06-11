@@ -34,7 +34,7 @@
             this.panelEsquerdo = new System.Windows.Forms.Panel();
             this.panelDireito = new System.Windows.Forms.Panel();
             this.textBoxRazaoSocial = new System.Windows.Forms.TextBox();
-            this.pictureBoxCNPJ = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBuscaCnpj = new System.Windows.Forms.PictureBox();
             this.labelRazaoSocial = new System.Windows.Forms.Label();
             this.labelCEP = new System.Windows.Forms.Label();
             this.textBoxCEP = new System.Windows.Forms.TextBox();
@@ -70,7 +70,7 @@
             this.textBoxCnpj = new System.Windows.Forms.TextBox();
             this.labelCnpj = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PanelBackground)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCNPJ)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuscaCnpj)).BeginInit();
             this.panelBotoes.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -122,15 +122,17 @@
             this.textBoxRazaoSocial.Size = new System.Drawing.Size(372, 24);
             this.textBoxRazaoSocial.TabIndex = 32;
             // 
-            // pictureBoxCNPJ
+            // pictureBoxBuscaCnpj
             // 
-            this.pictureBoxCNPJ.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxCNPJ.BackgroundImage")));
-            this.pictureBoxCNPJ.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBoxCNPJ.Location = new System.Drawing.Point(275, 77);
-            this.pictureBoxCNPJ.Name = "pictureBoxCNPJ";
-            this.pictureBoxCNPJ.Size = new System.Drawing.Size(25, 25);
-            this.pictureBoxCNPJ.TabIndex = 33;
-            this.pictureBoxCNPJ.TabStop = false;
+            this.pictureBoxBuscaCnpj.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxBuscaCnpj.BackgroundImage")));
+            this.pictureBoxBuscaCnpj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBoxBuscaCnpj.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxBuscaCnpj.Location = new System.Drawing.Point(275, 77);
+            this.pictureBoxBuscaCnpj.Name = "pictureBoxBuscaCnpj";
+            this.pictureBoxBuscaCnpj.Size = new System.Drawing.Size(25, 25);
+            this.pictureBoxBuscaCnpj.TabIndex = 33;
+            this.pictureBoxBuscaCnpj.TabStop = false;
+            this.pictureBoxBuscaCnpj.Click += new System.EventHandler(this.pictureBoxBuscaCnpj_Click);
             // 
             // labelRazaoSocial
             // 
@@ -481,6 +483,7 @@
             // 
             this.textBoxCnpj.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.textBoxCnpj.Location = new System.Drawing.Point(56, 77);
+            this.textBoxCnpj.MaxLength = 15;
             this.textBoxCnpj.Name = "textBoxCnpj";
             this.textBoxCnpj.Size = new System.Drawing.Size(213, 24);
             this.textBoxCnpj.TabIndex = 30;
@@ -531,7 +534,7 @@
             this.Controls.Add(this.textBoxCEP);
             this.Controls.Add(this.labelCEP);
             this.Controls.Add(this.labelRazaoSocial);
-            this.Controls.Add(this.pictureBoxCNPJ);
+            this.Controls.Add(this.pictureBoxBuscaCnpj);
             this.Controls.Add(this.textBoxRazaoSocial);
             this.Controls.Add(this.panelDireito);
             this.Controls.Add(this.panelEsquerdo);
@@ -542,7 +545,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FORNECEDOR";
             ((System.ComponentModel.ISupportInitialize)(this.PanelBackground)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCNPJ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuscaCnpj)).EndInit();
             this.panelBotoes.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -556,7 +559,7 @@
         private System.Windows.Forms.Panel panelEsquerdo;
         private System.Windows.Forms.Panel panelDireito;
         private System.Windows.Forms.TextBox textBoxRazaoSocial;
-        private System.Windows.Forms.PictureBox pictureBoxCNPJ;
+        private System.Windows.Forms.PictureBox pictureBoxBuscaCnpj;
         private System.Windows.Forms.Label labelRazaoSocial;
         private System.Windows.Forms.Label labelCEP;
         private System.Windows.Forms.TextBox textBoxCEP;

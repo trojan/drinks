@@ -34,7 +34,6 @@
   <ItemGroup>
     <Reference Include="MosaicoSolutions.ViaCep, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MosaicoSolutions.ViaCep.3.0.1\lib\net45\MosaicoSolutions.ViaCep.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -137,6 +136,12 @@
     <Compile Include="View\FormUnidadeMedida.Designer.cs">
       <DependentUpon>FormUnidadeMedida.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ListaFornecedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ListaFornecedores.Designer.cs">
+      <DependentUpon>ListaFornecedores.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Controller\FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormUnidadeMedida.resx">
       <DependentUpon>FormUnidadeMedida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ListaFornecedores.resx">
+      <DependentUpon>ListaFornecedores.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

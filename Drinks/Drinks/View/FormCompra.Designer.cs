@@ -68,6 +68,10 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.comboBoxFornecedorInformation = new System.Windows.Forms.ComboBox();
+            this.radioButtonTodos = new System.Windows.Forms.RadioButton();
+            this.radioButtonEspecifico = new System.Windows.Forms.RadioButton();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PanelBackground)).BeginInit();
             this.panelItemCompra.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -102,7 +106,7 @@
             this.panelItemCompra.Controls.Add(this.textBoxQuantidade);
             this.panelItemCompra.Controls.Add(this.textBoxValor);
             this.panelItemCompra.Controls.Add(this.comboBoxProdutoInformation);
-            this.panelItemCompra.Location = new System.Drawing.Point(12, 48);
+            this.panelItemCompra.Location = new System.Drawing.Point(12, 110);
             this.panelItemCompra.Name = "panelItemCompra";
             this.panelItemCompra.Size = new System.Drawing.Size(551, 121);
             this.panelItemCompra.TabIndex = 9;
@@ -212,7 +216,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.dgvItemPedido);
-            this.panel2.Location = new System.Drawing.Point(12, 175);
+            this.panel2.Location = new System.Drawing.Point(12, 237);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(551, 229);
             this.panel2.TabIndex = 10;
@@ -285,7 +289,7 @@
             this.buttonFinalizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFinalizar.FlatAppearance.BorderColor = System.Drawing.Color.MediumBlue;
             this.buttonFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFinalizar.Location = new System.Drawing.Point(569, 367);
+            this.buttonFinalizar.Location = new System.Drawing.Point(569, 429);
             this.buttonFinalizar.Name = "buttonFinalizar";
             this.buttonFinalizar.Size = new System.Drawing.Size(139, 37);
             this.buttonFinalizar.TabIndex = 11;
@@ -298,7 +302,7 @@
             this.buttonSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonSair.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.buttonSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSair.Location = new System.Drawing.Point(569, 315);
+            this.buttonSair.Location = new System.Drawing.Point(569, 377);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(139, 37);
             this.buttonSair.TabIndex = 13;
@@ -311,7 +315,7 @@
             this.buttonImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonImprimir.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
             this.buttonImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonImprimir.Location = new System.Drawing.Point(569, 97);
+            this.buttonImprimir.Location = new System.Drawing.Point(569, 102);
             this.buttonImprimir.Name = "buttonImprimir";
             this.buttonImprimir.Size = new System.Drawing.Size(139, 37);
             this.buttonImprimir.TabIndex = 14;
@@ -325,7 +329,7 @@
             this.buttonNovo.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
             this.buttonNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(255)))), ((int)(((byte)(242)))));
             this.buttonNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNovo.Location = new System.Drawing.Point(569, 48);
+            this.buttonNovo.Location = new System.Drawing.Point(569, 53);
             this.buttonNovo.Name = "buttonNovo";
             this.buttonNovo.Size = new System.Drawing.Size(139, 37);
             this.buttonNovo.TabIndex = 15;
@@ -341,16 +345,16 @@
             this.buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.buttonCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(22)))), ((int)(((byte)(47)))));
-            this.buttonCancelar.Location = new System.Drawing.Point(569, 263);
+            this.buttonCancelar.Location = new System.Drawing.Point(569, 325);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(139, 37);
             this.buttonCancelar.TabIndex = 16;
             this.buttonCancelar.UseVisualStyleBackColor = false;
-            this.buttonCancelar.Click += new System.EventHandler(this.buttonExcluir_Click);
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // buttonVisualizarItem
             // 
-            this.buttonVisualizarItem.Location = new System.Drawing.Point(471, 410);
+            this.buttonVisualizarItem.Location = new System.Drawing.Point(471, 472);
             this.buttonVisualizarItem.Name = "buttonVisualizarItem";
             this.buttonVisualizarItem.Size = new System.Drawing.Size(92, 23);
             this.buttonVisualizarItem.TabIndex = 17;
@@ -360,7 +364,7 @@
             // 
             // buttonExcluirItem
             // 
-            this.buttonExcluirItem.Location = new System.Drawing.Point(381, 410);
+            this.buttonExcluirItem.Location = new System.Drawing.Point(381, 472);
             this.buttonExcluirItem.Name = "buttonExcluirItem";
             this.buttonExcluirItem.Size = new System.Drawing.Size(75, 23);
             this.buttonExcluirItem.TabIndex = 18;
@@ -370,7 +374,7 @@
             // 
             // buttonGravarItem
             // 
-            this.buttonGravarItem.Location = new System.Drawing.Point(290, 410);
+            this.buttonGravarItem.Location = new System.Drawing.Point(290, 472);
             this.buttonGravarItem.Name = "buttonGravarItem";
             this.buttonGravarItem.Size = new System.Drawing.Size(75, 23);
             this.buttonGravarItem.TabIndex = 4;
@@ -380,7 +384,7 @@
             // 
             // buttonNovoItem
             // 
-            this.buttonNovoItem.Location = new System.Drawing.Point(200, 410);
+            this.buttonNovoItem.Location = new System.Drawing.Point(200, 472);
             this.buttonNovoItem.Name = "buttonNovoItem";
             this.buttonNovoItem.Size = new System.Drawing.Size(75, 23);
             this.buttonNovoItem.TabIndex = 20;
@@ -408,7 +412,7 @@
             this.labelbtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelbtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.labelbtnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(22)))), ((int)(((byte)(47)))));
-            this.labelbtnCancelar.Location = new System.Drawing.Point(620, 275);
+            this.labelbtnCancelar.Location = new System.Drawing.Point(620, 337);
             this.labelbtnCancelar.Name = "labelbtnCancelar";
             this.labelbtnCancelar.Size = new System.Drawing.Size(78, 15);
             this.labelbtnCancelar.TabIndex = 22;
@@ -419,7 +423,7 @@
             this.CancelarBtnIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(200)))));
             this.CancelarBtnIcon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CancelarBtnIcon.Image = ((System.Drawing.Image)(resources.GetObject("CancelarBtnIcon.Image")));
-            this.CancelarBtnIcon.Location = new System.Drawing.Point(587, 273);
+            this.CancelarBtnIcon.Location = new System.Drawing.Point(587, 335);
             this.CancelarBtnIcon.Name = "CancelarBtnIcon";
             this.CancelarBtnIcon.Size = new System.Drawing.Size(18, 17);
             this.CancelarBtnIcon.TabIndex = 23;
@@ -433,7 +437,7 @@
             this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.btnNovo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(180)))), ((int)(((byte)(134)))));
-            this.btnNovo.Location = new System.Drawing.Point(620, 60);
+            this.btnNovo.Location = new System.Drawing.Point(620, 65);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(45, 15);
             this.btnNovo.TabIndex = 24;
@@ -444,7 +448,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(255)))), ((int)(((byte)(242)))));
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(587, 58);
+            this.pictureBox1.Location = new System.Drawing.Point(587, 63);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(18, 17);
             this.pictureBox1.TabIndex = 25;
@@ -458,7 +462,7 @@
             this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.btnImprimir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(83)))), ((int)(((byte)(190)))));
-            this.btnImprimir.Location = new System.Drawing.Point(620, 110);
+            this.btnImprimir.Location = new System.Drawing.Point(620, 115);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(72, 15);
             this.btnImprimir.TabIndex = 26;
@@ -469,7 +473,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(585, 105);
+            this.pictureBox2.Location = new System.Drawing.Point(585, 110);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(23, 23);
             this.pictureBox2.TabIndex = 27;
@@ -483,7 +487,7 @@
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(624, 327);
+            this.label6.Location = new System.Drawing.Point(624, 389);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 15);
             this.label6.TabIndex = 28;
@@ -494,7 +498,7 @@
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(103)))), ((int)(((byte)(127)))));
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(584, 325);
+            this.pictureBox3.Location = new System.Drawing.Point(584, 387);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(27, 20);
             this.pictureBox3.TabIndex = 29;
@@ -508,7 +512,7 @@
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(623, 379);
+            this.label7.Location = new System.Drawing.Point(623, 441);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(75, 15);
             this.label7.TabIndex = 30;
@@ -519,18 +523,69 @@
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(134)))), ((int)(((byte)(255)))));
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(587, 378);
+            this.pictureBox4.Location = new System.Drawing.Point(587, 440);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(24, 20);
             this.pictureBox4.TabIndex = 31;
             this.pictureBox4.TabStop = false;
+            // 
+            // comboBoxFornecedorInformation
+            // 
+            this.comboBoxFornecedorInformation.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxFornecedorInformation.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBoxFornecedorInformation.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.comboBoxFornecedorInformation.FormattingEnabled = true;
+            this.comboBoxFornecedorInformation.Location = new System.Drawing.Point(12, 79);
+            this.comboBoxFornecedorInformation.Name = "comboBoxFornecedorInformation";
+            this.comboBoxFornecedorInformation.Size = new System.Drawing.Size(551, 25);
+            this.comboBoxFornecedorInformation.TabIndex = 32;
+            this.comboBoxFornecedorInformation.SelectedIndexChanged += new System.EventHandler(this.comboBoxFornecedorInformation_SelectedIndexChanged);
+            // 
+            // radioButtonTodos
+            // 
+            this.radioButtonTodos.AutoSize = true;
+            this.radioButtonTodos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioButtonTodos.Location = new System.Drawing.Point(182, 54);
+            this.radioButtonTodos.Name = "radioButtonTodos";
+            this.radioButtonTodos.Size = new System.Drawing.Size(55, 17);
+            this.radioButtonTodos.TabIndex = 33;
+            this.radioButtonTodos.TabStop = true;
+            this.radioButtonTodos.Text = "Todos";
+            this.radioButtonTodos.UseVisualStyleBackColor = true;
+            this.radioButtonTodos.CheckedChanged += new System.EventHandler(this.radioButtonTodos_CheckedChanged);
+            // 
+            // radioButtonEspecifico
+            // 
+            this.radioButtonEspecifico.AutoSize = true;
+            this.radioButtonEspecifico.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioButtonEspecifico.Location = new System.Drawing.Point(243, 54);
+            this.radioButtonEspecifico.Name = "radioButtonEspecifico";
+            this.radioButtonEspecifico.Size = new System.Drawing.Size(76, 17);
+            this.radioButtonEspecifico.TabIndex = 34;
+            this.radioButtonEspecifico.TabStop = true;
+            this.radioButtonEspecifico.Text = "Específico";
+            this.radioButtonEspecifico.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.label8.Location = new System.Drawing.Point(9, 53);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(167, 17);
+            this.label8.TabIndex = 1001;
+            this.label8.Text = "Compra por Fornecedor: ";
             // 
             // FormCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(720, 445);
+            this.ClientSize = new System.Drawing.Size(720, 507);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.radioButtonEspecifico);
+            this.Controls.Add(this.radioButtonTodos);
+            this.Controls.Add(this.comboBoxFornecedorInformation);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBox3);
@@ -615,5 +670,9 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.ComboBox comboBoxFornecedorInformation;
+        private System.Windows.Forms.RadioButton radioButtonTodos;
+        private System.Windows.Forms.RadioButton radioButtonEspecifico;
+        private System.Windows.Forms.Label label8;
     }
 }

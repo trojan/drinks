@@ -10,7 +10,7 @@ namespace Drinks.Model
     {
         public long     Cnpj { get; set; }
         public string   RazaoSocial { get; set; }
-        public int      Cep { get; set; }
+        public string   Cep { get; set; }
         public string   Endereco { get; set; }
         public string   Numero { get; set; }
         public string   Bairro { get; set; }
@@ -19,7 +19,7 @@ namespace Drinks.Model
         public int      DDDTelefone { get; set; }
         public int      Telefone { get; set; }
         public int      DDDCelular { get; set; }
-        public int      Celular { get; set; }   
+        public string   Celular { get; set; }   
         public string   NomeFantasia { get; set; }
         public long     InscricaoEstadual { get; set; }
         public string   Email { get; set; }

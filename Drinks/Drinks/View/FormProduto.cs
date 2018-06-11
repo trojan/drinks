@@ -18,6 +18,7 @@ namespace Drinks.View
             LimparCampos();
         }
 
+        #region [DECLARAÇÕES]
         // DAO
         DAO.DAO dao = new DAO.DAO();
 
@@ -32,6 +33,7 @@ namespace Drinks.View
         Controller.UnidadeMedidaController und_c = new Controller.UnidadeMedidaController();
         Controller.TamanhoController tmh_c = new Controller.TamanhoController();
         Controller.ProdutoController prd_c = new Controller.ProdutoController();
+        #endregion
 
         #region [FUNÇÕES]
         public void ListaMarca()

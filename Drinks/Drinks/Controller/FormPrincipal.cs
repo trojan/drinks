@@ -50,7 +50,8 @@ namespace Drinks.Controller
 
         private void cONSULTARFORNECEDORESToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            View.ListaFornecedores flfnd = new View.ListaFornecedores();
+            flfnd.ShowDialog();
         }
         #endregion
 

@@ -31,10 +31,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
             this.PanelBackground = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.ConsultaProdutoBuscar = new System.Windows.Forms.Button();
-            this.comboBoxTamanho = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buttonSair = new System.Windows.Forms.Button();
+            this.buttonBuscarProduto = new System.Windows.Forms.Button();
+            this.comboBoxFiltro = new System.Windows.Forms.ComboBox();
+            this.textBoxCampoBusca = new System.Windows.Forms.TextBox();
             this.consultaProdTitle = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -52,7 +52,7 @@
             // 
             // dgvProdutos
             // 
-            this.dgvProdutos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProdutos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvProdutos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProdutos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProdutos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -80,52 +80,54 @@
             this.PanelBackground.TabIndex = 7;
             this.PanelBackground.TabStop = false;
             // 
-            // button1
+            // buttonSair
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button1.ForeColor = System.Drawing.Color.Red;
-            this.button1.Location = new System.Drawing.Point(657, 382);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(142, 34);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Sair";
-            this.button1.UseVisualStyleBackColor = false;
+            this.buttonSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.buttonSair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.buttonSair.ForeColor = System.Drawing.Color.Red;
+            this.buttonSair.Location = new System.Drawing.Point(657, 382);
+            this.buttonSair.Name = "buttonSair";
+            this.buttonSair.Size = new System.Drawing.Size(142, 34);
+            this.buttonSair.TabIndex = 8;
+            this.buttonSair.Text = "Sair";
+            this.buttonSair.UseVisualStyleBackColor = false;
+            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
-            // ConsultaProdutoBuscar
+            // buttonBuscarProduto
             // 
-            this.ConsultaProdutoBuscar.BackColor = System.Drawing.Color.RoyalBlue;
-            this.ConsultaProdutoBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ConsultaProdutoBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ConsultaProdutoBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ConsultaProdutoBuscar.ForeColor = System.Drawing.Color.White;
-            this.ConsultaProdutoBuscar.Location = new System.Drawing.Point(657, 132);
-            this.ConsultaProdutoBuscar.Name = "ConsultaProdutoBuscar";
-            this.ConsultaProdutoBuscar.Size = new System.Drawing.Size(142, 34);
-            this.ConsultaProdutoBuscar.TabIndex = 9;
-            this.ConsultaProdutoBuscar.Text = "Buscar";
-            this.ConsultaProdutoBuscar.UseVisualStyleBackColor = false;
+            this.buttonBuscarProduto.BackColor = System.Drawing.Color.RoyalBlue;
+            this.buttonBuscarProduto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonBuscarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBuscarProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.buttonBuscarProduto.ForeColor = System.Drawing.Color.White;
+            this.buttonBuscarProduto.Location = new System.Drawing.Point(657, 132);
+            this.buttonBuscarProduto.Name = "buttonBuscarProduto";
+            this.buttonBuscarProduto.Size = new System.Drawing.Size(142, 34);
+            this.buttonBuscarProduto.TabIndex = 9;
+            this.buttonBuscarProduto.Text = "Buscar";
+            this.buttonBuscarProduto.UseVisualStyleBackColor = false;
+            this.buttonBuscarProduto.Click += new System.EventHandler(this.buttonBuscarProduto_Click);
             // 
-            // comboBoxTamanho
+            // comboBoxFiltro
             // 
-            this.comboBoxTamanho.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBoxTamanho.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBoxTamanho.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxTamanho.FormattingEnabled = true;
-            this.comboBoxTamanho.Location = new System.Drawing.Point(657, 71);
-            this.comboBoxTamanho.Name = "comboBoxTamanho";
-            this.comboBoxTamanho.Size = new System.Drawing.Size(142, 25);
-            this.comboBoxTamanho.TabIndex = 22;
+            this.comboBoxFiltro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxFiltro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBoxFiltro.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxFiltro.FormattingEnabled = true;
+            this.comboBoxFiltro.Location = new System.Drawing.Point(657, 71);
+            this.comboBoxFiltro.Name = "comboBoxFiltro";
+            this.comboBoxFiltro.Size = new System.Drawing.Size(142, 25);
+            this.comboBoxFiltro.TabIndex = 22;
             // 
-            // textBox1
+            // textBoxCampoBusca
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.textBox1.Location = new System.Drawing.Point(657, 102);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(142, 24);
-            this.textBox1.TabIndex = 24;
+            this.textBoxCampoBusca.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.textBoxCampoBusca.Location = new System.Drawing.Point(657, 102);
+            this.textBoxCampoBusca.Name = "textBoxCampoBusca";
+            this.textBoxCampoBusca.Size = new System.Drawing.Size(142, 24);
+            this.textBoxCampoBusca.TabIndex = 24;
             // 
             // consultaProdTitle
             // 
@@ -157,10 +159,10 @@
             this.ClientSize = new System.Drawing.Size(811, 428);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.consultaProdTitle);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBoxTamanho);
-            this.Controls.Add(this.ConsultaProdutoBuscar);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBoxCampoBusca);
+            this.Controls.Add(this.comboBoxFiltro);
+            this.Controls.Add(this.buttonBuscarProduto);
+            this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.PanelBackground);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -180,11 +182,11 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox PanelBackground;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button ConsultaProdutoBuscar;
-        private System.Windows.Forms.ComboBox comboBoxTamanho;
+        private System.Windows.Forms.Button buttonSair;
+        private System.Windows.Forms.Button buttonBuscarProduto;
+        private System.Windows.Forms.ComboBox comboBoxFiltro;
         private System.Windows.Forms.DataGridView dgvProdutos;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxCampoBusca;
         private System.Windows.Forms.Label consultaProdTitle;
         private System.Windows.Forms.Label label1;
     }

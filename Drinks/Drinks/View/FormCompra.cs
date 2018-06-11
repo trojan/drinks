@@ -25,16 +25,19 @@ namespace Drinks.View
         Model.ProdutoModel prd_m = new Model.ProdutoModel();
         Model.ItensCompraModel icmp_m = new Model.ItensCompraModel();
         Model.CompraModel cmp_m = new Model.CompraModel();
+        Model.FornecedorModel fnd_m = new Model.FornecedorModel();
 
         // CONTROLLER
         Controller.ProdutoController prd_c = new Controller.ProdutoController();
         Controller.ItensCompraController icmp_c = new Controller.ItensCompraController();
         Controller.CompraController cmp_c = new Controller.CompraController();
+        Controller.FornecedorController fnd_c = new Controller.FornecedorController();
         #endregion
 
         #region [FUNÇÕES]
         DataTable dtProduto = new DataTable();
         DataTable dtItens = new DataTable();
+        DataTable dtFornecedor = new DataTable();
 
         public void ListaProduto()
         {
@@ -64,12 +67,25 @@ namespace Drinks.View
             dgvItemPedido.Columns["VALOR_TOTAL_UNITARIO"].Visible = true;
         }
 
+        public void ListaFornecedor()
+        {
+            dao.ListarFornecedor(null, fnd_m).Fill(dtFornecedor);
+
+            comboBoxFornecedorInformation.DataSource = dtFornecedor;
+            comboBoxFornecedorInformation.DisplayMember = "RAZAO_SOCIAL";
+            comboBoxFornecedorInformation.ValueMember = "CNPJ";
+            comboBoxFornecedorInformation.Refresh();
+        }
+
+
         public void LimpaDGV()
         {
             dgvItemPedido.DataSource = null; //REMOVERA O DATASOURCE
             //dgvItemPedido.Columns.Clear(); //REMOVERA AS COLUNAS
             dgvItemPedido.Rows.Clear();    //REMOVERA AS LINHAS
             dgvItemPedido.Refresh();    //ATUALIZARA O DGV
+
+            textBoxQuantidade.Text = "1";
         }
 
         // RETORNA O PRODUTO DOS CAMPOS 'VALOR UNITARIO' E 'QUANTIDADE'
@@ -86,6 +102,15 @@ namespace Drinks.View
             else
                 textBoxValorTotal.Text = "Valores inválidos.";
         }
+
+
+        public void checkRadio()
+        {
+            if (radioButtonTodos.Checked == true)
+                comboBoxFornecedorInformation.Enabled = false;
+            else
+                comboBoxFornecedorInformation.Enabled = true;
+        }
         #endregion
 
         private void FormCompra_Load(object sender, EventArgs e)
@@ -99,6 +124,18 @@ namespace Drinks.View
             textBoxQuantidade.Text = "1";
 
             comboBoxProdutoInformation.Select();
+
+            radioButtonTodos.Checked = true;
+
+            ListaFornecedor();
+        }
+
+        private void comboBoxFornecedorInformation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // QUANDO SELECIONAR UM ITEM NO COMBOBOX
+            DataRowView drv = ((DataRowView)comboBoxFornecedorInformation.SelectedItem);
+            // ATRIBUIRA AO TEXTBOXVALOR O VALOR DESSE ITEM SELECIONADO 
+            //textBoxValor.Text = drv["VALOR_UNITARIO"].ToString();
         }
 
         private void comboBoxProdutoInformation_SelectedIndexChanged(object sender, EventArgs e)
@@ -123,16 +160,16 @@ namespace Drinks.View
             {
                 // PEGARA O ID DO PRODUTO NA TABELA
                 int id = prd_m.IdProduto = Convert.ToInt32(row.Cells["IDPRODUTO"].Value);
-                
+
                 // PEGARA A QUANTIDADE ATUAL DO PRODUTO NO ESTOQUE, APARTIR DO ID DO PRODUTO
                 int quantidade = dao.BuscarProdutoEspecifico(prd_m);
-               
+
                 // SOMARA A QUANTIDADE QUE TINHA EM ESTOQUE + QUANTIDADE DE ENTRADA
                 quantidade += Convert.ToInt32(row.Cells["QUANTIDADE_UNITARIO"].Value);
 
                 //INSERIR OS ITENS DA TABELA DE ITENS COMPRA
                 icmp_c.InsereItensCompra(codigo, Convert.ToInt32(row.Cells["IDPRODUTO"].Value), Convert.ToInt32(row.Cells["QUANTIDADE_UNITARIO"].Value), Convert.ToDecimal(row.Cells["VALOR_UNITARIO"].Value));
-                
+
                 // SOMARA TODAS A QUANTIDADE E VALORES UNITARIOS DA TABELA, FORMANDO UM QUANTIDADE TOTAL E VALOR TOTAL
                 quantidadeTotal += Convert.ToInt32(row.Cells["QUANTIDADE_UNITARIO"].Value);
                 valorTotal += Convert.ToDecimal(row.Cells["VALOR_TOTAL_UNITARIO"].Value);
@@ -159,14 +196,19 @@ namespace Drinks.View
 
         }
 
-        private void buttonExcluir_Click(object sender, EventArgs e)
+        private void buttonCancelar_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Tem certeza que deseja cancelar ?", "Mensagem do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                LimpaDGV();
+                comboBoxProdutoInformation.Select();
+            }
 
         }
 
         private void buttonSair_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
         #endregion
 
@@ -212,7 +254,7 @@ namespace Drinks.View
 
         #endregion
 
-        
+
 
         private void textBoxValor_TextChanged(object sender, EventArgs e)
         {
@@ -223,6 +265,13 @@ namespace Drinks.View
         {
             Multiply();
         }
+
+        private void radioButtonTodos_CheckedChanged(object sender, EventArgs e)
+        {
+            checkRadio();
+        }
+
+
     }
 }
 
